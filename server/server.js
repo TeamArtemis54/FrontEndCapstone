@@ -6,7 +6,7 @@ var app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Team Artemis - FEC Project')
 })
 
 app.listen(port, () => {
