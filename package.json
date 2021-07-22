@@ -4,8 +4,9 @@
   "description": "This is our HR-RFP54 Front-End capstone project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server-start": "node ./server/server.js"
+    "server-start": "nodemon ./server/server.js",
+    "dev:react": "webpack --config ./webpack.config.js --mode development -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
