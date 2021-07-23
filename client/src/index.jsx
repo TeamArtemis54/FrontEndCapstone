@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
+import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 
 class App extends Component {
   constructor () {
@@ -7,12 +8,14 @@ class App extends Component {
     this.state = {};
   }
 
-
   render () {
-
     return (
-      <h1>Team Artemis</h1>
+      <div>
+        <h1>Team Artemis</h1>
+        <RelatedProducts />
+      </div>
     )
   }
 };
+
 ReactDom.render(<App />, document.getElementById('app'));
