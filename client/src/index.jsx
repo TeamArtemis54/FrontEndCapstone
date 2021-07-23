@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
 
+import Temp from './components/Temp.jsx';
+
 class App extends Component {
   constructor () {
     super();
@@ -11,7 +13,10 @@ class App extends Component {
   render () {
 
     return (
-      <h1>Team Artemis</h1>
+      <div className='main-container'>
+        <h1>Team Artemis</h1>
+        <Temp />
+      </div>
     )
   }
 };
