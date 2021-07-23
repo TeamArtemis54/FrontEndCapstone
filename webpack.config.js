@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'development',
   entry: __dirname + '/client/src/index.jsx',
   output: {
     filename: 'bundle.js',
@@ -18,6 +19,16 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg|jpg|png)$/,
+        use: {
+          loader: 'url-loader'
+        }
+      },
+      {
+        test: /\.(s(a|c)ss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },

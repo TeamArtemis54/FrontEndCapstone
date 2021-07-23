@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 
 class App extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {};
   }
-
   render () {
     return (
       <div>
