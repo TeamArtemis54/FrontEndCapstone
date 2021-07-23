@@ -4,7 +4,7 @@
   "description": "This is our HR-RFP54 Front-End capstone project",
   "main": "index.js",
   "scripts": {
-    "server-start": "nodemon ./server/server.js",
+    "server-start": "nodemon ./server/index.js",
     "dev:react": "webpack --config ./webpack.config.js --mode development -w",
     "sass": "sass --watch client/src/style.scss client/dist/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/TeamArtemis54/FrontEndCapstone#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

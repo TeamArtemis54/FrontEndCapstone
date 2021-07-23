@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {};
   }
-  render() {
+  render () {
     return (
-      <div className='main-container'>
+      <div>
         <h1>Team Artemis</h1>
+        <RelatedProducts />
       </div>
     )
   }
 };
+
 ReactDom.render(<App />, document.getElementById('app'));
