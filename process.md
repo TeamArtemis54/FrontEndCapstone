@@ -83,4 +83,20 @@ Add to Cart
 
 # GUIDELINE FOR RATINGS AND REVIEW MODULE
 
+
+
 # GUIDELINE FOR RELATED ITEMS MODULE
+
+
+**Site wide components will most likely be functional components
+
+
+
+
+Logo/nav bar and announcement is static code
+
+Stars component -
+Buttons component -
+
+Overview right component
+  - stars, category, title, price, styles, buttons
