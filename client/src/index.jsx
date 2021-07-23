@@ -1,21 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import Temp from './components/Temp.jsx';
-
 class App extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {};
   }
-
-
-  render () {
-
+  render() {
     return (
       <div className='main-container'>
         <h1>Team Artemis</h1>
-        <Temp />
       </div>
     )
   }
