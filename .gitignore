@@ -80,7 +80,9 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# COMMENTED THIS OUT SO TEAM ARTEMIS HAS
+# ACCESS TO index.html FILE
+# dist
 
 # Gatsby files
 .cache/
@@ -102,3 +104,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# API KEYS SHALL NOT BE COMMTIED
+# THE env DIRECTORY HOLDS API KEYS
+env/
