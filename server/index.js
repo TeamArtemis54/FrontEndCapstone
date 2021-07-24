@@ -23,30 +23,10 @@ app.use(express.static(__dirname + '/../client/dist'));
 //   res.sendFile(path.join(__dirname, '../client/src', 'index.html'));
 // })
 
-
+// GIT TOKEN : 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
 
 // create ROUTES FOLDER
 // SEPARATE API'S INTO SEPARATE MODEL/CONTROLLERS??
-
-
-
-// // PRODUCTS API
-// app.get('/products', (req, res) => {
-//   axios({
-//     method: 'get',
-//     url: url + '/products',
-//     headers: {
-//       'Authorization': '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'
-//     }
-//   })
-//     .then((data) => {
-//       res.send(data.data);
-//     })
-//     .catch((err) => {
-//       // handle error better
-//       console.log(err);
-//     })
-// })
 
 if(!module.parent) {
   app.listen(app.get('port'));
