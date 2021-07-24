@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -17,4 +17,4 @@ class App extends Component {
   }
 };
 
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
