@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/TeamArtemis54/FrontEndCapstone#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
     "react": "^17.0.2",
