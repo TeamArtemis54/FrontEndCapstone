@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.jsx';
+import Ratings from './components/RatingsAndReviews/Ratings/Ratings.jsx';
+import Reviews from './components/RatingsAndReviews/Reviews/Reviews.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -14,7 +16,9 @@ class App extends React.Component {
         <h1>Team Artemis</h1>
         <RelatedProducts />
 
-        <RatingsAndReviews />
+        <RatingsAndReviews
+          ratingsLeft={<Ratings />}
+          reviewsRight={<Reviews />} />
       </div>
     )
   }
