@@ -1,6 +1,9 @@
 import React from 'react';
 
-function Review (props) {
+function Review ({props}) {
+  const {review} = {this.props};
+
+
 
 
   return (
@@ -13,25 +16,27 @@ function Review (props) {
 
         <div className='review__top--user'>
           <p className='review__top--reviewer'>
-            <span className='review__top--reviewer-name'>{props.reviewer_name}, </span>
-            <span className='review__top--reviewer-date'>{props.date}</span>
+            <span className='review__top--reviewer-name'>{review.reviewer_name}, </span>
+            <span className='review__top--reviewer-date'>{review.date}</span>
           </p>
         </div>
       </div>
 
       <div className='review__middle'>
         <p className='review__summary'>
-          <span>{props.summary}</span>
+          <span>{review.summary}</span>
         </p>
         <p className='review__summary'>
-          <span>{props.body}</span>
+          <span>{review.body}</span>
         </p>
       </div>
+
+      {{review.recommended}}
 
       <div className='review__bottom'>
         <div className='review__bottom--helpful'>
           <p className='review__bottom--helpful-help'>Helpful?
-            <span><u>Yes </u>{props.helpful}</span>
+            <span><u>Yes </u>{review.helpful}</span>
           </p>
         </div>
 
