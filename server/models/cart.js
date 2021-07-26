@@ -29,7 +29,7 @@ module.exports = {
       },
       contentType: 'application/json',
       dataType: 'application/json',
-      data: bodyParams.sku_id
+      data: bodyParams
     })
       .then((data) => {
         cb(null, data);

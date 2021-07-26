@@ -13,6 +13,7 @@ module.exports = {
     })
   },
 
+  // ADD TO CART NOT WORKING - the way that I'm testing is incorrect maybe?
   addToCart: function(req, res) {
     let bodyParams = req.body;
     models.cart.addToCart(bodyParams, (err, results) => {
