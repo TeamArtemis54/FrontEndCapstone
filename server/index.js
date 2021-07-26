@@ -1,6 +1,7 @@
 // we have to import express
 var express = require('express');
 const axios = require('axios');
+const bodyParser = require('body-parser');
 
 // Path
 const path = require('path');
@@ -13,6 +14,8 @@ var app = express();
 module.exports.app = app;
 
 app.set('port', 3000);
+
+app.use(bodyParser.json());
 
 // set up our routes
 app.use('/api', router);

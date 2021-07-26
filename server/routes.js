@@ -10,7 +10,15 @@ router.get('/products/:product_id', controller.products.getProductId);
 router.get('/products/:product_id/styles', controller.products.getProductStyles);
 router.get('/products/:product_id/related', controller.products.getRelatedProducts);
 
+// FOR INTERACTIONS API
+router.post('/interactions', controller.interactions.postInteraction);
+
 // FOR REVIEWS API
+router.get('/reviews/:product_id', controller.reviews.getReviews);
+router.get('/reviews/meta/:product_id', controller.reviews.getMetaData);
+router.post('/reviews', controller.reviews.addReview);
+router.put('/reviews/:review_id/helpful', controller.reviews.markReviewHelpful);
+router.put('/reviews/:review_id/report', controller.reviews.reportReview);
 
 
 
