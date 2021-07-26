@@ -26,11 +26,6 @@ app.use(express.static(__dirname + '/../client/dist'));
 //   res.sendFile(path.join(__dirname, '../client/src', 'index.html'));
 // })
 
-// GIT TOKEN : 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
-
-// create ROUTES FOLDER
-// SEPARATE API'S INTO SEPARATE MODEL/CONTROLLERS??
-
 if(!module.parent) {
   app.listen(app.get('port'));
   console.log('Listening on', app.get('port'));
