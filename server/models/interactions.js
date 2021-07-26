@@ -4,7 +4,7 @@ const API = require('/Users/jinhoobong/Desktop/HackReactor_SEI/FEC/client/env/ap
 
 // MODELS: use axios
 module.exports = {
-  postInteraction: function(cb, params) {
+  postInteraction: function(params, cb) {
     axios({
       method: 'POST',
       url: url + '/interactions',
@@ -12,11 +12,7 @@ module.exports = {
         'Authorization': API.token
       },
       dataType: 'application/json',
-      data: {
-        'element': params[0],
-        'widget': params[1],
-        'time': params[2],
-      }
+      data: params
     })
       .then((data) => {
         cb(null, data);

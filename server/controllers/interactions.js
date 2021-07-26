@@ -5,11 +5,9 @@ const bodyParser = require('body-parser');
 
 module.exports = {
   postInteraction: function(req, res) {
-    // console.log(req.body);
-    // req.body is undefined even when i'm submitting via postman!! fix
-
-
-    models.interactions.postInteraction((err, result) => {
+    console.log(req.body);
+    let params = req.body;
+    models.interactions.postInteraction(params, (err, result) => {
       if (err) {
         res.send(err);
       } else {

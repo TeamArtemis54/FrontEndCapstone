@@ -20,6 +20,8 @@ router.post('/reviews', controller.reviews.addReview);
 router.put('/reviews/:review_id/helpful', controller.reviews.markReviewHelpful);
 router.put('/reviews/:review_id/report', controller.reviews.reportReview);
 
-
+// FOR CART API
+router.get('/cart', controller.cart.getCart);
+router.post('/cart', controller.cart.addToCart);
 
 module.exports = router;
