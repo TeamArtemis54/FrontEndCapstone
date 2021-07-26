@@ -80,6 +80,8 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
+
+
 # COMMENTED THIS OUT SO TEAM ARTEMIS HAS
 # ACCESS TO index.html FILE
 # dist
