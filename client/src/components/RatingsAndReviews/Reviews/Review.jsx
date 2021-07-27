@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 class Review extends Component {
   constructor(props) {
     super(props);
-    const {review} = this.props;
     this.state = {
     }
   }
 
   render() {
+    const {review} = this.props;
+    console.log(this.props);
     return (
       <div className='review'>
 
