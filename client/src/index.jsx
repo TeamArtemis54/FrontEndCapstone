@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom';
 
 import Header from './components/Header/Header.jsx';
 
+// OVERVIEW
+
 // RELATED PRODUCTS
 import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
 
 // RATINGS AND REVIEWS
 import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.jsx';
-import Ratings from './components/RatingsAndReviews/Ratings/Ratings.jsx';
-import Reviews from './components/RatingsAndReviews/Reviews/Reviews.jsx';
-
-// OVERVIEW
 
 class App extends React.Component {
   constructor() {
@@ -23,11 +21,12 @@ class App extends React.Component {
       <div>
         <Header />
         <h1>Team Artemis</h1>
+
+        {/* PLACEHOLDER FOR OVERVIEW COMPONENT */}
+
         <RelatedProducts />
 
-        <RatingsAndReviews
-          ratingsLeft={<Ratings />}
-          reviewsRight={<Reviews />} />
+        <RatingsAndReviews />
       </div>
     )
   }

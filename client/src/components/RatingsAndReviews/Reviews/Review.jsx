@@ -9,7 +9,6 @@ class Review extends Component {
 
   render() {
     const {review} = this.props;
-    console.log(this.props);
     return (
       <div className='review'>
 

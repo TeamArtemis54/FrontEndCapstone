@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// app components
 import Reviews from './Reviews/Reviews.jsx';
 
 // axios
