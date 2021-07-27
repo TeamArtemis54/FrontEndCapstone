@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Review ({props}) {
-  const {review} = {this.props};
+function Review (props) {
+  const {review} = {props};
 
 
 
@@ -31,7 +31,7 @@ function Review ({props}) {
         </p>
       </div>
 
-      {{review.recommended}}
+      {review.recommended}
 
       <div className='review__bottom'>
         <div className='review__bottom--helpful'>
