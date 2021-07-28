@@ -25,11 +25,12 @@ class RelatedList extends React.Component {
   getProductThumbnail() {
     axios.get(`/api/products/${this.props.productId}/styles`)
       .then((response) => {
-        // console.log(response.data.results[0].photos[0].thumbnail_url);
+        // console.log(response.data.results);
         let newPic = this.state.thumbnails.concat(response.data.results[0].photos[0].thumbnail_url);
         this.setState({
           thumbnails: newPic
         })
+        // console.log(this.state.thumbnails);
       })
       .catch((err) => {
         console.log(err);
@@ -43,7 +44,7 @@ class RelatedList extends React.Component {
 
   render(props) {
     return (
-      <div>
+      <div className="relatedList">
         {this.state.products.map((item, i) => {
           return <RelatedCard product={item} key={i} thumbnails={this.state.thumbnails}/>
         })}

@@ -1,6 +1,6 @@
 import React from 'react';
 import RelatedList from './relatedList.jsx';
-import './relatedStyles.css';
+import './relatedStyles.scss';
 const axios = require('axios');
 
 // This component will hold the first list which will be the related products that were determined internally
