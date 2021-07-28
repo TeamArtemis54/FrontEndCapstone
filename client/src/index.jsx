@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 import Header from './components/Header/Header.jsx';
 
 // RELATED PRODUCTS
-import RelatedProducts from './components/RelatedProducts/RelatedProducts.jsx';
+import RelatedProductsWidget from './components/RelatedProducts/RelatedProductsWidget.jsx';
+import RelatedList from './components/RelatedProducts/relatedList.jsx';
 
 // RATINGS AND REVIEWS
 import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.jsx';
@@ -23,7 +24,7 @@ class App extends React.Component {
       <div>
         <Header />
         <h1>Team Artemis</h1>
-        <RelatedProducts />
+        <RelatedProductsWidget />
 
         <RatingsAndReviews
           ratingsLeft={<Ratings />}

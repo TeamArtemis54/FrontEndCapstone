@@ -1,5 +1,5 @@
 import React from 'react';
-import RelatedCard from './relatedCard.jsx';
+import RelatedList from './relatedList.jsx';
 import './relatedStyles.css';
 const axios = require('axios');
 
@@ -13,7 +13,7 @@ const axios = require('axios');
 
 // images will require 'products/productId/styles --> data.results.photos.thumbnail_url
 
-class RelatedProducts extends React.Component {
+class RelatedProductsWidget extends React.Component {
   constructor(props) {
     super(props);
 
@@ -42,11 +42,11 @@ class RelatedProducts extends React.Component {
       <div className="RelatedBox">
         <h3 className="relatedTitle">Related Products</h3>
         {this.state.relatedItems.map((item, i) => {
-          return <RelatedCard product={item} key={i}/>
+          return <RelatedList productId={item} key={i}/>
         })}
       </div>
     )
   }
 
 }
-export default RelatedProducts;
+export default RelatedProductsWidget;
