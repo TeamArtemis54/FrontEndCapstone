@@ -26,6 +26,7 @@ class RelatedProductsWidget extends React.Component {
     }
 
     this.handleClick = this.handleClick.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   getRelatedItems() {
@@ -98,7 +99,7 @@ class RelatedProductsWidget extends React.Component {
             return <RelatedList clickFn={this.handleClick} productId={item} key={i} />
           })}
         </div>
-        <CompareModal info={this.state.productData} show={this.state.showModal} closeClick={this.closeModal.bind(this)}/>
+        <CompareModal info={this.state.productData} show={this.state.showModal} closeClick={this.closeModal}/>
       </div>
     )
   }
