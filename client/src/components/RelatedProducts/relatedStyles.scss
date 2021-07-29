@@ -24,9 +24,14 @@
 .relatedCard {
   font-family: 'Open Sans';
   font-weight: 300;
-  border: 1px solid black;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
   height: 450px;
   width: 300px;
+  padding: 1%;
+}
+
+.relatedCard:hover {
+  border: 5px solid rgba(159, 160, 255, 0.6);
 }
 
   .card-imgContainer {
@@ -79,7 +84,7 @@
 .modal-content {
   width: 500px;
   background-color: #fff;
-  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal-header, .modal-footer {
@@ -100,8 +105,32 @@
   font-size: 0.8rem;
 }
 
-.modal-body {
-  padding: 3%
+.modal-body table{
+  font-family: 'Open Sans';
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.modal-body tr {
+  margin: 2% 0;
+}
+
+.modal-body table tr td {
+  padding: 5%;
+  text-align: center;
+}
+
+.modal-body table tr th {
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.3);
+  width: 33%;
+  margin: auto;
+}
+
+.table-mid {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border: none;
 }
 
   .modal-productName {

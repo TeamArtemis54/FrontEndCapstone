@@ -19,7 +19,7 @@ class RelatedProductsWidget extends React.Component {
     super(props);
 
     this.state = {
-      currentProductId: 17067,
+      currentProductId: 17068,
       relatedItems: [],
       showModal: false,
       productData: {}

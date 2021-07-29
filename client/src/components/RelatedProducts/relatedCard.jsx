@@ -12,7 +12,7 @@ let RelatedCard = (props) => {
       <div className="card-infoContainer">
         <p className="relatedItem-category">{props.product.category}</p>
         <p className="relatedItem-name">{props.product.name}</p>
-        <p className="relatedItem-price">${props.product.default_price.substring(0, 2)}</p>
+        <p className="relatedItem-price">${props.product.default_price}</p>
         <p>stars component</p>
       </div>
     </div>
