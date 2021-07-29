@@ -2,7 +2,7 @@ import React from 'react';
 
 let RelatedCard = (props) => {
   return (
-    <div className="relatedCard">
+    <div className="relatedCard" onClick={() => props.clickFn(props.product)}>
       <div className="card-imgContainer">
         {props.thumbnails[0] === null ?
         <div className="card-thumbnail">No image available</div> :
@@ -13,6 +13,7 @@ let RelatedCard = (props) => {
         <p className="relatedItem-category">{props.product.category}</p>
         <p className="relatedItem-name">{props.product.name}</p>
         <p className="relatedItem-price">${props.product.default_price.substring(0, 2)}</p>
+        <p>stars component</p>
       </div>
     </div>
   )
