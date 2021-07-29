@@ -39,11 +39,13 @@ class RelatedProductsWidget extends React.Component {
 
   render() {
     return (
-      <div className="RelatedBox">
+      <div>
         <h3 className="relatedTitle">Related Products</h3>
-        {this.state.relatedItems.map((item, i) => {
-          return <RelatedList productId={item} key={i}/>
-        })}
+        <div className="relatedContainer">
+          {this.state.relatedItems.map((item, i) => {
+            return <RelatedList productId={item} key={i}/>
+          })}
+        </div>
       </div>
     )
   }

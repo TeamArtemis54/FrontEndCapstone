@@ -3,13 +3,17 @@ import React from 'react';
 let RelatedCard = (props) => {
   return (
     <div className="relatedCard">
-      {props.thumbnails[0] === null ?
-      <div>No image available</div> :
-      <img src={props.thumbnails}/> }
+      <div className="card-imgContainer">
+        {props.thumbnails[0] === null ?
+        <div className="card-thumbnail">No image available</div> :
+        <img className="card-thumbnail" src={props.thumbnails}/> }
+      </div>
       {/* maybe send message that says no image available */}
-      <p className="relatedItem-category">{props.product.category}</p>
-      <p className="relatedItem-name">{props.product.name}</p>
-      <p className="relatedItem-price">${props.product.default_price}</p>
+      <div className="card-infoContainer">
+        <p className="relatedItem-category">{props.product.category}</p>
+        <p className="relatedItem-name">{props.product.name}</p>
+        <p className="relatedItem-price">${props.product.default_price.substring(0, 2)}</p>
+      </div>
     </div>
   )
 }
