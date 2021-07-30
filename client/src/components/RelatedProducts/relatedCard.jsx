@@ -2,7 +2,7 @@ import React from 'react';
 
 let RelatedCard = (props) => {
   return (
-    <div className="relatedCard" onClick={() => props.clickFn(props.product)}>
+    <div className="relatedCard" onClick={(e) => props.clickFn(props.product, e)}>
       <div className="card-imgContainer">
         {props.thumbnails[0] === null ?
         <div className="card-thumbnail">No image available</div> :

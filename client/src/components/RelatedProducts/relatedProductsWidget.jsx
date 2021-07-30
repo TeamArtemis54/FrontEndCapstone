@@ -43,12 +43,7 @@ class RelatedProductsWidget extends React.Component {
     this.getRelatedItems();
   }
 
-  handleClick(targetProduct) {
-    console.log(targetProduct.category);
-    console.log(targetProduct.name);
-    console.log(targetProduct.default_price);
-
-
+  handleClick(targetProduct, e) {
     // get the reviews of the clicked product
     axios.get(`/api/reviews/${targetProduct.id}`)
       .then((response) => {
@@ -63,7 +58,6 @@ class RelatedProductsWidget extends React.Component {
         }
         // this is the average rating (star rating)
         avgRating = avgRating / numReviews;
-        console.log(avgRating + ` (${numReviews})`);
 
         this.setState({
           productData: {
@@ -82,12 +76,28 @@ class RelatedProductsWidget extends React.Component {
         showModal: !this.state.showModal
       })
 
+      let time = new Date().toLocaleTimeString();
+
+      // console.log(e.target.tagName);
+
+      this.sendInteraction(e.target.tagName, time);
+
   }
 
   closeModal() {
     this.setState({
       showModal: false
     })
+  }
+
+  sendInteraction(clickedElement, time) {
+    axios.post('/api/interactions', {
+      element: clickedElement,
+      widget: 'Related Products',
+      time: time,
+    })
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
   }
 
   render() {

@@ -4,7 +4,6 @@ const CompareModal = (props) => {
   if (!props.show) {
     return null
   }
-  console.log('p', props);
 
   return (
     <div className="modal">
