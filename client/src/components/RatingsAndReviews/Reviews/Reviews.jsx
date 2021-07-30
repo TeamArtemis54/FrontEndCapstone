@@ -1,11 +1,11 @@
 import React from 'react';
 import Review from './Review.jsx';
 
-const Reviews = ({reviewsData}) => {
+const Reviews = ({reviews}) => {
   return (
     <div className='reviews_right'>
       <div className='reviews_right__reviews'>
-        {reviewsData.map((review, idx) => {
+        {reviews.map((review, idx) => {
           return (
             <Review
               key={idx}

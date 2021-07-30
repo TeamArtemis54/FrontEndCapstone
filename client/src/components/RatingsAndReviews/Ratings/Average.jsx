@@ -1,5 +1,5 @@
 import React from 'react';
-function Average (props) {
+const 
   // functionality to get average of ratings
 
   return (
