@@ -4,14 +4,10 @@ function Header (props) {
   return (
     <div className='header'>
       <div className='header__left-nav'>
-        <div className='header__left-nav--logo'></div>
+        <div className='header__left-nav--title'>Team Artemis</div>
       </div>
       <div className='header__right-nav'>
-        <ul>
-          <li>About Us</li>
-          <li>History</li>
-          <li>Contact</li>
-        </ul>
+        <input type='search' placeholder='Search for a product' />
       </div>
     </div>
   )

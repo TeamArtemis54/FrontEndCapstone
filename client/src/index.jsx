@@ -30,16 +30,22 @@ const App = () => {
             });
     }, []);
 
-    return (
-        <div>
-            <Header />
-            <h1>Team Artemis</h1>
-            <RelatedProductsWidget />
+  return (
+    <div className='entry-point'>
+      <Header />
 
-            <RatingsAndReviews
-                reviews={reviews}
-                review_meta={review_meta} />
-        </div>
-    )
+      <div className='overview'>
+        OVERVIEW
+        {/* PLACEHOLDER FOR OVERVIEW COMPONENT */}
+      </div>
+
+
+      <RelatedProductsWidget />
+
+      <RatingsAndReviews
+        reviews={reviews}
+        review_meta={review_meta} />
+    </div>
+  )
 }
 ReactDOM.render(<App />, document.getElementById('app'));
