@@ -4,10 +4,8 @@ module.exports = {
   getProducts: function(req, res) {
     models.products.getProducts((err, results) => {
       if (err) {
-        console.log(err);
-        res.end();
+        res.send(err);
       } else {
-        console.log(results);
         res.send(results.data);
       }
     });
@@ -19,10 +17,8 @@ module.exports = {
     let productId = req.params.product_id;
     models.products.getProductId(productId, (err, results) => {
       if (err) {
-        console.log(err);
-        res.end();
+        res.send(err);
       } else {
-        console.log(results);
         res.send(results.data);
       }
     });
@@ -32,10 +28,8 @@ module.exports = {
     let productId = req.params.product_id;
     models.products.getProductStyles(productId, (err, results) => {
       if (err) {
-        console.log(err);
-        res.end();
+        res.send(err);
       } else {
-        console.log(results);
         res.send(results.data);
       }
     });
@@ -45,10 +39,8 @@ module.exports = {
     let productId = req.params.product_id;
     models.products.getRelatedProducts(productId, (err, results) => {
       if (err) {
-        console.log(err);
-        res.end();
+        res.send(err);
       } else {
-        console.log(results);
         res.send(results.data);
       }
     });
