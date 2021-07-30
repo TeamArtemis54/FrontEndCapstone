@@ -1,12 +1,17 @@
 import React from 'react';
 import Review from './Review.jsx';
 
-function Reviews (props) {
-
+const Reviews = ({reviews}) => {
   return (
     <div className='reviews_right'>
-      <p>right reviews section...</p>
       <div className='reviews_right__reviews'>
+        {reviews.map((review, idx) => {
+          return (
+            <Review
+              key={idx}
+              review={review} />
+          )
+        })}
       </div>
     </div>
   )

@@ -1,3 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+.widget-title {
+  font-size: 1rem;
+  font-family: "Open Sans";
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 90vw;
+  margin: auto;
+  padding: 2%;
+}
+
+.relatedlist-container {
+  width: 90vw;
+  margin: auto;
+  display: flex;
+}
+
+.relatedList {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.relatedCard {
+  font-family: "Open Sans";
+  font-weight: 300;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  height: 450px;
+  width: 300px;
+  padding: 1%;
+}
+
+.relatedCard:hover {
+  border: 3px solid #45A29E;
+}
+
+.card-imgContainer {
+  width: 100%;
+  height: 65%;
+}
+
+.card-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+.card-infoContainer {
+  width: 100%;
+  height: 30%;
+  padding: 0 1%;
+}
+
+.relatedItem-category {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.relatedItem-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.relatedItem-price {
+  font-weight: 300;
+  font-size: 0.75rem;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+
+.modal-content {
+  width: 500px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-header {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
+
+.closeButton:hover {
+  color: #C5C6C7;
+}
+
+.modal-title {
+  margin: 0;
+  padding: 1% 3%;
+  text-transform: uppercase;
+  font-family: "Open Sans";
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.modal-body table {
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.modal-body tr {
+  margin: 2% 0;
+}
+
+.modal-body table tr td {
+  padding: 5%;
+  text-align: center;
+}
+
+.modal-body table tr th {
+  border-bottom: 0.2px solid rgba(0, 0, 0, 0.3);
+  width: 33%;
+  margin: auto;
+}
+
+.table-mid {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border: none;
+}
+
+.modal-productName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Open Sans";
+  padding: 0.5% 3%;
+}
+
 html, body {
   padding: 0;
   margin: 0;

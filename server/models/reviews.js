@@ -7,6 +7,7 @@ const API = require('../env/api_config.js');
 // MODELS: use axios
 module.exports = {
   getReviews: function(params, cb) {
+  console.log(API.token);
     axios({
       method: 'get',
       url: url + '/reviews/',
