@@ -1,11 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Review (props) {
-  const {review} = {props};
-
-
-
-
+const Review = (props) => {
+  const { review } = props;
   return (
     <div className='review'>
 
