@@ -30,13 +30,17 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className='entry-point'>
       <Header />
-      <h1>Team Artemis</h1>
 
-      {/* PLACEHOLDER FOR OVERVIEW COMPONENT */}
+      <div className='overview'>
+        OVERVIEW
+        {/* PLACEHOLDER FOR OVERVIEW COMPONENT */}
+      </div>
 
-      <RelatedProducts />
+      <div className='related-products'>
+        <RelatedProducts />
+      </div>
 
       <RatingsAndReviews
         reviews={reviews}
