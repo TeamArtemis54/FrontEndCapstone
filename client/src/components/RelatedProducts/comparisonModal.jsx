@@ -10,34 +10,37 @@ const CompareModal = (props) => {
       <div className="modal-content">
         <div className="modal-header">
           <h4 className="modal-title">Comparing</h4>
+          <button onClick={props.closeClick} className="closeButton">X</button>
         </div>
         <div className="modal-body">
           <table>
-            <tr>
-              <th>{props.info.name}</th>
-              <th className="table-mid"></th>
-              <th>current product on overview</th>
-            </tr>
-            <tr>
-              <td>{props.info.category}</td>
-              <td className="table-mid">Category</td>
-              <td>overview product</td>
-            </tr>
-            <tr>
-              <td>{props.info.price}</td>
-              <td className="table-mid">Price</td>
-              <td>Overview product</td>
-            </tr>
-            <tr>
-              <td>{props.info.avgRating} ({props.info.totalReviews})</td>
-              <td className="table-mid">Average Rating (# of Reviews)</td>
-              <td>Overview product</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>{props.clickedInfo.name}</th>
+                <th className="table-mid"></th>
+                <th>{props.currentInfo.name}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{props.clickedInfo.category}</td>
+                <td className="table-mid">Category</td>
+                <td>{props.currentInfo.category}</td>
+              </tr>
+              <tr>
+                <td>{props.clickedInfo.price}</td>
+                <td className="table-mid">Price</td>
+                <td>{props.currentInfo.price}</td>
+              </tr>
+              <tr>
+                <td>{props.clickedInfo.avgRating} ({props.clickedInfo.totalReviews})</td>
+                <td className="table-mid">Average Rating (# of Reviews)</td>
+                <td>{props.currentInfo.avgRating} ({props.currentInfo.totalReviews})</td>
+              </tr>
+            </tbody>
           </table>
         </div>
-        <div className="modal-footer">
-          <button onClick={props.closeClick} className="button">X</button>
-        </div>
+
       </div>
     </div>
   )

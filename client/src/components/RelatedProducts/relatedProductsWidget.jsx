@@ -22,7 +22,8 @@ class RelatedProductsWidget extends React.Component {
       currentProductId: 17068,
       relatedItems: [],
       showModal: false,
-      productData: {}
+      productData: {},
+      currentProductData: {}
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -47,11 +48,11 @@ class RelatedProductsWidget extends React.Component {
     // get the reviews of the clicked product
     axios.get(`/api/reviews/${targetProduct.id}`)
       .then((response) => {
-        let numReviews = 0;
-        let avgRating = 0;
         let reviewData = response.data;
         // this is the number of reviews
-        numReviews = reviewData.results.length;
+        let numReviews = reviewData.results.length;
+
+        let avgRating = 0;
 
         for (let i = 0; i < reviewData.results.length; i++) {
           avgRating += reviewData.results[i].rating;
@@ -68,21 +69,53 @@ class RelatedProductsWidget extends React.Component {
             totalReviews: numReviews
           }
         })
-
       })
       .catch((err) => console.log(err));
 
+      this.getCurrentProductInfo();
+
       this.setState({
-        showModal: !this.state.showModal
+        showModal: true
       })
 
       let time = new Date().toLocaleTimeString();
-
-      // console.log(e.target.tagName);
-
       this.sendInteraction(e.target.tagName, time);
 
+
   }
+
+  getCurrentProductInfo() {
+    axios.get(`/api/products/${this.state.currentProductId}`)
+      .then((response) => {
+        axios.get(`/api/reviews/${this.state.currentProductId}`)
+          .then((reviewResponse) => {
+            let reviewData = reviewResponse.data;
+            // this is the number of reviews
+            let numReviews = reviewData.results.length;
+
+            let avgRating = 0;
+
+            for (let i = 0; i < reviewData.results.length; i++) {
+              avgRating += reviewData.results[i].rating;
+            }
+            // this is the average rating (star rating)
+            avgRating = avgRating / numReviews;
+
+            this.setState({
+              currentProductData: {
+                category: response.data.category,
+                name: response.data.name,
+                price: response.data.default_price,
+                avgRating: avgRating,
+                totalReviews: numReviews
+              }
+            })
+          })
+          .catch((err) => console.log(err))
+      })
+      .catch((err) => console.log(err));
+  }
+
 
   closeModal() {
     this.setState({
@@ -96,20 +129,20 @@ class RelatedProductsWidget extends React.Component {
       widget: 'Related Products',
       time: time,
     })
-    .then((response) => console.log(response))
+    .then((response) => console.log(response.statusText))
     .catch((err) => console.log(err));
   }
 
   render() {
     return (
-      <div>
-        <h3 className="relatedTitle">Related Products</h3>
-        <div className="relatedContainer">
+      <div className="widget-container">
+        <h3 className="widget-title">Related Products</h3>
+        <div className="relatedlist-container">
           {this.state.relatedItems.map((item, i) => {
             return <RelatedList clickFn={this.handleClick} productId={item} key={i} />
           })}
         </div>
-        <CompareModal info={this.state.productData} show={this.state.showModal} closeClick={this.closeModal}/>
+        <CompareModal clickedInfo={this.state.productData} currentInfo={this.state.currentProductData} show={this.state.showModal} closeClick={this.closeModal}/>
       </div>
     )
   }
