@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import addZoom from './zoom.js'
 // import addZoom2 from './zoom2.js'
 
-//const getStyle = require('./httpHandler.jsx').getStyle
+const getStyle = require('./httpHandler.jsx').getStyle
 
 var url
 
@@ -27,10 +27,10 @@ class ImageGallery extends Component {
       //ALSO MAKES THE NEXT AND PREVIOUS BUTTONS DISAPPEAR (IF THERE ARE 7 OR FEWER THUMBNAILS)
 
       if(direction === 'up'){
-        console.log(this.state.carouselIndex)
+        // console.log(this.state.carouselIndex)
         if(this.state.carouselIndex + 7 < stylePhotos.length){
           this.setState({carouselIndex: this.state.carouselIndex + 1})
-          console.log(this.state.carouselIndex)
+          // console.log(this.state.carouselIndex)
         }
       }
 
@@ -76,16 +76,16 @@ class ImageGallery extends Component {
       var stylePhotos=this.props.styles[styleIndex].photos
 
       var mainImage = stylePhotos[this.state.focusedImageIndex]
-      console.log(mainImage)
-      console.log('mainImage')
+      // console.log(mainImage)
+      // console.log('mainImage')
 
       url = this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex].url
 
-console.log(url)
+// console.log(url)
     } else {
       var stylePhotos = []
       var mainImage = {thumbnail_url:''}
-      console.log('sfsff')
+      // console.log('sfsff')
     }
 
 

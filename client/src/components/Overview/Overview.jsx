@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
-import {ImageGallery} from './components/imageGallery.jsx'
-// import StyleSelector from './components/overview/styleSelector'
-// import Cart from './components/overview/cart'
-// import ProductInfo from './components/overview/productInfo'
+import {ImageGallery} from './overviewWidgets/imageGallery.jsx'
+import StyleSelector from './overviewWidgets/styleSelector.jsx'
+import Cart from './overviewWidgets/cart.jsx'
+import ProductInfo from './overviewWidgets/productInfo.jsx'
 
-const fetcher = require('./components/httpHandler.jsx')
+const fetcher = require('./overviewWidgets/httpHandler.jsx')
 
 
 class Overview extends Component {
@@ -83,13 +83,13 @@ class Overview extends Component {
 
       </article>
       <aside>
-{/*
+
       <ProductInfo salePrice={salePrice} selectedStylePrice={price} productCategory ={this.state.productCategory} productName={this.state.productName}/>
 
       <StyleSelector changeStyle={this.changeStyle} selectedStyle={this.state.selectedStyle} hasData={this.state.dataDidLoad} styles={this.state.styles}/>
 
       <Cart hasData={this.state.dataDidLoad} selectedStyleObject={this.state.styles[this.state.selectedStyle]}/>
- */}
+
 
       </aside>
     </div>
@@ -99,8 +99,10 @@ class Overview extends Component {
     )
   }
 };
-ReactDom.render(<Overview />, document.getElementById('overview'));
+//ReactDom.render(<Overview />, document.getElementById('overview'));
 
 // 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/'
 
 //   'Authorization': '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'
+
+export default Overview;
