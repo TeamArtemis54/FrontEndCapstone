@@ -10,7 +10,7 @@ let RelatedCard = (props) => {
         <div className="card_img__thumbnail" style={{
           backgroundImage: `url(${props.thumbnails})`
         }}>
-          <p className="card_img__star">&#9733;</p>
+          <p onClick={() => props.favorite()} className="card_img__star">&#9733;</p>
         </div>
         }
       </div>

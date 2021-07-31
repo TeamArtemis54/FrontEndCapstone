@@ -1,6 +1,8 @@
 import React from 'react';
 import RelatedList from './relatedList.jsx';
 import CompareModal from './comparisonModal.jsx';
+import UserList from './userList.jsx';
+
 const axios = require('axios');
 
 // This component will hold the first list which will be the related products that were determined internally
@@ -27,6 +29,7 @@ class RelatedProductsWidget extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.clickStar = this.clickStar.bind(this);
   }
 
   getRelatedItems() {
@@ -132,14 +135,22 @@ class RelatedProductsWidget extends React.Component {
     .catch((err) => console.log(err));
   }
 
+  clickStar() {
+    console.log('clicked');
+  }
+
   render() {
     return (
       <div className="widget_container">
         <h3 className="widget_title">Related Products</h3>
         <div className="relatedlist_container">
           {this.state.relatedItems.map((item, i) => {
-            return <RelatedList clickFn={this.handleClick} productId={item} key={i} />
+            return <RelatedList clickFn={this.handleClick} productId={item} key={i} starFn={this.clickStar} />
           })}
+        </div>
+        <h3 className="userList_title">Your Outfit</h3>
+        <div className="userList_container">
+          <UserList />
         </div>
         <CompareModal clickedInfo={this.state.productData} currentInfo={this.state.currentProductData} show={this.state.showModal} closeClick={this.closeModal}/>
       </div>
