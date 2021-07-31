@@ -32,8 +32,8 @@ class Overview extends Component {
       if(err){
         console.log(err)
       }
-      console.log('STYLE DATA')
-      console.log(data)
+      // console.log('STYLE DATA')
+      // console.log(data)
       this.setState({styles: data.results, dataDidLoad: true})
     })
 
@@ -42,9 +42,9 @@ class Overview extends Component {
       if(err){
         console.log(err)
       }
-      console.log('PRODUCT DATA')
-      console.log(data)
-      console.log(data.category, data.name)
+      // console.log('PRODUCT DATA')
+      // console.log(data)
+      // console.log(data.category, data.name)
       this.setState({productCategory:data.category, productName:data.name})
 
 
@@ -93,7 +93,7 @@ class Overview extends Component {
 
       </aside>
     </div>
-    <footer>related items</footer>
+    <footer>related products</footer>
 
     </>
     )

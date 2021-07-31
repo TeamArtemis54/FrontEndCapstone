@@ -61,10 +61,12 @@ class Cart extends Component {
       return <div>nothin!</div>
     }
 
-    var quantitiesInStock =Object.entries(this.props.selectedStyleObject.skus).map((key) => {console.log(key[1].quantity);})
+    var quantitiesInStock =Object.entries(this.props.selectedStyleObject.skus).map((key) => {
+      // console.log(key[1].quantity);
+    })
 
     var inStock = quantitiesInStock.some((elem)=>elem!==0)
-    console.log(inStock)
+    // console.log(inStock)
 
 
     if(this.state.quantityAvailable){
@@ -76,7 +78,7 @@ class Cart extends Component {
       var list = []
     }
 
-    console.log(this.props.selectedStyleObject)
+    // console.log(this.props.selectedStyleObject)
 
     return(
       <>
@@ -99,7 +101,7 @@ class Cart extends Component {
 
               {Object.entries(this.props.selectedStyleObject.skus).map((key) => {//console.log(key);
                 if (key[1].quantity !== 0){
-                  return <option value={[key[1].size, key[1].quantity]} >{key[1].size}</option>
+                  return <option key={key[0]} value={[key[1].size, key[1].quantity]} >{key[1].size}</option>
                 }
               })}
 

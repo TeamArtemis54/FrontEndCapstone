@@ -16,7 +16,7 @@ class StyleSelector extends Component {
     return(
       <div id='style-container'>
         {this.props.styles.map((style,index) =>
-          <div class='style-preview-thumbnail' onClick={()=>{this.props.changeStyle(index)}}> <img src={style.photos[0].thumbnail_url} ></img></div>
+          <div key={style.style_id} className='style-preview-thumbnail' onClick={()=>{this.props.changeStyle(index)}}> <img src={style.photos[0].thumbnail_url} ></img></div>
         )}
       </div>
           )
