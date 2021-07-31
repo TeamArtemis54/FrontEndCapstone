@@ -3,7 +3,6 @@ import Reviews from './Reviews/Reviews.jsx';
 import axios from 'axios';
 
 const RatingsAndReviews = ({reviews, review_meta}) => {
-  console.log('meta', review_meta)
   return (
     <div className='ratings_and_reviews'>
       <div className='ratings_and_reviews__ratings-left'>
