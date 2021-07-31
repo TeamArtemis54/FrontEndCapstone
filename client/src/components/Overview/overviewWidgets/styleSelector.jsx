@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-const getStyle = require('./httpHandler').getStyle
+const getStyle = require('./httpHandler.jsx').getStyle
 
 class StyleSelector extends Component {
   constructor(props){
@@ -14,11 +14,11 @@ class StyleSelector extends Component {
 
   render(){
     return(
-      <ul>
+      <div id='style-container'>
         {this.props.styles.map((style,index) =>
-          <li onClick={()=>{this.props.changeStyle(index)}}> <img src={style.photos[0].thumbnail_url} ></img></li>
+          <div key={style.style_id} className='style-preview-thumbnail' onClick={()=>{this.props.changeStyle(index)}}> <img src={style.photos[0].thumbnail_url} ></img></div>
         )}
-      </ul>
+      </div>
           )
   }
 }
