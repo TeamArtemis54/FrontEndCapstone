@@ -4,7 +4,7 @@ const getStyle = (style = '17070', callback) => {
 
   const instance = axios.create({
     baseURL: 'https://app-hrsei-api.herokuapp.com/api/',
-    headers: {'Authorization': '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'}
+    headers: {'Authorization': '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'}
   });
 
   instance.get(`fec2/hr-rfp/products/${style}/styles`)
@@ -27,7 +27,7 @@ const getProduct = (style = '17070', callback) => {
 
   const instance = axios.create({
     baseURL: 'https://app-hrsei-api.herokuapp.com/api/',
-    headers: {'Authorization': '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'}
+    headers: {'Authorization': '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'}
   });
 
   instance.get(`fec2/hr-rfp/products/${style}`)
