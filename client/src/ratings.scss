@@ -5,6 +5,19 @@
   &__ratings-left {
     flex-basis: 35%;
     background: #c5c6c7;
+
+    .stars {
+      display: flex;
+
+
+      &__underlay--stars-container {
+        display: flex;
+
+        &_stars__image {
+          width: 20px;
+        }
+      }
+    }
   }
 
 

@@ -154,6 +154,15 @@
   flex-basis: 35%;
   background: #c5c6c7;
 }
+.ratings_and_reviews__ratings-left .stars {
+  display: flex;
+}
+.ratings_and_reviews__ratings-left .stars__underlay--stars-container {
+  display: flex;
+}
+.ratings_and_reviews__ratings-left .stars__underlay--stars-container_stars__image {
+  width: 20px;
+}
 .ratings_and_reviews__reviews-right {
   flex-basis: 65%;
   background: #45a29e;

@@ -12,7 +12,6 @@ const Review = (props) => {
       <div className='review__top'>
         <div className='review__top--stars'>
           {/* STARS COMPONENT WILL GO HERE */}
-          <p>a bunch of stars will go here</p>
         </div>
 
         <div className='review__top--user'>
@@ -33,7 +32,6 @@ const Review = (props) => {
       </div>
 
       <div className='conditions'>
-
         {review.recommend ? <Recommend /> : null}
 
         {review.response ? <Response response={review.response} /> : null}

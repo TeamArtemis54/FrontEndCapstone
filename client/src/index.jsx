@@ -18,18 +18,17 @@ const App = () => {
   useEffect(() => {
     axios.get('/api/products')
       .then((response) => {
-        setProduct(response.data[1]);
-        axios.get(`/api/reviews/${response.data[1].id}`)
+        setProduct(response.data[4]);
+        axios.get(`/api/reviews/${response.data[4].id}`)
           .then((response) => {
             setReviews(response.data.results);
           });
-        axios.get(`/api/reviews/meta/${response.data[1].id}`)
+        axios.get(`/api/reviews/meta/${response.data[4].id}`)
           .then((response) => {
             setReviewMeta(response.data);
           });
       });
   }, []);
-
 
   return (
     <div className='entry-point'>
@@ -48,5 +47,5 @@ const App = () => {
         review_meta={review_meta} />
     </div>
   )
-}
+};
 ReactDOM.render(<App />, document.getElementById('app'));
