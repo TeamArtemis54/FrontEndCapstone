@@ -1,4 +1,10 @@
+// THESE ARE IMPORTED HERE
+// FROM OUR INDIVIDUAL scss
+// FILES FOR STYLING
 @use 'related';
+@use 'ratings';
+@use 'overview';
+
 
 html, body {
   padding: 0;
@@ -22,23 +28,25 @@ html, body {
   color: #0b0c10;
 
   &__left-nav {
-    
+
   }
 }
 
-// THE DIV IN OUR App COMPONENT
-// WHERE EVERYTHING ELSE LIVES
 .entry-point {
   // padding: 25px;
   display: flex;
   flex-direction: column;
-  margin-top: 72px;
   background: #c5c6c7;
+
+  // max-width: 1000px;
+  // margin: 0 auto;
+  margin-top: 72px;
 
   .overview {
     height: 72px;
     background: #45a29e;
   }
+}
 
   .related-products {
     height: min-content;
@@ -62,4 +70,5 @@ html, body {
 // THIS IS THE CLOSING CURLY BRACE
 // FOR THE entry-point CLASS AND
 // HOLDS EVERYTHING ELSE (CURRENTLY)
-}
+// }
+

@@ -178,6 +178,244 @@
   padding: 0.5% 3%;
 }
 
+.ratings_and_reviews {
+  display: flex;
+  flex-direction: row;
+}
+.ratings_and_reviews__ratings-left {
+  flex-basis: 35%;
+  background: #c5c6c7;
+}
+.ratings_and_reviews__ratings-left .stars {
+  display: flex;
+}
+.ratings_and_reviews__ratings-left .stars__underlay--stars-container {
+  display: flex;
+}
+.ratings_and_reviews__ratings-left .stars__underlay--stars-container_stars__image {
+  width: 20px;
+}
+.ratings_and_reviews__reviews-right {
+  flex-basis: 65%;
+  background: #45a29e;
+}
+.ratings_and_reviews .review {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #030a0a;
+}
+.ratings_and_reviews .review__top {
+  display: flex;
+  justify-content: space-between;
+}
+#img-gallery {
+  margin: 250px;
+}
+
+ul {
+  list-style-type: none;
+  /* Remove bullets */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margins */
+}
+
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: none;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+#main-image-container {
+  position: relative;
+  height: 500px;
+}
+
+#main-image {
+  /* width: 400px;
+  height: 538px; */
+  height: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  /* width: 100%; */
+}
+
+#overlay img {
+  width: 50%;
+  height: 50%;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+}
+
+#dumbthing {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  position: absolute;
+}
+
+#carousel {
+  border: 2px solid green;
+  width: 100px;
+  position: absolute;
+  z-index: 2;
+}
+
+#carousel img {
+  height: 50px;
+}
+
+#zoom-img {
+  width: 400px;
+  height: 538px;
+  object-fit: contain;
+  /* background-image: url('https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80'); */
+  background-position: center;
+  background-size: cover;
+  /* background-size: cover; */
+}
+
+/* /////////////////MOCKUP.CSS////////////////////// */
+/* /////////////////MOCKUP.CSS////////////////////// */
+/* /////////////////MOCKUP.CSS////////////////////// */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: auto;
+  max-width: 90vw;
+  /* justify-content: center */
+}
+
+#main {
+  display: flex;
+  flex: 1;
+  /* justify-content: center; */
+}
+
+#main > article {
+  flex: 1;
+  order: 1;
+}
+
+#main > nav,
+#main > aside {
+  flex: 0 0 30vw;
+}
+
+#main > nav {
+  background: #D7E8D4;
+  order: 3;
+}
+
+#main > aside {
+  background: beige;
+  order: 2;
+}
+
+header, footer {
+  background: yellowgreen;
+  height: 20vh;
+}
+
+header, footer, article, nav, aside {
+  padding: 1em;
+}
+
+/* /////////////////////////// */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: auto;
+  max-width: 90vw;
+  /* justify-content: center */
+}
+
+#main {
+  display: flex;
+  flex: 1;
+  /* justify-content: center; */
+}
+
+#main > article {
+  flex: 1;
+  order: 1;
+}
+
+#main > aside {
+  flex: 0 0 30vw;
+}
+
+#main > aside {
+  background: beige;
+  order: 2;
+}
+
+header, footer {
+  background: yellowgreen;
+  height: 20vh;
+}
+
+header, footer, article, aside {
+  padding: 1em;
+}
+
+#carousel li {
+  background-color: rgba(173, 216, 230, 0.4);
+  margin: 2px;
+}
+
+#carousel img {
+  display: block;
+  margin: auto;
+}
+
+/*////////////// style selector////////////// */
+#style-container {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
+}
+
+.style-preview-thumbnail {
+  /* margin: 2px; */
+  flex: 1 0 21%;
+  background-color: #bfb98c;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.style-preview-thumbnail img {
+  margin: auto;
+  height: 50px;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -199,26 +437,28 @@ html, body {
 .entry-point {
   display: flex;
   flex-direction: column;
-  margin-top: 72px;
   background: #c5c6c7;
+  margin-top: 72px;
 }
 .entry-point .overview {
   height: 72px;
   background: #45a29e;
 }
-.entry-point .related-products {
+
+.related-products {
   height: min-content;
   background: #1f2833;
   color: #c5c6c7;
 }
-.entry-point .ratings_and_reviews {
+
+.ratings_and_reviews {
   display: flex;
 }
-.entry-point .ratings_and_reviews__ratings-left {
+.ratings_and_reviews__ratings-left {
   flex-basis: 35%;
   background: #c5c6c7;
 }
-.entry-point .ratings_and_reviews__reviews-right {
+.ratings_and_reviews__reviews-right {
   flex-basis: 65%;
   background: #45a29e;
 }
