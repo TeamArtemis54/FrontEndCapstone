@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import Stars from './../../reusable_components/Stars.jsx';
 
-function Ratings(props) {
+const Ratings = (props) => {
+  const {review_meta} = props;
+
   return (
     <div className='ratings_left'>
-    <p>left ratings section...</p>
+      <p>left ratings section...</p>
       <div className='ratings_left__average'>
-        {props.averageRating}
+        <Stars review_meta={review_meta} />
+
       </div>
 
       <div className='ratings_left__ratings-bars'>
