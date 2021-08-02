@@ -364,7 +364,7 @@ header, footer, article, aside {
   position: absolute;
   width:3px;
   height:9px;
-  background-color:green;
+  background-color:red;
   left:11px;
   top:6px;
 }

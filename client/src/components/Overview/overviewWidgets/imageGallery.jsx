@@ -42,9 +42,15 @@ class ImageGallery extends Component {
     }
   }
 
+  componentDidUpdate(){
+    console.log('tsxtsxv')
+  }
+
   changeFocusedImage(event){
 
-    document.getElementById("focused").id = ""
+    if (document.getElementById("focused")){
+      document.getElementById("focused").id = ""
+    }
     event.target.id = 'focused'
 
     var index = event.target.dataset.index

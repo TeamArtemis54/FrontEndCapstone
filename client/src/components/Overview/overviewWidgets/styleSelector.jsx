@@ -20,9 +20,9 @@ class StyleSelector extends Component {
         return(
         <div key={style.style_id} className='style-preview-thumbnail' className='flex-item' onClick={()=>{this.props.changeStyle(index)}}>
           <img src={style.photos[0].thumbnail_url} ></img>
-          <span class="checkmark">
-            <div class="checkmark_stem"></div>
-            <div class="checkmark_kick"></div>
+          <span className="checkmark">
+            <div className="checkmark_stem"></div>
+            <div className="checkmark_kick"></div>
           </span>
         </div>)
       } else {

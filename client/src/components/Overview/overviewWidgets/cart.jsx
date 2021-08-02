@@ -120,7 +120,7 @@ class Cart extends Component {
             </select>
           </label>
           {/* //AHH SHIT. SHOULD ADD TO CART BE SUBMIT BUTTON? */}
-          <input type="submit" value="Submit" />
+          {/* <input type="submit" value="Submit" /> */}
         </form>
 
         <AddToCart inStock={inStock} style_id={this.props.selectedStyleObject.style_id} selectedSize={this.state.selectedSize} selectedQuantity={this.state.selectedQuantity}/>
