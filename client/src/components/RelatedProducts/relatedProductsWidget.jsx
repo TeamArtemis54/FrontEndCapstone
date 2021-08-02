@@ -1,7 +1,7 @@
 import React from 'react';
-import RelatedList from './relatedList.jsx';
-import CompareModal from './comparisonModal.jsx';
-import UserList from './userList.jsx';
+import RelatedList from './relatedList/relatedList.jsx';
+import CompareModal from './relatedList/comparisonModal.jsx';
+import UserList from './outfitList/userList.jsx';
 
 const axios = require('axios');
 
@@ -30,7 +30,6 @@ class RelatedProductsWidget extends React.Component {
 
     this.handleClick = this.handleClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.clickStar = this.clickStar.bind(this);
   }
 
   getRelatedItems() {
@@ -136,27 +135,13 @@ class RelatedProductsWidget extends React.Component {
     .catch((err) => console.log(err));
   }
 
-  clickStar(e) {
-    console.log('clicked');
-    console.log(e.target.className);
-    this.setState({
-      starClicked: !this.state.starClicked
-    })
-    if (this.state.starClicked) {
-      e.target.style.color = "#ffdc14";
-    } else {
-      e.target.style.color = '#fff';
-    }
-  }
-
-
   render() {
     return (
       <div className="widget_container">
         <h3 className="widget_title">Related Products</h3>
         <div className="relatedlist_container">
           {this.state.relatedItems.map((item, i) => {
-            return <RelatedList clickFn={this.handleClick} productId={item} key={i} starFn={this.clickStar} />
+            return <RelatedList productId={item} key={i} starFn={this.handleClick} />
           })}
         </div>
         <h3 className="userList_title">Your Outfit</h3>

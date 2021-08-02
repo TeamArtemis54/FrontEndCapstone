@@ -1,5 +1,5 @@
 import React from 'react';
-import Stars from '../reusable_components/Stars.jsx';
+import Stars from '../../reusable_components/Stars.jsx';
 
 const axios = require('axios');
 
@@ -15,10 +15,10 @@ class RelatedCard extends React.Component {
   }
 
   getReviewsMeta() {
-    console.log('id', this.props.product.id);
+    // console.log('id', this.props.product.id);
     axios.get(`/api/reviews/meta/${this.props.product.id}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({
           reviewsMeta: response.data
         })
@@ -31,9 +31,8 @@ class RelatedCard extends React.Component {
   }
 
   render() {
-    console.log('reviewsmeta', this.state.reviewsMeta);
     return (
-      <div className="relatedCard" onClick={(e) => this.props.clickFn(this.props.product, e)}>
+      <div className="relatedCard">
         <div className="card_img">
           {this.props.thumbnails[0] === null ?
           <div className="card_img__thumbnail">No image available</div> :
@@ -41,7 +40,7 @@ class RelatedCard extends React.Component {
           <div className="card_img__thumbnail" style={{
             backgroundImage: `url(${this.props.thumbnails})`
           }}>
-            <p onClick={(e) => this.props.favorite(e)} className="card_img__star">&#9733;</p>
+            <p onClick={(e) => this.props.clickFn(this.props.product, e)} className="card_img__star">&#9733;</p>
           </div>
           }
         </div>
