@@ -524,6 +524,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ "./client/src/components/RelatedProducts/userList.jsx":
 /*!************************************************************!*\
   !*** ./client/src/components/RelatedProducts/userList.jsx ***!
@@ -546,6 +547,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+=======
+>>>>>>> Stashed changes
 /***/ "./client/src/index.jsx":
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
