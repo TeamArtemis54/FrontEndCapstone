@@ -93,7 +93,7 @@ class Overview extends Component {
 
       </aside>
     </div>
-    <footer>related products</footer>
+    {/* <footer>related products</footer> */}
 
     </>
     )
