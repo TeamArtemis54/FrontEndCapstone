@@ -14,14 +14,29 @@ class StyleSelector extends Component {
 
   render(){
 
-    const styles = this.props.styles.map((style,index) =>
-      <div key={style.style_id} className='style-preview-thumbnail' className='flex-item' onClick={()=>{this.props.changeStyle(index)}}>
-        <img src={style.photos[0].thumbnail_url} ></img>
-        <span class="checkmark">
-          <div class="checkmark_stem"></div>
-          <div class="checkmark_kick"></div>
-        </span>
-      </div>
+    const styles = this.props.styles.map((style,index) => {
+
+      if (index === this.props.selectedStyle){
+        return(
+        <div key={style.style_id} className='style-preview-thumbnail' className='flex-item' onClick={()=>{this.props.changeStyle(index)}}>
+          <img src={style.photos[0].thumbnail_url} ></img>
+          <span class="checkmark">
+            <div class="checkmark_stem"></div>
+            <div class="checkmark_kick"></div>
+          </span>
+        </div>)
+      } else {
+        return(
+        <div key={style.style_id} className='style-preview-thumbnail' className='flex-item' onClick={()=>{this.props.changeStyle(index)}}>
+          <img src={style.photos[0].thumbnail_url} ></img>
+        </div>
+        )
+
+      }
+
+
+    }
+
     )
 
     let numOfRows = Math.ceil(this.props.styles.length / 4)
