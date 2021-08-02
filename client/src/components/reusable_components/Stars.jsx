@@ -18,7 +18,6 @@ const Stars = (props) => {
     const result = pointsTotal / numberOfResponses;
     const remainder = result % 1;
     average = Math.round(10 * result) / 10;
-    console.log(result)
 
     switch (parseInt(average)) {
       case (1):
@@ -37,7 +36,6 @@ const Stars = (props) => {
         width = 98;
         break;
       default:
-        // console.log('You are in default mode ;)');
         break;
     }
     if (remainder > .15 && remainder <= .35) {
@@ -47,37 +45,8 @@ const Stars = (props) => {
     } else if (remainder > .57 && remainder <= .77) {
       width += 16;
     }
-    console.log('width', width)
-
-    // first star
-    //   6px
-    //   10
-    //   14
-    //   18
-    // second star
-    //   26
-    //   30
-    //   34
-    //   38
-    // third
-    //   46
-    //   50
-    //   54
-    //   58
-    // fourth
-    //   66
-    //   70
-    //   74
-    //   78
-    // fifth
-    //   86
-    //   90
-    //   94
-    //   98
-
   }
-  console.log(getAverage(review_meta.ratings))
-
+  getAverage(review_meta.ratings);
 
   return (
     <div className='stars'>
