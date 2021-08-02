@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Header from './components/Header/Header.jsx';
 // OVERVIEW
-
+import Overview from './components/Overview/Overview.jsx';
 // RELATED PRODUCTS
 import RelatedProductsWidget from './components/RelatedProducts/RelatedProductsWidget.jsx';
 import RelatedList from './components/RelatedProducts/relatedList.jsx';
@@ -32,13 +32,9 @@ const App = () => {
 
   return (
     <div className='entry-point'>
-      <Header />
+      {/* <Header /> */}
 
-      <div className='overview'>
-        OVERVIEW
-        {/* PLACEHOLDER FOR OVERVIEW COMPONENT */}
-      </div>
-
+      <Overview/>
 
       <RelatedProductsWidget />
 
@@ -46,6 +42,7 @@ const App = () => {
         reviews={reviews}
         review_meta={review_meta} />
     </div>
+
   )
 };
 ReactDOM.render(<App />, document.getElementById('app'));
