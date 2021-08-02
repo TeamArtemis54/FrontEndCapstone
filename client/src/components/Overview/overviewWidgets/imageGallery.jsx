@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import addZoom from './zoom.js'
+import addZoom from './zoom.js'
 // import addZoom2 from './zoom2.js'
 
 const getStyle = require('./httpHandler.jsx').getStyle
@@ -43,8 +43,12 @@ class ImageGallery extends Component {
   }
 
   changeFocusedImage(event){
-       var index = event.target.dataset.index
-       this.setState({focusedImageIndex: index})
+
+    document.getElementById("focused").id = ""
+    event.target.id = 'focused'
+
+    var index = event.target.dataset.index
+    this.setState({focusedImageIndex: index})
   }
 
   overlay(){
@@ -89,7 +93,6 @@ class ImageGallery extends Component {
     }
 
 
-
     return (
       <>
       <div id='main-image-container'>
@@ -98,11 +101,25 @@ class ImageGallery extends Component {
 
       <ul id='carousel'>
         {stylePhotos.map((image, index) => {
-          if (index >= carouselStart && index <= carouselEnd){return (
-            <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
-            {/* {index} */}
-            <img data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
-            )
+          if (index >= carouselStart && index <= carouselEnd){
+
+            if (index === this.state.focusedImageIndex){
+
+              return (
+              <li  data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+              {/* {index} */}
+              <img id='focused' data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+              )
+            } else {
+
+              return (
+                <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+                {/* {index} */}
+                <img data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+                )
+
+            }
+
           }
 
         })}

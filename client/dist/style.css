@@ -336,6 +336,15 @@ header, footer, article, aside {
 
 /*////////////// style selector////////////// */
 
+/* /////active carousel START///// */
+
+#focused {
+  border:3px solid red
+}
+
+
+/* /////active carousel END///// */
+
 
 /* //checkmark// */
 .checkmark {
