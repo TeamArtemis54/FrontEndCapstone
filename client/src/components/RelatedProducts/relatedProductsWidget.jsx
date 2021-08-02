@@ -24,7 +24,8 @@ class RelatedProductsWidget extends React.Component {
       relatedItems: [],
       showModal: false,
       productData: {},
-      currentProductData: {}
+      currentProductData: {},
+      starClicked: false
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -135,9 +136,19 @@ class RelatedProductsWidget extends React.Component {
     .catch((err) => console.log(err));
   }
 
-  clickStar() {
+  clickStar(e) {
     console.log('clicked');
+    console.log(e.target.className);
+    this.setState({
+      starClicked: !this.state.starClicked
+    })
+    if (this.state.starClicked) {
+      e.target.style.color = "#ffdc14";
+    } else {
+      e.target.style.color = '#fff';
+    }
   }
+
 
   render() {
     return (

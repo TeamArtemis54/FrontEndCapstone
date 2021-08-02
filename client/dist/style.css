@@ -8,13 +8,13 @@
   font-family: "Open Sans";
   font-weight: 300;
   text-transform: uppercase;
-  width: 90vw;
+  width: 90%;
   margin: auto;
   padding: 2%;
   border: 2px solid blue;
 }
 .widget_container .relatedlist_container {
-  width: 90vw;
+  width: 90%;
   margin: auto;
   display: flex;
   border: 2px solid orange;
@@ -87,13 +87,13 @@
   font-family: "Open Sans";
   font-weight: 300;
   text-transform: uppercase;
-  width: 90vw;
+  width: 90%;
   margin: 1% auto 0;
   padding: 2%;
   border: 2px solid blue;
 }
 .widget_container .userList_container {
-  width: 90vw;
+  width: 90%;
   margin: auto;
   display: flex;
   border: 2px solid orange;
