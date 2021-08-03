@@ -12,6 +12,7 @@ import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.
 
 const App = () => {
   const [product, setProduct] = useState({});
+  const [product_id, setProductId] = useState('');
   const [reviews, setReviews] = useState([]);
   const [review_meta, setReviewMeta] = useState({});
 
@@ -19,6 +20,7 @@ const App = () => {
     axios.get('/api/products')
       .then((response) => {
         setProduct(response.data[4]);
+        setProductId(response.data[4].id);
         axios.get(`/api/reviews/${response.data[4].id}`)
           .then((response) => {
             setReviews(response.data.results);
@@ -34,7 +36,7 @@ const App = () => {
     <div className='entry-point'>
       {/* <Header /> */}
 
-      <Overview/>
+      {/* <Overview/> */}
 
       <RelatedProductsWidget />
 
