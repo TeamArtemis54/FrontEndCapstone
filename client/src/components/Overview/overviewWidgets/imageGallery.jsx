@@ -44,14 +44,22 @@ class ImageGallery extends Component {
 
   componentDidUpdate(){
     console.log('tsxtsxv')
-  }
-
-  changeFocusedImage(event){
+    console.log(document.querySelectorAll(`[data-index~="5"]`))
+    console.log(document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`))
 
     if (document.getElementById("focused")){
       document.getElementById("focused").id = ""
     }
-    event.target.id = 'focused'
+
+    document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`)[1].id = 'focused'
+  }
+
+  changeFocusedImage(event){
+
+    // if (document.getElementById("focused")){
+    //   document.getElementById("focused").id = ""
+    // }
+    // event.target.id = 'focused'
 
     var index = event.target.dataset.index
     this.setState({focusedImageIndex: index})
@@ -72,6 +80,7 @@ class ImageGallery extends Component {
   }
 
   componentDidMount(){
+    // document.querySelectorAll(`[data-index~="0"]`)[1].id = 'focused'
   }
 
 
@@ -109,14 +118,14 @@ class ImageGallery extends Component {
         {stylePhotos.map((image, index) => {
           if (index >= carouselStart && index <= carouselEnd){
 
-            if (index === this.state.focusedImageIndex){
+            // if (index === this.state.focusedImageIndex){
 
-              return (
-              <li  data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
-              {/* {index} */}
-              <img id='focused' data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
-              )
-            } else {
+            //   return (
+            //   <li  data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+            //   {/* {index} */}
+            //   <img id='focused' data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+            //   )
+            // } else {
 
               return (
                 <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
@@ -124,7 +133,7 @@ class ImageGallery extends Component {
                 <img data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
                 )
 
-            }
+            // }
 
           }
 
