@@ -32,7 +32,7 @@ class RelatedCard extends React.Component {
 
   render() {
     return (
-      <div className="relatedCard">
+      <div className="relatedCard" onClick={(e) => this.props.cardClickFn(e)}>
         <div className="card_img">
           {this.props.thumbnails[0] === null ?
           <div className="card_img__thumbnail">No image available</div> :
@@ -40,7 +40,7 @@ class RelatedCard extends React.Component {
           <div className="card_img__thumbnail" style={{
             backgroundImage: `url(${this.props.thumbnails})`
           }}>
-            <p onClick={(e) => this.props.clickFn(this.props.product, e)} className="card_img__star">&#9733;</p>
+            <p onClick={(e) => this.props.starClickFn(this.props.product, e)} className="card_img__star">&#9733;</p>
           </div>
           }
         </div>

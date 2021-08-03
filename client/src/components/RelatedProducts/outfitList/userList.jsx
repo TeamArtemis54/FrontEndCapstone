@@ -1,9 +1,11 @@
 import React from 'react';
+import RelatedCard from '../relatedList/relatedCard.jsx';
+import AddItemCard from './addItemCard.jsx';
 
 const UserList = (props) => {
   return (
-    <div>
-      <h1>List will go here</h1>
+    <div className="outfitList">
+      <AddItemCard />
     </div>
   )
 }

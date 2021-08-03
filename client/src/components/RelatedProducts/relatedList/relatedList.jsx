@@ -46,7 +46,7 @@ class RelatedList extends React.Component {
     return (
       <div className="relatedList">
         {this.state.products.map((item, i) => {
-          return <RelatedCard product={item} key={i} thumbnails={this.state.thumbnails} clickFn={this.props.starFn}/>
+          return <RelatedCard product={item} key={i} thumbnails={this.state.thumbnails} starClickFn={this.props.starClick} cardClickFn={this.props.cardClick}/>
         })}
       </div>
     )

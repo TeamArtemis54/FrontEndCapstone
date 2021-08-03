@@ -28,8 +28,9 @@ class RelatedProductsWidget extends React.Component {
       starClicked: false
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleStarClick = this.handleStarClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleCardClick = this.handleCardClick.bind(this);
   }
 
   getRelatedItems() {
@@ -46,7 +47,7 @@ class RelatedProductsWidget extends React.Component {
     this.getRelatedItems();
   }
 
-  handleClick(targetProduct, e) {
+  handleStarClick(targetProduct, e) {
     // get the reviews of the clicked product
     axios.get(`/api/reviews/${targetProduct.id}`)
       .then((response) => {
@@ -135,13 +136,19 @@ class RelatedProductsWidget extends React.Component {
     .catch((err) => console.log(err));
   }
 
+  handleCardClick(e) {
+    // here i want to be able to send the current product id i clicked on to the overview component
+    console.log('clicked');
+    console.log(e.target);
+  }
+
   render() {
     return (
       <div className="widget_container">
         <h3 className="widget_title">Related Products</h3>
         <div className="relatedlist_container">
           {this.state.relatedItems.map((item, i) => {
-            return <RelatedList productId={item} key={i} starFn={this.handleClick} />
+            return <RelatedList productId={item} key={i} starClick={this.handleStarClick} cardClick={this.handleCardClick} />
           })}
         </div>
         <h3 className="userList_title">Your Outfit</h3>
