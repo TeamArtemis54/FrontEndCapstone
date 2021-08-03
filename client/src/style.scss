@@ -11,6 +11,11 @@ html, body {
   margin: auto;
   font-family: sans-serif;
   color: #0b0c10;
+  background: #030a0a;
+}
+#app {
+  width: 90%;
+  margin: 0 auto;
 }
 .header {
   width: 100%;
@@ -26,10 +31,6 @@ html, body {
 
   background: #c5c6c7;
   color: #0b0c10;
-
-  &__left-nav {
-
-  }
 }
 
 .entry-point {
@@ -40,13 +41,12 @@ html, body {
 
   // max-width: 1000px;
   // margin: 0 auto;
-  margin-top: 72px;
+  // margin-top: 72px;
 
   .overview {
     height: 72px;
     background: #45a29e;
   }
-}
 
   .related-products {
     height: min-content;
@@ -54,21 +54,4 @@ html, body {
     color: #c5c6c7;
   }
 
-
-  .ratings_and_reviews {
-    display: flex;
-
-    &__ratings-left {
-      flex-basis: 35%;
-    background: #c5c6c7;
-    }
-    &__reviews-right {
-      flex-basis: 65%;
-      background: #45a29e;
-    }
-  }
-// THIS IS THE CLOSING CURLY BRACE
-// FOR THE entry-point CLASS AND
-// HOLDS EVERYTHING ELSE (CURRENTLY)
-// }
-
+}
