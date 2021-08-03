@@ -146,6 +146,16 @@
   padding: 0.5% 3%;
 }
 
+
+/* //////////////////////OVERVIEW START//////////////////////// */
+/* //////////////////////OVERVIEW START//////////////////////// */
+/* //////////////////////OVERVIEW START//////////////////////// */
+/* //////////////////////OVERVIEW START//////////////////////// */
+
+
+
+
+
 #img-gallery {
   margin: 250px;
 }
@@ -191,8 +201,10 @@ ul {
 #main-image {
   /* width: 400px;
   height: 538px; */
+
   height: 100%;
-  max-width: 100%;
+  width: 100%;
+object-fit: cover;
   margin: auto;
   display: block;
   /* width: 100%; */
@@ -221,9 +233,15 @@ ul {
   z-index: 2;
 }
 
+#carousel button{
+  display: block;
+  width:60%;
+  margin:auto;
+}
+
 #carousel img {
-  height: 60px;
-  width: 60px;
+  height: 56px;
+  width: 56px;
   display: block;
   margin: auto;
 }
@@ -272,6 +290,7 @@ body {
 #main > nav,
 #main > aside {
   flex: 0 0 30vw;
+  min-width: 346px;
 }
 
 #main > nav {
@@ -336,6 +355,80 @@ header, footer, article, aside {
 
 /*////////////// style selector////////////// */
 
+
+    /*//// product info START//// */
+
+#category-name{
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+#product-name{
+  font-size: 34px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+#selected-style-price{
+  font-size: 17px;
+  margin-top: 8px;
+}
+#style-name{
+  font-size: 17px;
+  margin-top: 8px;
+}
+
+    /*//// product info END//// */
+
+
+
+    /*//// shopping cart START//// */
+
+#shopping-form{
+  width: 100%;
+  position: relative;
+  height:35px
+}
+
+#add-to-cart-row{
+  margin-top: 10px;
+  height: 38px;
+  width: 100%;
+  position: relative;
+}
+
+#add-to-cart-row--button{
+  width: 75%;
+  background-color: white;
+  height: 100%;
+}
+#add-to-cart-row--star{
+  width: 15%;
+  height: 100%;
+  background-color: white;
+  position:absolute;
+  right:0px;
+  display: inline-block;
+}
+
+
+#select-size{
+  font-size: 17px;
+  width:60%;
+  height:100%;
+
+}
+#select-quantity{
+  font-size: 17px;
+  width:30%;
+  position:absolute;
+  right:0px;
+  height:100%;
+}
+
+    /*//// shopping cart END//// */
+
+
+
+
 /* /////active carousel START///// */
 
 #focused {
@@ -387,6 +480,7 @@ header, footer, article, aside {
   padding: 0;
   margin: 0;
   display: flex;
+  max-width: 300px;
 
 }
 .flex-item {
@@ -400,7 +494,9 @@ header, footer, article, aside {
 
 .flex-item img{
   width:8vw;
-  height: 8vw;;
+  height: 8vw;
+  max-width: 68px;
+  max-height: 68px;
   object-fit: cover;
   border-radius: 50%;
 }

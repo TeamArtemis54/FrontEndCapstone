@@ -12,22 +12,17 @@ class ProductInfo extends Component{
 
       <>
 
-      <div style={{border: '10px solid black'}}>
-{/* STARS
-CATEGORY
-TITLE
-DEFAULT PRICE --- responsive to style...
-  PRICE (FROM STYLE)
-      IF SALE...roduct 17069 ..style 90262 has sale */}
+      <div>
 
-        <p>{this.props.productCategory}</p>
-        <p>{this.props.productName}</p>
-        <p>{this.props.selectedStylePrice}</p>
+        <p id='category-name'>{this.props.productCategory}</p>
+        <p id='product-name'>{this.props.productName}</p>
+        <p id='selected-style-price'>${this.props.selectedStylePrice}</p>
+
+        <p id='style-name'><span>STYLE > </span> <span>{this.props.styleName}</span></p>
 
         {this.props.salePrice ?
         <p>sale price:{this.props.salePrice}</p>
         : <p></p>}
-
 
       </div>
 

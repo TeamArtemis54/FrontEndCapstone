@@ -43,15 +43,15 @@ class ImageGallery extends Component {
   }
 
   componentDidUpdate(){
-    console.log('tsxtsxv')
-    console.log(document.querySelectorAll(`[data-index~="5"]`))
-    console.log(document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`))
+    // console.log('tsxtsxv')
+    // console.log(document.querySelectorAll(`[data-index~="5"]`))
+    // console.log(document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`))
 
-    if (document.getElementById("focused")){
-      document.getElementById("focused").id = ""
-    }
+    // if (document.getElementById("focused")){
+    //   document.getElementById("focused").id = ""
+    // }
 
-    document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`)[1].id = 'focused'
+    // document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`)[1].id = 'focused'
   }
 
   changeFocusedImage(event){
@@ -81,6 +81,7 @@ class ImageGallery extends Component {
 
   componentDidMount(){
     // document.querySelectorAll(`[data-index~="0"]`)[1].id = 'focused'
+    //console.log(this.props.selectedStyle)
   }
 
 
@@ -115,6 +116,9 @@ class ImageGallery extends Component {
 
 
       <ul id='carousel'>
+
+      <button onClick = {()=>{this.scrollThumbnails('up')}}>Next</button>
+
         {stylePhotos.map((image, index) => {
           if (index >= carouselStart && index <= carouselEnd){
 
@@ -138,12 +142,15 @@ class ImageGallery extends Component {
           }
 
         })}
+
+      <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>
+
       </ul>
 
 
 
 
-        <img id='main-image' onClick={this.overlay.bind(this)} src={mainImage.thumbnail_url}></img>
+        <img id='main-image' onClick={this.overlay.bind(this)} src={mainImage.url}></img>
       </div>
 
       <div id="overlay">
@@ -155,11 +162,6 @@ class ImageGallery extends Component {
 
       {/* <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
       </div> */}
-
-      <hr></hr>
-
-      <button onClick = {()=>{this.scrollThumbnails('up')}}>Next</button>
-      <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>
 
 
 

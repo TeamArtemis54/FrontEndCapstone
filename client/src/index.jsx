@@ -36,11 +36,11 @@ const App = () => {
 
       <Overview/>
 
-      <RelatedProductsWidget />
+      {/* <RelatedProductsWidget />
 
       <RatingsAndReviews
         reviews={reviews}
-        review_meta={review_meta} />
+        review_meta={review_meta} /> */}
     </div>
 
   )
