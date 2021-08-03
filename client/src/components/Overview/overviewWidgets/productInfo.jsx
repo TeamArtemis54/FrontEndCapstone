@@ -17,7 +17,6 @@ class ProductInfo extends Component{
         <p id='category-name'>{this.props.productCategory}</p>
         <p id='product-name'>{this.props.productName}</p>
         <p id='selected-style-price'>${this.props.selectedStylePrice}</p>
-
         <p id='style-name'><span>STYLE > </span> <span>{this.props.styleName}</span></p>
 
         {this.props.salePrice ?
