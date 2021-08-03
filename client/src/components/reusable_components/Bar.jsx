@@ -15,24 +15,18 @@ const Bar = ({ review_meta }) => {
     return (
       <div className='bars'>
         {[5, 4, 3, 2, 1].map((item, idx) => {
-          {/* console.log(review_meta.ratings) */ }
-          {/* barLevel(o, item); */ }
           return (
-            <div key={idx}>
-              <p><span><u>
-                {`${item} stars`}
-              </u></span></p>
-
-              <div>
-                <div style={{
-                  background: 'rgba(51, 170, 51, .8)',
-                  height: '5px',
-
-                  width: `${barLevel(review_meta.ratings, item)}%`,
-                }}
-                />
+            <div className='bar' key={idx}>
+              <div className='bar__underlay'>
+                <p className='bar__line'>
+                  <u className='bar__line--underline'>{`${item} stars`}</u>
+                  <span style={{
+                    background: '#45a29e',
+                    height: '11px',
+                    width: `${barLevel(review_meta.ratings, item)}%`
+                  }}></span>
+                </p>
               </div>
-              <div></div>
             </div>
           )
         }
