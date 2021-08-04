@@ -19,20 +19,24 @@ const CardComponent = (props) => {
     // if it has thumbnail
     // if it doesn't have thumbnail
     console.log('product', product);
-    console.log('thumbnails', thumbnails);
+    // console.log('thumbnails', thumbnails);
     return (
       <div className="card">
         <div className="card__mediaBox">
           {thumbnails === null ?
-            <div>No image available</div> :
-            <div>
-              <img src={thumbnails}/>
+            <div className="card__mediaBox__thumbnail">No image available</div> :
+            <div className="card__mediaBox__thumbnail" style={{
+              backgroundImage: `url(${thumbnails})`
+            }}>
+              <p className="card__mediaBox__thumbnail__star">&#9733;</p>
             </div>
           }
         </div>
-        <div>
+        <div className="card__info">
           <p>{product.category}</p>
-
+          <p>{product.name}</p>
+          <p>{product.default_price}</p>
+          {/* <Stars /> */}
         </div>
       </div>
     )
