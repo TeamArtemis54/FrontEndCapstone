@@ -36,7 +36,8 @@ const App = () => {
 
       <Overview/>
 
-      <RelatedProductsWidget />
+      <RelatedProductsWidget
+        product={product}/>
 
       <RatingsAndReviews
         reviews={reviews}

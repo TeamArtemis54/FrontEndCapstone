@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Stars from '../reusable_components/Stars.jsx';
 import Button from '../reusable_components/Button.jsx';
 
@@ -10,12 +10,28 @@ const CardComponent = (props) => {
   // destructuring the productId that is sent in
   const { productId } = props;
 
+
+  // FOR RELATED CARD
+  // destructuring the product and thumbnails needed for the card
+  const { product, thumbnails } = props;
+
   function RelatedCard() {
     // if it has thumbnail
     // if it doesn't have thumbnail
+    console.log('product', product);
+    console.log('thumbnails', thumbnails);
     return (
       <div className="card">
         <div className="card__mediaBox">
+          {thumbnails === null ?
+            <div>No image available</div> :
+            <div>
+              <img src={thumbnails}/>
+            </div>
+          }
+        </div>
+        <div>
+          <p>{product.category}</p>
 
         </div>
       </div>
@@ -35,14 +51,17 @@ const CardComponent = (props) => {
   function AddCard() {
 
     function handleAddButton() {
-      console.log('hello');
+      // will need to send data
+      if (productId) {
+        // console.log('productid in card', productId);
+      }
     }
 
     return (
       <div className="card">
         <div className="card__mediaBox">
           <div className="addItem_Card">
-            <p className="addItem_Card__plus_sign">&#43;</p>
+            <p onClick={() => handleAddButton()} className="addItem_Card__plus_sign">&#43;</p>
           </div>
         </div>
         <Button onClick={() => handleAddButton()} class={"addCard_button"} children={'Add To Outfit'} />

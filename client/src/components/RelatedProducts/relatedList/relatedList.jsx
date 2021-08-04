@@ -1,157 +1,178 @@
-import React from 'react';
-import RelatedCard from './relatedCard.jsx';
-const axios = require('axios');
-
-class RelatedList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      products: [],
-      thumbnails: []
-    }
-  }
-
-  getProductInfo() {
-    axios.get(`/api/products/${this.props.productId}`)
-      .then((response) => {
-        let newData = this.state.products.concat(response.data);
-        this.setState({
-          products: newData
-        })
-      });
-  }
-
-  getProductThumbnail() {
-    axios.get(`/api/products/${this.props.productId}/styles`)
-      .then((response) => {
-        // console.log(response.data.results);
-        let newPic = this.state.thumbnails.concat(response.data.results[0].photos[0].thumbnail_url);
-        this.setState({
-          thumbnails: newPic
-        })
-        // console.log(this.state.thumbnails);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  componentDidMount() {
-    this.getProductInfo();
-    this.getProductThumbnail();
-  }
-
-  render(props) {
-    return (
-      <div className="relatedList">
-        {this.state.products.map((item, i) => {
-          return <RelatedCard product={item} key={i} thumbnails={this.state.thumbnails} starClickFn={this.props.starClick} cardClickFn={this.props.cardClick}/>
-        })}
-      </div>
-    )
-  }
-
-}
-
-export default RelatedList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
+// import React from 'react';
 // import RelatedCard from './relatedCard.jsx';
 // const axios = require('axios');
 
-// const RelatedList = (props) => {
+// class RelatedList extends React.Component {
+//   constructor(props) {
+//     super(props);
 
-//   // this is the array of related items pulled in from parent
-//   const { related } = props;
-
-//   const [relatedList, setRelatedList] = useState([]);
-
-//   // this will hold the product info
-//   const [products, setProducts] = useState([]);
-
-//   // this will store product thumbnails
-//   const [thumbnails, setThumbnails] = useState([]);
-
-//   // console.log('related is: ', props.related);
-
-//   // anytime the related items change, this will take place
-//   useEffect(() => {
-//     // console.log('relatedid', related);
-//     setRelatedList(related);
-//     // getProductInfo();
-//     // getThumbnail();
-//   }, [related])
-
-//   useEffect(() => {
-//     console.log('relatedList', relatedList);
-//     // relatedList is now populated with items
-//     if(Array.isArray(relatedList)) {
-//       // relatedList.map((item) => {
-//       //   getProductInfo(item);
-//       // })
-//       getProductInfo();
+//     this.state = {
+//       products: [],
+//       thumbnails: []
 //     }
-//   }, [relatedList])
-
-//   useEffect(() => {
-//     // console.log('products', products);
-//   }, [products])
-
-//   // get product info
-//   function getProductInfo() {
-//     relatedList.map((itemId) => {
-//       axios.get(`/api/products/${itemId}`)
-//         .then((response) => {
-//           // products is resetting each time
-//           // console.log('specific product data', response.data);
-//           // console.log('products before', products);
-//           let data = products.concat(response.data);
-//           // console.log('data', data);
-//           setProducts(data);
-//         })
-//         .catch((err) => console.log(err));
-//     })
 //   }
 
-//   // get thumbnails
-//   function getThumbnail() {
-//     axios.get(`/api/products/${related}/styles`)
+//   getProductInfo() {
+//     axios.get(`/api/products/${this.props.productId}`)
 //       .then((response) => {
-//         let thumbnails = thumbnails.concat(response.data.results[0].photos[0].thumbnail_url);
-//         // console.log(thumbnails);
-//         setThumbnails(thumbnails);
-//       })
-//       .catch((err) => console.log(err));
+//         let newData = this.state.products.concat(response.data);
+//         this.setState({
+//           products: newData
+//         })
+//       });
 //   }
 
-//   // console.log('products', products);
-//   // console.log('thumbnails', thumbnails);
+//   getProductThumbnail() {
+//     axios.get(`/api/products/${this.props.productId}/styles`)
+//       .then((response) => {
+//         // console.log(response.data.results);
+//         let newPic = this.state.thumbnails.concat(response.data.results[0].photos[0].thumbnail_url);
+//         this.setState({
+//           thumbnails: newPic
+//         })
+//         // console.log(this.state.thumbnails);
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//       })
+//   }
 
-//   return (
-//     <div className="related-cards">
-//       <h1>Hello</h1>
-//       {products.map((item, i) => {
-//         console.log(item);
-//         return <RelatedCard product={item} key={i}/>
-//       })}
-//     </div>
-//   )
+//   componentDidMount() {
+//     this.getProductInfo();
+//     this.getProductThumbnail();
+//   }
+
+//   render(props) {
+//     return (
+//       <div className="relatedList">
+//         {this.state.products.map((item, i) => {
+//           return <RelatedCard product={item} key={i} thumbnails={this.state.thumbnails} starClickFn={this.props.starClick} cardClickFn={this.props.cardClick}/>
+//         })}
+//       </div>
+//     )
+//   }
 
 // }
 
 // export default RelatedList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React, { useState, useEffect } from 'react';
+import RelatedCard from './relatedCard.jsx';
+import CardComponent from '../CardComponent.jsx';
+import arrow from '../assets/next.png';
+
+const axios = require('axios');
+
+const RelatedList = (props) => {
+
+  // this is the current product being displayed in overview
+  const { currentProduct } = props;
+
+  // this will store the items related to the current product
+  const [relatedIdsList, setRelatedIdsList] = useState([]);
+
+  // this will hold the product info
+  const [products, setProducts] = useState([]);
+
+  // this will store product thumbnails
+  const [thumbnails, setThumbnails] = useState([]);
+
+  // this will store the reviews stars
+  const [reviewsMeta, setReviewsMeta] = useState({});
+
+  // console.log('related is: ', props.related);
+
+
+  // anytime 'currentProduct' value changes, whatever's inside this useEffect will run
+  useEffect(() => {
+    // upon receiving currentProduct, i want to get relatedItems
+    axios.get(`/api/products/${currentProduct.id}/related`)
+      .then((response) => {
+        // console.log('related response', response.data);
+        setRelatedIdsList(response.data);
+      })
+      .catch((err) => {
+        console.log('related error', err);
+      });
+  }, [currentProduct]);
+
+  // if relatedIdsList changes value, then run whatever is inside
+  useEffect(() => {
+    // this would mean that data has now been added
+    if(relatedIdsList.length > 0) {
+      // console.log('data has now entered');
+      // console.log('relatedList', relatedIdsList);
+      relatedIdsList.map((item, i) => {
+        getProductInfo(item);
+        getProductThumbnail(item);
+      })
+    } else {
+      console.log('relatedList not yet in');
+    }
+
+  }, [relatedIdsList]);
+
+
+  function getProductInfo(id) {
+    axios.get(`/api/products/${id}`)
+      .then((response) => {
+        // console.log('relatedItemData', response.data);
+        let data = response.data;
+        setProducts(products => [...products, data]);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function getProductThumbnail(id) {
+    axios.get(`/api/products/${id}/styles`)
+      .then((response) => {
+        // console.log('thumbnail', response.data.results[0].photos[0].thumbnail_url);
+        let thumbnail = response.data.results[0].photos[0].thumbnail_url;
+        setThumbnails(thumbnails => [...thumbnails, thumbnail]);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  // useEffect(() => {
+  //   // this would mean that data has now been added
+  //   if(products.length > 0) {
+  //     // console.log('data has now entered');
+  //     console.log('products', products);
+  //   } else {
+  //     // console.log('not yet');
+  //   }
+  // }, [products]);
+
+  return (
+    <div className="relatedList">
+      {/* <img className="arrow__left" src={arrow} />
+      <div className="relatedList__carousel"> */}
+        {/* {products.length > 0 ? products.map((item, i) => {
+          // console.log(item);
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails}/>
+        }) : console.log('not yet ready')} */}
+        {products.length > 0 && thumbnails.length > 0 ? products.map((item, i) => {
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} />
+        }) : console.log('not yet ready')}
+      {/* </div>
+      <img className="arrow__right" src={arrow} /> */}
+    </div>
+  )
+
+}
+
+export default RelatedList;

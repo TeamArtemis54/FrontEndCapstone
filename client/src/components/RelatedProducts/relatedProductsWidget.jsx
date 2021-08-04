@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RelatedList from './relatedList/relatedList.jsx';
 import CompareModal from './relatedList/comparisonModal.jsx';
+import OutfitList from './outfitList/OutfitList.jsx';
 const axios = require('axios');
 
 // This component will hold the first list which will be the related products that were determined internally
@@ -20,9 +21,6 @@ const RelatedProductsWidget = (props) => {
   // this will store the current product that the page is on
   const [currentProduct, setCurrentProduct] = useState({});
 
-  // this will store the related items to the current product
-  const [relatedItems, setRelatedItems] = useState([]);
-
   // this will store whether modal is displayed or not
   const [showModal, setShowModal] = useState(false);
 
@@ -31,32 +29,20 @@ const RelatedProductsWidget = (props) => {
 
   // console.log('product being passed in', product);
 
-  // this will set
+  // product is our dependency
+  // meaning after the first initial default render, it will re-render when
+  // product value changes.
   useEffect(() => {
-
     setCurrentProduct(product);
     // console.log('logged');
   }, [product]);
 
-  useEffect(() => {
-    // console.log('cur', currentProduct);
-    getRelatedItems();
-  }, [currentProduct.id])
-
-  function getRelatedItems() {
-    axios.get(`/api/products/${currentProduct.id}/related`)
-      .then((response) => {
-        let relatedList = response.data;
-        // console.log('data', response.data);
-        setRelatedItems(relatedList);
-      })
-      .catch((err) => console.log(err));
-  }
-
   return(
-    <div className="widget-container">
-      <h1>HI</h1>
-      {/* <RelatedList related={relatedItems}/> */}
+    <div className="relatedWidget_container">
+      <h3 className="relatedWidget_container__title">Related Products</h3>
+      <RelatedList currentProduct={currentProduct} />
+      {/* <h3 className="relatedWidget_container__title">Your Outfit</h3>
+      <OutfitList currentProduct={currentProduct} /> */}
     </div>
   )
 }
