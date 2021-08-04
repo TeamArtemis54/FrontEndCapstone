@@ -6,6 +6,15 @@ const Reviews = ({reviews}) => {
   const [next, setNext] = useState(0);
   let reviewList = reviews.slice(next, next + 2);
 
+  function seeMore () {
+    setNext(next + 2);
+
+    if (reviewList.length <= 1) {
+      setNext(0);
+    }
+    console.log(reviewList)
+  }
+
   return (
     <div className='reviews_right'>
       <div className='reviews_right__reviews'>
@@ -18,7 +27,7 @@ const Reviews = ({reviews}) => {
         })}
       </div>
       <Button
-        onClick={() => setNext(next + 2)}
+        onClick={() => seeMore()}
         className='more_reviews'>More Reviews</Button>
       <Button
         className='add_a_review'>Add a Review</Button>
