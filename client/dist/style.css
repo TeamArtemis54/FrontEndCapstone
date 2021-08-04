@@ -373,7 +373,7 @@ object-fit: cover;
 
 
 #zoom-img {
-  width: 400px;
+  width: 600px;
   height: 538px;
   object-fit: contain;
   /* background-image: url('https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80'); */
@@ -560,6 +560,8 @@ header, footer, article, aside {
 /* //checkmark// */
 .checkmark {
   position: absolute;
+  background-color: blue;
+  border-radius: 50%;
   top: 0px;
   right: 5px;
   z-index: 100;
@@ -574,19 +576,19 @@ header, footer, article, aside {
 .checkmark_stem {
   position: absolute;
   width:3px;
-  height:9px;
-  background-color:red;
-  left:11px;
-  top:6px;
+  height:13px;
+  background-color:white;
+  left:13px;
+  top:3px;
 }
 
 .checkmark_kick {
   position: absolute;
-  width:3px;
+  width:7px;
   height:3px;
-  background-color:green;
-  left:8px;
-  top:12px;
+  background-color:white;
+  left:9px;
+  top:14px;
 }
 
 
