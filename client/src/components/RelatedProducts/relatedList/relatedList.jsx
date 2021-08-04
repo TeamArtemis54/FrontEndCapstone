@@ -80,7 +80,7 @@ const axios = require('axios');
 const RelatedList = (props) => {
 
   // this is the current product being displayed in overview
-  const { currentProduct } = props;
+  const { currentProduct, starFn } = props;
 
   // this will store the items related to the current product
   const [relatedIdsList, setRelatedIdsList] = useState([]);
@@ -173,7 +173,7 @@ const RelatedList = (props) => {
       {/* <img className="arrow__left" src={arrow} />
       <div className="relatedList__carousel"> */}
         {products.length > 0 && thumbnails.length && reviewsMeta.length > 0 ? products.map((item, i) => {
-          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} />
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn}/>
         }) : console.log('not yet ready')}
       {/* </div>
       <img className="arrow__right" src={arrow} /> */}

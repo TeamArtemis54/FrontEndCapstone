@@ -6,9 +6,9 @@ const axios = require('axios');
 
 const CardComponent = (props) => {
   // destructuring the type that is sent in
-  const { type } = props;
+  const { type, productId, starFn } = props;
   // destructuring the productId that is sent in
-  const { productId } = props;
+  // const { productId } = props;
 
 
   // FOR RELATED CARD
@@ -29,7 +29,7 @@ const CardComponent = (props) => {
             <div className="card__mediaBox__thumbnail" style={{
               backgroundImage: `url(${thumbnails})`
             }}>
-              <p className="card__mediaBox__thumbnail__star">&#9733;</p>
+              <p onClick={(e) => starFn(product, e)} className="card__mediaBox__thumbnail__star">&#9733;</p>
             </div>
           }
         </div>
