@@ -150,7 +150,14 @@ class ImageGallery extends Component {
       <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>
         {stylePhotos.map((image, index) => {
           if (index >= carouselStart && index <= carouselEnd){
+            var idForFocus = 'nothing'
 
+            if (index == this.state.focusedImageIndex){
+              idForFocus = 'focused'
+              console.log('contrast',index, this.state.focusedImageIndex)
+              console.log('FOCUSED!')
+              console.log(index)
+            }
             // if (index === this.state.focusedImageIndex){
 
             //   return (
@@ -162,7 +169,7 @@ class ImageGallery extends Component {
 
               return (
                 <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
-                <img data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+                <img data-index={index} id={idForFocus} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
                 )
 
 
