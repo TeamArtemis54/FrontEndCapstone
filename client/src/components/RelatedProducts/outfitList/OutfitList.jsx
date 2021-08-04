@@ -15,7 +15,7 @@ const OutfitList = (props) => {
   const [outfitList, setOutfitList] = useState([]);
 
   function addItem() {
-    console.log(currentProduct);
+    // console.log(currentProduct);
     setOutfitList(outfitList => [...outfitList, currentProduct]);
     console.log('outfitlist', outfitList);
   }

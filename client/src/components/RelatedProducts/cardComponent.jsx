@@ -18,7 +18,7 @@ const CardComponent = (props) => {
   function RelatedCard() {
     // console.log('product', product);
     // console.log('thumbnails', thumbnails);
-    console.log('reviewMEta', reviewsMeta);
+    // console.log('reviewMEta', reviewsMeta);
     return (
       <div className="card" onClick={() => cardFn(product)}>
         <div className="card__mediaBox">
