@@ -1,0 +1,45 @@
+.ratings_and_reviews {
+  display: flex;
+  flex-direction: row;
+
+  &__ratings-left {
+    flex-basis: 35%;
+    background: #c5c6c7;
+
+    .stars {
+      display: flex;
+
+
+      &__underlay--stars-container {
+        display: flex;
+
+        &_stars__image {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+
+
+
+  &__reviews-right {
+    flex-basis: 65%;
+    background: #45a29e;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #030a0a;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+
+      &--user {
+      }
+    }
+  }
+
+}

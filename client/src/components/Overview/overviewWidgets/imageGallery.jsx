@@ -43,12 +43,26 @@ class ImageGallery extends Component {
     }
   }
 
-  scrollImageGallery(){
+  scrollImageGallery(direction){
     var styleIndex = this.props.selectedStyle
     var stylePhotos=this.props.styles[styleIndex].photos
-    if (this.state.focusedImageIndex < stylePhotos . length-1){
-      this.setState({focusedImageIndex: this.state.focusedImageIndex + 1})
+    if ((this.state.focusedImageIndex < stylePhotos.length-1) && direction == 'right'){
+      this.setState({focusedImageIndex: Number(this.state.focusedImageIndex) + 1})
+
+      if (this.state.focusedImageIndex > this.state.carouselIndex + 5){
+        this.setState({carouselIndex: this.state.carouselIndex + 1})
+      }
     }
+    if ((this.state.focusedImageIndex > 0) && direction == 'left'){
+
+      if (this.state.focusedImageIndex <= this.state.carouselIndex){
+        this.setState({carouselIndex: this.state.focusedImageIndex - 1})
+      }
+      this.setState({focusedImageIndex: Number(this.state.focusedImageIndex) - 1})
+
+
+    }
+
 
   }
 
@@ -105,14 +119,32 @@ class ImageGallery extends Component {
       var styleIndex = this.props.selectedStyle
       var stylePhotos=this.props.styles[styleIndex].photos
       var mainImage = stylePhotos[this.state.focusedImageIndex]
-      url = this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex].url
+      // console.log(styleIndex)
+      // console.log(stylePhotos)
+      // console.log(mainImage)
+      // console.log(this.props.styles)
+      // console.log(this.props.selectedStyle)
+      // console.log(this.props.styles[this.props.selectedStyle].photos)
+      console.log('carousel', this.state.carouselIndex)
+      console.log('fII', this.state.focusedImageIndex)
+
+      // if(this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex]){
+        url = this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex].url
+      // }
+
+      // console.log(this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex])
+      // console.log('fII', this.state.focusedImageIndex)
+
+
     } else {
       var stylePhotos = []
       var mainImage = {thumbnail_url:''}
     }
     return (
       <>
-      <button onClick={this.scrollImageGallery}></button>
+      <button onClick={()=>{this.scrollImageGallery('left')}}></button>
+      <button onClick={()=>{this.scrollImageGallery('right')}}></button>
+
       <div id='main-image-container'>
       <ul id='carousel'>
       <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>

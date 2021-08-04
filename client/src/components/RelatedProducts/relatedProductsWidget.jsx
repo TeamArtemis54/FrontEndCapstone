@@ -1,6 +1,8 @@
 import React from 'react';
 import RelatedList from './relatedList.jsx';
 import CompareModal from './comparisonModal.jsx';
+import UserList from './userList.jsx';
+
 const axios = require('axios');
 
 // This component will hold the first list which will be the related products that were determined internally
@@ -22,11 +24,13 @@ class RelatedProductsWidget extends React.Component {
       relatedItems: [],
       showModal: false,
       productData: {},
-      currentProductData: {}
+      currentProductData: {},
+      starClicked: false
     }
 
     this.handleClick = this.handleClick.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.clickStar = this.clickStar.bind(this);
   }
 
   getRelatedItems() {
@@ -132,14 +136,32 @@ class RelatedProductsWidget extends React.Component {
     .catch((err) => console.log(err));
   }
 
+  clickStar(e) {
+    console.log('clicked');
+    console.log(e.target.className);
+    this.setState({
+      starClicked: !this.state.starClicked
+    })
+    if (this.state.starClicked) {
+      e.target.style.color = "#ffdc14";
+    } else {
+      e.target.style.color = '#fff';
+    }
+  }
+
+
   render() {
     return (
-      <div className="widget-container">
-        <h3 className="widget-title">Related Products</h3>
-        <div className="relatedlist-container">
+      <div className="widget_container">
+        <h3 className="widget_title">Related Products</h3>
+        <div className="relatedlist_container">
           {this.state.relatedItems.map((item, i) => {
-            return <RelatedList clickFn={this.handleClick} productId={item} key={i} />
+            return <RelatedList clickFn={this.handleClick} productId={item} key={i} starFn={this.clickStar} />
           })}
+        </div>
+        <h3 className="userList_title">Your Outfit</h3>
+        <div className="userList_container">
+          <UserList />
         </div>
         <CompareModal clickedInfo={this.state.productData} currentInfo={this.state.currentProductData} show={this.state.showModal} closeClick={this.closeModal}/>
       </div>
@@ -148,3 +170,83 @@ class RelatedProductsWidget extends React.Component {
 
 }
 export default RelatedProductsWidget;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import RelatedList from './relatedList.jsx';
+// import CompareModal from './comparisonModal.jsx';
+// const axios = require('axios');
+
+// // This component will hold the first list which will be the related products that were determined internally
+
+// // related API products returns an array of the related items ids
+// // given the array of ids,
+// // we can generate each product information by using /products/:product_id
+
+// // will use default value item as first item 17067
+
+// // images will require 'products/productId/styles --> data.results.photos.thumbnail_url
+
+// const RelatedProductsWidget = (props) => {
+
+//   const {product} = props;
+
+//   // this will store the current product that the page is on
+//   const [currentProduct, setCurrentProduct] = useState({});
+
+//   // this will store the related items to the current product
+//   const [relatedItems, setRelatedItems] = useState([]);
+
+//   // this will store whether modal is displayed or not
+//   const [showModal, setShowModal] = useState(false);
+
+//   // this will store clicked product data
+//   const [clickedProductData, setClickedProductData] = useState({});
+
+//   // console.log('product being passed in', product);
+
+//   // this will set
+//   useEffect(() => {
+
+//     setCurrentProduct(product);
+//     // console.log('logged');
+//   }, [product]);
+
+//   useEffect(() => {
+//     // console.log('cur', currentProduct);
+//     getRelatedItems();
+//   }, [currentProduct.id])
+
+//   function getRelatedItems() {
+//     axios.get(`/api/products/${currentProduct.id}/related`)
+//       .then((response) => {
+//         let relatedList = response.data;
+//         // console.log('data', response.data);
+//         setRelatedItems(relatedList);
+//       })
+//       .catch((err) => console.log(err));
+//   }
+
+//   return(
+//     <div className="widget-container">
+//       <h1>HI</h1>
+//       <RelatedList related={relatedItems}/>
+//     </div>
+//   )
+// }
+
+// export default RelatedProductsWidget;
