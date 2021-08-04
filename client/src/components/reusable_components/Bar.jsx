@@ -35,7 +35,12 @@ const Bar = ({ review_meta }) => {
     )
   } else {
     return (
-      <img src='loading-2.gif' alt="loading..." />
+      <div className='loading'>
+        <img
+          src='spinner.gif'
+          alt="loading..."
+          style={{width: '150px', margin: '0 auto'}} />
+      </div>
     )
   }
 };

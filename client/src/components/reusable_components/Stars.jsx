@@ -53,7 +53,7 @@ const Stars = (props) => {
 
       <div className='average__container'>
         <div className='average__container--average'>
-          <p className='average__container--average_text'>{average}</p>
+          <p className='average__container--average_text'>{average = average || 0}</p>
         </div>
       </div>
 

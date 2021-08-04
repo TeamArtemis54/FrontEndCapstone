@@ -36,9 +36,9 @@ const App = () => {
     <div className='entry-point'>
       {/* <Header /> */}
 
-      <Overview/>
+      {/* <Overview/> */}
 
-      <RelatedProductsWidget />
+      {/* <RelatedProductsWidget /> */}
 
       <RatingsAndReviews
         reviews={reviews}
