@@ -3,8 +3,8 @@ import Review from './Review.jsx';
 import Button from './../../reusable_components/Button.jsx';
 
 const Reviews = ({reviews}) => {
-  const [next, setNext] = useState(2);
-  let reviewList = reviews.slice(next, 2);
+  const [next, setNext] = useState(0);
+  let reviewList = reviews.slice(next, next + 2);
 
   return (
     <div className='reviews_right'>
