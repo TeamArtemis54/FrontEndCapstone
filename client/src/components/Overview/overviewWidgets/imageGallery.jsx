@@ -142,12 +142,14 @@ class ImageGallery extends Component {
     }
     return (
       <>
-      <button onClick={()=>{this.scrollImageGallery('left')}}></button>
-      <button onClick={()=>{this.scrollImageGallery('right')}}></button>
 
       <div id='main-image-container'>
+
+      <button id='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+      <button id='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+
       <ul id='carousel'>
-      <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>
+      <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
         {stylePhotos.map((image, index) => {
           if (index >= carouselStart && index <= carouselEnd){
             var idForFocus = 'nothing'
@@ -176,7 +178,7 @@ class ImageGallery extends Component {
           }
 
         })}
-      <button onClick = {()=>{this.scrollThumbnails('up')}}>Next</button>
+      <button id='up-button' onClick = {()=>{this.scrollThumbnails('up')}}><i class="arrow down"></i></button>
 
       </ul>
 
