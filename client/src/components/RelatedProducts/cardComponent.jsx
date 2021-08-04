@@ -13,16 +13,17 @@ const CardComponent = (props) => {
 
   // FOR RELATED CARD
   // destructuring the product and thumbnails needed for the card
-  const { product, thumbnails } = props;
+  const { product, thumbnails, reviewsMeta } = props;
 
   function RelatedCard() {
-    // if it has thumbnail
-    // if it doesn't have thumbnail
-    console.log('product', product);
+    // console.log('product', product);
     // console.log('thumbnails', thumbnails);
+    console.log('reviewMEta', reviewsMeta);
     return (
       <div className="card">
         <div className="card__mediaBox">
+          {/* // if it has thumbnail
+          // if it doesn't have thumbnail */}
           {thumbnails === null ?
             <div className="card__mediaBox__thumbnail">No image available</div> :
             <div className="card__mediaBox__thumbnail" style={{
@@ -33,10 +34,14 @@ const CardComponent = (props) => {
           }
         </div>
         <div className="card__info">
-          <p>{product.category}</p>
-          <p>{product.name}</p>
-          <p>{product.default_price}</p>
-          {/* <Stars /> */}
+          <p className="card__info__category">{product.category}</p>
+          <p className="card__info__name">{product.name}</p>
+          <p className="card__info__price">${product.default_price}</p>
+          {reviewsMeta !== undefined ?
+            <Stars review_meta={reviewsMeta}/> :
+            console.log('not ready')
+          }
+
         </div>
       </div>
     )

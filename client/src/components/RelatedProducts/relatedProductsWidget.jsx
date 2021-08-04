@@ -41,8 +41,8 @@ const RelatedProductsWidget = (props) => {
     <div className="relatedWidget_container">
       <h3 className="relatedWidget_container__title">Related Products</h3>
       <RelatedList currentProduct={currentProduct} />
-      {/* <h3 className="relatedWidget_container__title">Your Outfit</h3>
-      <OutfitList currentProduct={currentProduct} /> */}
+      <h3 className="relatedWidget_container__title">Your Outfit</h3>
+      <OutfitList currentProduct={currentProduct} />
     </div>
   )
 }

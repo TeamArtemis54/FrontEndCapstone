@@ -92,7 +92,7 @@ const RelatedList = (props) => {
   const [thumbnails, setThumbnails] = useState([]);
 
   // this will store the reviews stars
-  const [reviewsMeta, setReviewsMeta] = useState({});
+  const [reviewsMeta, setReviewsMeta] = useState([]);
 
   // console.log('related is: ', props.related);
 
@@ -119,6 +119,7 @@ const RelatedList = (props) => {
       relatedIdsList.map((item, i) => {
         getProductInfo(item);
         getProductThumbnail(item);
+        getReviewsMeta(item);
       })
     } else {
       console.log('relatedList not yet in');
@@ -147,6 +148,15 @@ const RelatedList = (props) => {
       .catch((err) => console.log(err));
   }
 
+  function getReviewsMeta(id) {
+    axios.get(`/api/reviews/meta/${id}`)
+      .then((response) => {
+        let reviewMetaData = response.data;
+        setReviewsMeta(reviewsMeta => [...reviewsMeta, reviewMetaData]);
+      })
+      .catch((err) => console.log(err));
+  }
+
   // useEffect(() => {
   //   // this would mean that data has now been added
   //   if(products.length > 0) {
@@ -158,15 +168,12 @@ const RelatedList = (props) => {
   // }, [products]);
 
   return (
+    // console.log('reviewsMeta', reviewsMeta),
     <div className="relatedList">
       {/* <img className="arrow__left" src={arrow} />
       <div className="relatedList__carousel"> */}
-        {/* {products.length > 0 ? products.map((item, i) => {
-          // console.log(item);
-          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails}/>
-        }) : console.log('not yet ready')} */}
-        {products.length > 0 && thumbnails.length > 0 ? products.map((item, i) => {
-          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} />
+        {products.length > 0 && thumbnails.length && reviewsMeta.length > 0 ? products.map((item, i) => {
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} />
         }) : console.log('not yet ready')}
       {/* </div>
       <img className="arrow__right" src={arrow} /> */}
