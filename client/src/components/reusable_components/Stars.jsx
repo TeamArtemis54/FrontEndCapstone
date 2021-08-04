@@ -4,8 +4,8 @@ import React from 'react';
 // stars__underlay--stars-container
 
 let width = 0;
+let average = 0;
 function getAverage(obj) {
-  let average = 0;
   let pointsTotal = 0;
   let numberOfResponses = 0;
 
@@ -46,23 +46,33 @@ function getAverage(obj) {
 }
 
 const Stars = (props) => {
-  const {review_meta} = props;
+  const { review_meta } = props;
   getAverage(review_meta.ratings);
   return (
     <div className='stars'>
-      <div className='stars__underlay'>
-        <div
-          className='stars__underlay--stars-container'
-          style={{width: width, background: '#45a29e'}}>
-          {[1, 2, 3, 4, 5].map((item, idx) => {
-            return (
-              <div key={idx} className='stars__underlay--stars-container_stars'>
-                <img className='stars__underlay--stars-container_stars__image' src='star.png' />
-              </div>
-            )
-          })}
+
+      <div className='average__container'>
+        <div className='average__container--average'>
+          <p className='average__container--average_text'>{average}</p>
         </div>
       </div>
+
+      <div className='stars__container'>
+        <div className='stars__underlay'>
+          <div
+            className='stars__underlay--stars-container'
+            style={{ width: width, background: '#45a29e' }}>
+            {[1, 2, 3, 4, 5].map((item, idx) => {
+              return (
+                <div key={idx} className='stars__underlay--stars-container_stars'>
+                  <img className='stars__underlay--stars-container_stars__image' src='star.png' />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 };

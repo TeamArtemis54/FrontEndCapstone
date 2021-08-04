@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review.jsx';
+import Button from './../../reusable_components/Button.jsx';
 
 const Reviews = ({reviews}) => {
   return (
@@ -13,6 +14,8 @@ const Reviews = ({reviews}) => {
           )
         })}
       </div>
+      <Button
+        className='write_a_review'>Write a Review</Button>
     </div>
   )
 };

@@ -179,6 +179,10 @@
   padding: 0.5% 3%;
 }
 
+* {
+  outline: 1px solid red;
+}
+
 .ratings_and_reviews {
   display: flex;
 }
@@ -188,8 +192,13 @@
   width: 35%;
   background: #c5c6c7;
 }
+.ratings_and_reviews__ratings-left .ratings_left {
+  display: flex;
+  flex-direction: column;
+}
 .ratings_and_reviews__ratings-left .stars {
   display: flex;
+  align-items: center;
 }
 .ratings_and_reviews__ratings-left .stars__underlay--stars-container {
   display: flex;
@@ -197,6 +206,16 @@
 }
 .ratings_and_reviews__ratings-left .stars__underlay--stars-container_stars__image {
   width: 20px;
+}
+.ratings_and_reviews__ratings-left .average__container {
+  width: 25%;
+}
+.ratings_and_reviews__ratings-left .average__container--average_text {
+  font-size: 36px;
+  font-weight: 900;
+}
+.ratings_and_reviews__ratings-left .stars__container {
+  width: 75%;
 }
 .ratings_and_reviews__ratings-left .bar {
   height: 18px;
