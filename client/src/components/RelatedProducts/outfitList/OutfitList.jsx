@@ -14,14 +14,23 @@ const OutfitList = (props) => {
 
   const [outfitList, setOutfitList] = useState([]);
 
-
+  function addItem() {
+    console.log(currentProduct);
+    setOutfitList(outfitList => [...outfitList, currentProduct]);
+    console.log('outfitlist', outfitList);
+  }
 
   return (
     // console.log('current in outfit', currentProduct),
     <div className="outfitList">
       {/* <AddItemCard /> */}
-      <CardComponent type={"add"} productId={currentProduct.id}/>
-      <CardComponent type={"outfit"} />
+      <CardComponent type={"add"} productId={currentProduct.id} addFn={addItem}/>
+      {outfitList.length > 0 ?
+        outfitList.map((item, i) => {
+          <CardComponent type={"outfit"} productId={item.id} />
+        }) :
+        console.log('not yet ready')
+      }
     </div>
   )
 }

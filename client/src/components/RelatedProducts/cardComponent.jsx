@@ -6,7 +6,7 @@ const axios = require('axios');
 
 const CardComponent = (props) => {
   // destructuring the type that is sent in
-  const { type, productId, starFn } = props;
+  const { type, productId, starFn, cardFn } = props;
   // destructuring the productId that is sent in
   // const { productId } = props;
 
@@ -20,7 +20,7 @@ const CardComponent = (props) => {
     // console.log('thumbnails', thumbnails);
     console.log('reviewMEta', reviewsMeta);
     return (
-      <div className="card">
+      <div className="card" onClick={() => cardFn(product)}>
         <div className="card__mediaBox">
           {/* // if it has thumbnail
           // if it doesn't have thumbnail */}
@@ -57,23 +57,20 @@ const CardComponent = (props) => {
     )
   }
 
+
+  // FOR ADD CARD
+  const { addFn } = props;
+
   function AddCard() {
 
-    function handleAddButton() {
-      // will need to send data
-      if (productId) {
-        // console.log('productid in card', productId);
-      }
-    }
-
     return (
-      <div className="card">
+      <div className="card" >
         <div className="card__mediaBox">
           <div className="addItem_Card">
-            <p onClick={() => handleAddButton()} className="addItem_Card__plus_sign">&#43;</p>
+            <p className="addItem_Card__plus_sign" onClick={() => addFn()}>&#43;</p>
           </div>
         </div>
-        <Button onClick={() => handleAddButton()} class={"addCard_button"} children={'Add To Outfit'} />
+        <Button onClick={() => addFn()} class={"addCard_button"} children={'Add To Outfit'} />
       </div>
     )
   }
