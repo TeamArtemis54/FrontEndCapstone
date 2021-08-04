@@ -160,21 +160,10 @@ class ImageGallery extends Component {
               console.log('FOCUSED!')
               console.log(index)
             }
-            // if (index === this.state.focusedImageIndex){
-
-            //   return (
-            //   <li  data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
-            //   {/* {index} */}
-            //   <img id='focused' data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
-            //   )
-            // } else {
-
               return (
                 <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
                 <img data-index={index} id={idForFocus} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
                 )
-
-
           }
 
         })}
@@ -186,8 +175,31 @@ class ImageGallery extends Component {
       </div>
 
       <div id="overlay">
-      <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
-      </div>
+        <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
+
+
+            <ul id='carousel'>
+                <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
+                {stylePhotos.map((image, index) => {
+                    if (index >= carouselStart && index <= carouselEnd){
+                        var idForFocus = 'nothing'
+                        if (index == this.state.focusedImageIndex){
+                          idForFocus = 'focused'
+                        }
+                        return (
+                          <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+                          <img data-index={index} id={idForFocus} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+                        )
+                    }
+                })}
+                <button id='up-button' onClick = {()=>{this.scrollThumbnails('up')}}><i class="arrow down"></i></button>
+
+            </ul>
+
+
+
+
+        </div>
       </div>
 
 

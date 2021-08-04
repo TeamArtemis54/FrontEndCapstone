@@ -248,15 +248,28 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   /* Black background with opacity */
-  z-index: 2;
+  z-index: 99;
   /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
   /* Add a pointer on hover */
   /* display: flex; */
   justify-content: center;
   align-items: center;
+}
+
+
+#zoom-img {
+  z-index: 99;
+  width: 85%;
+  height: 538px;
+  object-fit: contain;
+  position: relative;
+  /* background-image: url('https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80'); */
+  background-position: center;
+  background-size: cover;
+  /* background-size: cover; */
 }
 
 #main-image-container {
@@ -371,16 +384,6 @@ object-fit: cover;
 
 }
 
-
-#zoom-img {
-  width: 600px;
-  height: 538px;
-  object-fit: contain;
-  /* background-image: url('https://images.unsplash.com/photo-1552902865-b72c031ac5ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80'); */
-  background-position: center;
-  background-size: cover;
-  /* background-size: cover; */
-}
 
 /* /////////////////MOCKUP.CSS////////////////////// */
 /* /////////////////MOCKUP.CSS////////////////////// */
@@ -564,7 +567,7 @@ header, footer, article, aside {
   border-radius: 50%;
   top: 0px;
   right: 5px;
-  z-index: 100;
+  z-index: 97;
   display:inline-block;
   width: 22px;
   height:22px;
