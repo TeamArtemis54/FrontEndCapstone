@@ -32,6 +32,10 @@ const App = () => {
       });
   }, []);
 
+  function setMainProduct(id) {
+    setProductId(id);
+  }
+
   return (
     <div className='entry-point'>
       {/* <Header /> */}
@@ -39,7 +43,7 @@ const App = () => {
       <Overview/>
 
       <RelatedProductsWidget
-        product={product}/>
+        product={product} changeMainProductFn={setMainProduct}/>
 
       <RatingsAndReviews
         reviews={reviews}
