@@ -148,7 +148,7 @@ class ImageGallery extends Component {
       <button id='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
       <button id='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
 
-      <ul id='carousel'>
+      <ul className='carousel'>
       <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
         {stylePhotos.map((image, index) => {
           if (index >= carouselStart && index <= carouselEnd){
@@ -176,9 +176,8 @@ class ImageGallery extends Component {
 
       <div id="overlay">
         <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
-
-
-            <ul id='carousel'>
+        </div>
+        <ul className='carousel' id='carousel2'>
                 <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
                 {stylePhotos.map((image, index) => {
                     if (index >= carouselStart && index <= carouselEnd){
@@ -195,11 +194,6 @@ class ImageGallery extends Component {
                 <button id='up-button' onClick = {()=>{this.scrollThumbnails('up')}}><i class="arrow down"></i></button>
 
             </ul>
-
-
-
-
-        </div>
       </div>
 
 

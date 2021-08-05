@@ -340,14 +340,14 @@ object-fit: cover;
   /* width: 100%; */
 }
 
-#overlay img {
+/* #overlay img {
   width: 50%;
   height: 50%;
   /* top: 0;
   left: 0;
   right: 0;
   bottom: 0; */
-}
+} */
 
 #dumbthing {
   height: 150px;
@@ -356,7 +356,7 @@ object-fit: cover;
   position: absolute;
 }
 
-#carousel {
+.carousel {
   /* border: 2px solid green; */
   width: 100px;
   position: absolute;
@@ -364,23 +364,32 @@ object-fit: cover;
   top: 15px;
 }
 
-#carousel button{
+.carousel button{
   display: block;
   width:60%;
   margin:auto;
 }
 
-#carousel img {
+.carousel img {
   height: 50px;
   width: 50px;
   display: block;
   margin: auto;
 }
 
-#carousel li {
+.carousel li {
   /* background-color: rgba(173, 216, 230, 0.4); */
   margin: 8px;
   object-fit: contain;
+
+}
+/* lknsc;knsdcknwdc */
+#carousel2{
+  position: absolute;
+  /* top: 50%; */
+  left: 5%;
+  transform: translate(0, 25%);
+  z-index: 999;
 
 }
 
