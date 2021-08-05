@@ -36,10 +36,10 @@ const App = () => {
     <div className='entry-point'>
       {/* <Header /> */}
 
-      {/* <Overview/> */}
+      <Overview/>
 
-      {/* <RelatedProductsWidget
-        product={product}/> */}
+      <RelatedProductsWidget
+        product={product}/>
 
       <RatingsAndReviews
         reviews={reviews}
