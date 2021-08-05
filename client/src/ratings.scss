@@ -1,10 +1,9 @@
 * {
-  outline: 1px solid red;
+  outline: 1px solid rgb(93, 38, 182);
 }
 .ratings_and_reviews {
   display: flex;
   height: 495px;
-  // flex-direction: row;
 
   &__ratings-left {
     display: flex;
@@ -19,7 +18,6 @@
     }
     .stars {
       display: flex;
-      // justify-content: space-around;
       align-items: center;
       &__underlay--stars-container {
         display: flex;
@@ -29,7 +27,6 @@
         }
       }
     }
-
     .average__container {
       width: 25%;
       &--average_text {
@@ -37,7 +34,6 @@
         font-weight: 900;
       }
     }
-
     .stars__container {
       width: 75%;
     }
@@ -82,10 +78,31 @@
 
       }
     }
+    .review__middle {
+      &--summary {
+        word-wrap: break-word;
+      }
+      &--body {
+        word-wrap: break-word;
+      }
+    }
 
     .form-section {
       width: 100%;
       background: #c5c6c7;
+    }
+  }
+
+
+  .star {
+    display: flex;
+    align-items: center;
+    &__underlay--star-container {
+      display: flex;
+      height: 23px;
+      &_star__image {
+        width: 20px;
+      }
     }
   }
 

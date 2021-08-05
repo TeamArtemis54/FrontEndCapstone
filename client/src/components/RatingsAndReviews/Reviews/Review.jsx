@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Response from './Response.jsx';
 import Recommend from './Recommend.jsx';
+import Star from './../../reusable_components/Star.jsx';
 import moment from 'moment';
 
 const Review = (props) => {
@@ -11,7 +12,7 @@ const Review = (props) => {
 
       <div className='review__top'>
         <div className='review__top--stars'>
-          {/* STARS COMPONENT WILL GO HERE */}
+          <Star review={review} />
         </div>
 
         <div className='review__top--user'>
@@ -23,12 +24,12 @@ const Review = (props) => {
       </div>
 
       <div className='review__middle'>
-        <p className='review__summary'>
-          <span><b>{review.summary.slice(0, 100)}</b></span>
-        </p>
-        <p className='review__summary'>
-          <span>{review.body.slice(0, 188)}</span>
-        </p>
+        <div className='review__middle--summary'>
+          <b>{review.summary || 'Summary of review...'}</b>
+        </div>
+        <div className='review__middle--body'>
+          {review.body || 'Main text of review...'}
+        </div>
       </div>
 
       <div className='conditions'>

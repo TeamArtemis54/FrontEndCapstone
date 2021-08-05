@@ -264,7 +264,7 @@
 }
 
 * {
-  outline: 1px solid red;
+  outline: 1px solid #5d26b6;
 }
 
 .ratings_and_reviews {
@@ -332,9 +332,26 @@
   display: flex;
   justify-content: space-between;
 }
+.ratings_and_reviews__reviews-right .review__middle--summary {
+  word-wrap: break-word;
+}
+.ratings_and_reviews__reviews-right .review__middle--body {
+  word-wrap: break-word;
+}
 .ratings_and_reviews__reviews-right .form-section {
   width: 100%;
   background: #c5c6c7;
+}
+.ratings_and_reviews .star {
+  display: flex;
+  align-items: center;
+}
+.ratings_and_reviews .star__underlay--star-container {
+  display: flex;
+  height: 23px;
+}
+.ratings_and_reviews .star__underlay--star-container_star__image {
+  width: 20px;
 }
 
 #img-gallery {
