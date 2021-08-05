@@ -11,6 +11,7 @@ class ImageGallery extends Component {
     super(props);
     this.changeFocusedImage = this.changeFocusedImage.bind(this)
     this.scrollImageGallery = this.scrollImageGallery.bind(this)
+    this.overlay = this.overlay.bind(this)
 
     this.state = {
       focusedImageIndex: 0,
@@ -89,10 +90,12 @@ class ImageGallery extends Component {
     this.setState({focusedImageIndex: index})
   }
 
-  overlay(){
-    document.getElementById("overlay").style.display = "flex";
-    // document.getElementById("zoom-img").style.display = "block";
-
+  overlay(open_close){
+    if (open_close === 'open'){
+      document.getElementById("overlay").style.display = "flex";
+    } else {
+      document.getElementById("overlay").style.display = "none";
+    }
   }
 
   zoom(){
@@ -171,10 +174,11 @@ class ImageGallery extends Component {
 
       </ul>
 
-        <img id='main-image' onClick={this.overlay.bind(this)} src={mainImage.url}></img>
+        <img id='main-image' onClick={()=>{this.overlay('open')}} src={mainImage.url}></img>
       </div>
 
       <div id="overlay">
+        <span id='close-overlay' onClick={()=>{this.overlay('close')}}>x</span>
         <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
         </div>
         <ul className='carousel' id='carousel2'>

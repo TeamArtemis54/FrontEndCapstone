@@ -259,6 +259,12 @@ ul {
   align-items: center;
 }
 
+#close-overlay{
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 3em;
+}
 
 #zoom-img {
   z-index: 99;
@@ -375,6 +381,7 @@ object-fit: cover;
   width: 50px;
   display: block;
   margin: auto;
+  object-fit: cover;
 }
 
 .carousel li {
