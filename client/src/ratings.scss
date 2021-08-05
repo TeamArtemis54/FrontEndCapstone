@@ -3,6 +3,7 @@
 }
 .ratings_and_reviews {
   display: flex;
+  height: 495px;
   // flex-direction: row;
 
   &__ratings-left {
@@ -80,6 +81,11 @@
         justify-content: space-between;
 
       }
+    }
+
+    .form-section {
+      width: 100%;
+      background: #c5c6c7;
     }
   }
 

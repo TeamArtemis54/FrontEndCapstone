@@ -24,7 +24,7 @@ const Review = (props) => {
 
       <div className='review__middle'>
         <p className='review__summary'>
-          <span><b>{review.summary}</b></span>
+          <span><b>{review.summary.slice(0, 100)}</b></span>
         </p>
         <p className='review__summary'>
           <span>{review.body.slice(0, 188)}</span>

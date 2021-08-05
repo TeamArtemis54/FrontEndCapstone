@@ -185,6 +185,7 @@
 
 .ratings_and_reviews {
   display: flex;
+  height: 495px;
 }
 .ratings_and_reviews__ratings-left {
   display: flex;
@@ -246,6 +247,10 @@
 .ratings_and_reviews__reviews-right .review__top {
   display: flex;
   justify-content: space-between;
+}
+.ratings_and_reviews__reviews-right .form-section {
+  width: 100%;
+  background: #c5c6c7;
 }
 
 #img-gallery {
