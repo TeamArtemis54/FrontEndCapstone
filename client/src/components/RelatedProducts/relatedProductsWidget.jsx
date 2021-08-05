@@ -115,7 +115,6 @@ const RelatedProductsWidget = (props) => {
   }
 
 
-
   // ATTENTION!!!!!
   // this function will get replaced by changeMainProductFn passed in from prop
   function handleCardClick(clickedProduct) {
