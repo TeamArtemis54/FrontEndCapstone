@@ -6,7 +6,7 @@ const CompareModal = (props) => {
   }
 
   return (
-    <div className="modal">
+    <div className="modal" onClick={props.closeClick}>
       <div className="modal-content">
         <div className="modal-header">
           <h4 className="modal-title">Comparing</h4>
