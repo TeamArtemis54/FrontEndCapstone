@@ -6,130 +6,137 @@
 // #66fcf1;
 // #45a29e;
 
+// * {
+//   outline: 1px solid green;
+// }
+
 // WIDGET STYLING
-.widget_container {
-  // border: 2px solid red;
-  padding: 2%;
+// .widget_container {
+//   border: 2px solid red;
+//   padding: 2%;
+//   background-color: #f9f9f9;
 
-  .widget_title {
-    font-size: 1rem;
-    font-family: 'Open Sans';
-    font-weight: 300;
-    text-transform: uppercase;
-    width: 90%;
-    margin: auto;
-    padding: 2%;
-    // border: 2px solid blue;
-  }
+//   .widget_title {
+//     font-size: 1rem;
+//     font-family: 'Open Sans';
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     width: 90%;
+//     margin: auto;
+//     padding: 2%;
+//     border: 2px solid blue;
+//   }
 
-  // RELATED LIST CONTAINER
-  .relatedlist_container {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    // border: 2px solid orange;
-  }
+//   // RELATED LIST CONTAINER
+//   .relatedlist_container {
+//     width: 90%;
+//     margin: auto;
+//     display: flex;
+//     border: 2px solid orange;
+//   }
 
-  // THE RELATED LIST
-  .relatedList {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    // border: 2px solid green;
+//   // THE RELATED LIST
+//   .relatedList {
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-evenly;
+//     border: 2px solid green;
 
-    .relatedCard:hover {
-      box-shadow: 3px 3px 19px 6px rgba(0,0,0,0.46);
-    }
+//     .relatedCard:hover {
+//       box-shadow: 3px 3px 19px 6px rgba(0,0,0,0.46);
+//     }
 
-    // EACH CARD STYLING
-    .relatedCard {
-      font-family: 'Open Sans';
-      font-weight: 300;
-      // border: 0.5px solid rgba(0, 0, 0, 0.2);
-      // border: 2px solid red;
-      height: 500px;
-      width: 90%;
-      padding: 1%;
+//     // EACH CARD STYLING
+//     .relatedCard {
+//       font-family: 'Open Sans';
+//       font-weight: 300;
+//       // border: 0.5px solid rgba(0, 0, 0, 0.2);
+//       border: 2px solid red;
+//       height: 500px;
+//       width: 90%;
+//       padding: 2%;
 
-      .card_img {
-        width: 100%;
-        height: 65%;
-        display: flex;
-        text-align: right;
+//       .card_img {
+//         width: 100%;
+//         height: 65%;
+//         display: flex;
+//         text-align: right;
+//         border: 2px solid aqua;
 
-        &__thumbnail {
-          width: 100%;
-          height: 100%;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-        }
+//         &__thumbnail {
+//           width: 100%;
+//           height: 100%;
+//           background-size: cover;
+//           background-repeat: no-repeat;
+//           background-position: center;
+//         }
 
-        &__star {
-          color: #fff;
-          // border: 2px solid red;
-          width: 25px;
-          font-size: 1.3rem;
-          text-align: center;
-          background-color: rgba(0, 0, 0, 0.3);
-          margin-left: 90%;
-          padding: 0.5%;
-        }
+//         &__star {
+//           color: #fff;
+//           border: 2px solid red;
+//           width: 25px;
+//           font-size: 1.3rem;
+//           text-align: center;
+//           background-color: rgba(0, 0, 0, 0.3);
+//           margin-left: 90%;
+//           padding: 0.5%;
+//         }
 
-        &__star:hover {
-          color: #ffdc14;
-        }
-      }
+//         &__star:hover {
+//           color: #ffdc14;
+//         }
+//       }
 
-      .card_info {
-        width: 100%;
-        height: 30%;
-        padding: 0 1%;
-        // border: 2px solid blue;
-
-
-        &__category {
-          text-transform: uppercase;
-          font-size: 0.75rem;
-          // border: 2px solid green;
-        }
-
-        &__name {
-          font-weight: 600;
-          font-size: 1.1rem;
-          // border: 2px solid orange;
-        }
-
-        &__price {
-          font-weight: 300;
-          font-size: 0.75rem;
-          // border: 2px solid red;
-        }
-      }
-    }
-  }
+//       .card_info {
+//         width: 100%;
+//         height: 30%;
+//         padding: 0 1%;
+//         border: 2px solid blue;
 
 
-  // USER LIST
-  .userList_title {
-    font-size: 1rem;
-    font-family: 'Open Sans';
-    font-weight: 300;
-    text-transform: uppercase;
-    width: 90%;
-    margin: 1% auto 0;
-    padding: 2%;
-    // border: 2px solid blue;
-  }
+//         &__category {
+//           text-transform: uppercase;
+//           font-size: 0.75rem;
+//           border: 2px solid green;
+//         }
 
-  .userList_container {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    // border: 2px solid orange;
-  }
+//         &__name {
+//           font-weight: 600;
+//           font-size: 1.1rem;
+//           border: 2px solid orange;
+//         }
 
-}
+//         &__price {
+//           font-weight: 300;
+//           font-size: 0.75rem;
+//           border: 2px solid red;
+//         }
+//       }
+//     }
+//   }
+
+
+//   // USER LIST
+//   .userList_title {
+//     font-size: 1rem;
+//     font-family: 'Open Sans';
+//     font-weight: 300;
+//     text-transform: uppercase;
+//     width: 90%;
+//     margin: 1% auto 0;
+//     padding: 2%;
+//     border: 2px solid blue;
+//   }
+
+//   .userList_container {
+//     width: 90%;
+//     margin: auto;
+//     display: flex;
+//     border: 2px solid orange;
+//   }
+
+
+// }
 
 
 
@@ -226,3 +233,220 @@
     padding: 0.5% 3%;
   }
 
+
+
+
+// YOUR OUTFIT LIST CSS
+
+  .addItemCard {
+    &_deleteButton {
+      border: 1px solid red;
+      text-align: right;
+      width: 100%;
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border: 2px solid black;
+      padding: 1%;
+
+      &__box {
+        border: 2px solid #4d4d4d;
+        // border: 2px solid red;
+        border-radius: 50%;
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 100%;
+        text-align: center;
+        margin-left: 85%;
+      }
+    }
+  }
+
+
+
+
+
+
+
+// THE NEW CSS - 8/03/2021
+
+.relatedWidget_container {
+  width: 100%;
+  outline: 2px solid red;
+  padding: 1%;
+
+  &__title {
+    font-size: 1rem;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    text-transform: uppercase;
+    width: 90%;
+    margin: auto;
+    padding: 2%;
+    outline: 2px solid blue;
+    letter-spacing: 1px;
+  }
+}
+
+.relatedList {
+  width: 90%;
+  margin: auto;
+  outline: 2px solid orange;
+  display: flex;
+  overflow-x: hidden;
+  align-items: center;
+
+  &__carousel {
+    outline: 2px solid blueviolet;
+    display: flex;
+    justify-content: space-evenly;
+    // width: 80%;
+    margin: auto;
+  }
+}
+
+.arrow__left {
+  height: 40px;
+  width: 40px;
+  transform: rotate(180deg);
+}
+
+.arrow__right {
+  height: 40px;
+  width: 40px;
+}
+
+
+
+
+.outfitList {
+  width: 90%;
+  margin: auto;
+  outline: 2px solid green;
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-evenly;
+  justify-content: flex-start;
+}
+
+
+
+// CARD COMPONENT BASIC STYLING FOR OUTLINE
+.card {
+  outline: 2px solid aqua;
+  padding: 1%;
+  width: 340px;
+  max-width: 25%;
+  height: 400px;
+  cursor: pointer;
+  // border: 0.5px solid rgba(0, 0, 0, 0.2);
+
+  &__mediaBox {
+    outline: 2px solid green;
+    text-align: center;
+    padding: 5%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+
+    &__thumbnail {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &__star {
+        color: #fff;
+        // outline: 2px solid red;
+        width: 25px;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-left: 80%;
+        padding: 0.5%;
+      }
+
+      &__star:hover {
+        color: #ffdc14;
+      }
+    }
+
+  }
+
+  &__info {
+    width: 100%;
+    height: 30%;
+    outline: 2px solid blue;
+    padding: 0 1%;
+    font-family: 'Open Sans';
+
+    &__category {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 300;
+      outline: 2px solid green;
+    }
+
+    &__name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      outline: 2px solid orange;
+    }
+
+    &__price {
+      font-weight: 300;
+      font-size: 0.75rem;
+      outline: 2px solid red;
+    }
+  }
+}
+
+
+// SPECIFICALLY FOR ADD ITEM CARDS
+.addItem_Card {
+  outline: 1px solid blue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__plus_sign {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 90%;
+    // padding: 25%;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__plus_sign:hover {
+    animation-name: spin;
+    animation-duration: 1000ms;
+  }
+
+    @keyframes spin {
+      from {
+        transform:rotate(0deg);
+      }
+      to {
+        transform:rotate(360deg);
+      }
+    }
+
+}
+
+  .addCard_button {
+    background-color: transparent;
+    width: 100%;
+    padding: 3%;
+    border: none;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    height: 30%;
+  }
