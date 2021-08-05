@@ -4,7 +4,6 @@ import Bar from './../../reusable_components/Bar.jsx';
 
 const Ratings = (props) => {
   const {review_meta, product_id} = props;
-  // console.log('meta in ratings', review_meta)
 
   return (
     <div className='ratings_left'>
