@@ -110,3 +110,7 @@ typings/
 # API KEYS SHALL NOT BE COMMTIED
 # THE env DIRECTORY HOLDS API KEYS
 env/
+
+
+# IGNORING BUNDLE
+client/dist/bundle.js

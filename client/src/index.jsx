@@ -6,7 +6,7 @@ import Header from './components/Header/Header.jsx';
 import Overview from './components/Overview/Overview.jsx';
 // RELATED PRODUCTS
 import RelatedProductsWidget from './components/RelatedProducts/RelatedProductsWidget.jsx';
-import RelatedList from './components/RelatedProducts/relatedList.jsx';
+import RelatedList from './components/RelatedProducts/relatedList/relatedList.jsx';
 // RATINGS AND REVIEWS
 import RatingsAndReviews from './components/RatingsAndReviews/RatingsAndReviews.jsx';
 
@@ -38,7 +38,8 @@ const App = () => {
 
       <Overview/>
 
-      <RelatedProductsWidget />
+      <RelatedProductsWidget
+        product={product}/>
 
       <RatingsAndReviews
         reviews={reviews}
