@@ -33,8 +33,8 @@ const Reviews = ({reviews}) => {
           onClick={() => seeMore()}
           className='more_reviews'>More Reviews</Button>
         <Button
-          onClick={() => setShowReviewForm(true)}
-          className='add_a_review'>Add a Review</Button>
+          onClick={() => setShowReviewForm(!show)}
+          className='add_a_review'>{show ? 'Cancel' : 'Add a Review'}</Button>
       </div>
     </div>
   )

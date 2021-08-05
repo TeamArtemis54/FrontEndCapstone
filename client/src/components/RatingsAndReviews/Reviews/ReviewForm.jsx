@@ -40,6 +40,7 @@ const ReviewForm = (props) => {
 
         <div className='review-form__summary'>
           <Input
+            onChange={() => console.log(summary)}
             className='review-form__summary--input'
             type='textarea'
             placeholder='Add a summary of your review (in less than 50 characters'
