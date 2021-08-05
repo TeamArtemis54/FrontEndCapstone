@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-.main-container {
-  background: #345678;
-=======
 html, body {
   padding: 0;
   margin: 0;
@@ -17,7 +13,6 @@ html, body {
 }
 .header ul {
   list-style: none;
->>>>>>> main
 }
 
 /*# sourceMappingURL=style.css.map */
