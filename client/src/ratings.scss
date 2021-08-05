@@ -82,6 +82,14 @@
 
       }
     }
+    .review__middle {
+      &--summary {
+        word-wrap: break-word;
+      }
+      &--body {
+        word-wrap: break-word;
+      }
+    }
 
     .form-section {
       width: 100%;

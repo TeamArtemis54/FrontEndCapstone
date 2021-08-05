@@ -23,12 +23,12 @@ const Review = (props) => {
       </div>
 
       <div className='review__middle'>
-        <p className='review__summary'>
-          <span><b>{review.summary.slice(0, 100)}</b></span>
-        </p>
-        <p className='review__summary'>
-          <span>{review.body.slice(0, 188)}</span>
-        </p>
+        <div className='review__middle--summary'>
+          <b>{review.summary || 'Summary of review...'}</b>
+        </div>
+        <div className='review__middle--body'>
+          {review.body || 'Main text of review...'}
+        </div>
       </div>
 
       <div className='conditions'>
