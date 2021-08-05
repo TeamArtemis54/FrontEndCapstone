@@ -19,7 +19,7 @@ const RelatedProductsWidget = (props) => {
 
   const {product} = props;
 
-  console.log('the PRODUCT BEING DISPLAYED', product);
+  // console.log('the PRODUCT BEING DISPLAYED', product);
 
   // this will store the current product that the page is on
   const [currentProduct, setCurrentProduct] = useState({});

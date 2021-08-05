@@ -17,7 +17,7 @@ const OutfitList = (props) => {
   function addItem() {
     // console.log(currentProduct);
     setOutfitList(outfitList => [...outfitList, currentProduct]);
-    console.log('outfitlist', outfitList);
+    // console.log('outfitlist', outfitList);
   }
 
   return (
