@@ -28,7 +28,7 @@ class Overview extends Component {
   }
 
   componentDidMount(){
-    fetcher.getStyle('17069', (err, data)=>{
+    fetcher.getStyle('17071', (err, data)=>{
       if(err){
         console.log(err)
       }
@@ -61,6 +61,9 @@ class Overview extends Component {
 
   render(){
     if(this.state.dataDidLoad){
+
+      var styleName = this.state.styles[this.state.selectedStyle]['name']
+
       var price = this.state.styles[this.state.selectedStyle]['original_price']
       if (this.state.styles[this.state.selectedStyle]['sale_price']){
         var salePrice = this.state.styles[this.state.selectedStyle]['sale_price']
@@ -84,7 +87,7 @@ class Overview extends Component {
       </article>
       <aside>
 
-      <ProductInfo salePrice={salePrice} selectedStylePrice={price} productCategory ={this.state.productCategory} productName={this.state.productName}/>
+      <ProductInfo salePrice={salePrice} selectedStylePrice={price} productCategory ={this.state.productCategory} productName={this.state.productName} styleName={styleName}/>
 
       <StyleSelector changeStyle={this.changeStyle} selectedStyle={this.state.selectedStyle} hasData={this.state.dataDidLoad} styles={this.state.styles}/>
 
