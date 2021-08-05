@@ -17,7 +17,7 @@ const axios = require('axios');
 
 const RelatedProductsWidget = (props) => {
 
-  const {product} = props;
+  const { product, setMainProductFn } = props;
 
   // console.log('the PRODUCT BEING DISPLAYED', product);
 
@@ -114,9 +114,13 @@ const RelatedProductsWidget = (props) => {
     setShowModal(false);
   }
 
+
+
+  // ATTENTION!!!!!
+  // this function will get replaced by changeMainProductFn passed in from prop
   function handleCardClick(clickedProduct) {
     // here I want to be able to send the clicked product id to the overview component
-    console.log(clickedProduct.id);
+    console.log(clickedProduct);
   }
 
   return(
