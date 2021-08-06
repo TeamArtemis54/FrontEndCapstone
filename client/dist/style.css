@@ -278,12 +278,18 @@
 .ratings_and_reviews__ratings-left {
   display: flex;
   flex-direction: column;
+  border: ridge 5px grey;
+  padding: 9px;
+  margin-right: 5px;
   width: 35%;
   background: #ffffff;
 }
 .ratings_and_reviews__ratings-left .ratings_left {
   display: flex;
   flex-direction: column;
+}
+.ratings_and_reviews__ratings-left .ratings_left__average {
+  display: flex;
 }
 .ratings_and_reviews__ratings-left .stars {
   display: flex;
@@ -328,6 +334,9 @@
   flex-direction: column;
   width: 65%;
   background: #ffffff;
+  border: ridge 5px grey;
+  padding: 9px;
+  margin-left: 5px;
 }
 .ratings_and_reviews__reviews-right .review {
   border-bottom: 1px solid #030a0a;
@@ -373,13 +382,18 @@
   box-shadow: 0 0 21px 9px #030a0a;
 }
 
+.reviews_right {
+  position: absolute;
+  height: 500px;
+}
+
 .review-form {
   display: flex;
   align-content: center;
   justify-content: center;
-  position: absolute;
+  position: relative;
   left: 50%;
-  bottom: -261%;
+  bottom: 300px;
   transform: translate(-50%, 0%);
   background: #030a0a;
   color: #c5c6c7;
@@ -397,7 +411,8 @@
   opacity: 1;
   color: #030a0a;
   width: 100%;
-  box-shadow: 0 0 3px 23px black;
+  box-shadow: 0 0 23px 4px #030a0a;
+  padding: 15px;
 }
 
 .review-form__rating {
@@ -620,10 +635,6 @@ header, footer, article, aside {
   height: 50px;
 }
 
-* {
-  background: #ffffff;
-}
-
 html, body {
   padding: 0;
   margin: auto;
@@ -636,22 +647,9 @@ html, body {
   margin: 0 auto;
 }
 
-.header {
-  width: 100%;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  border-bottom: 2px #1f2833 solid;
-  background: #c5c6c7;
-  color: #0b0c10;
-}
-
 .entry-point {
   display: flex;
   flex-direction: column;
-  background: #c5c6c7;
 }
 .entry-point .overview {
   height: 72px;

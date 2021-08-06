@@ -21,7 +21,7 @@ const Star = (props) => {
         <div className='star__underlay'>
           <div
             className='star__underlay--star-container'
-            style={{ width: width, background: '#030a0a' }}>
+            style={{ width: width, background: '#000000' }}>
             {[1, 2, 3, 4, 5].map((item, idx) => {
               return (
                 <div key={idx} className='star__underlay--star-container_star'>

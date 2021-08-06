@@ -1,14 +1,7 @@
-// THESE ARE IMPORTED HERE
-// FROM OUR INDIVIDUAL scss
-// FILES FOR STYLING
 @use 'related';
 @use 'ratings';
 @use 'overview';
 
-
-* {
-  background: #ffffff;
-}
 html, body {
   padding: 0;
   margin: auto;
@@ -19,31 +12,10 @@ html, body {
   width: 90%;
   margin: 0 auto;
 }
-.header {
-  width: 100%;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-
-  position: fixed;
-  top: 0;
-
-  border-bottom: 2px #1f2833 solid;
-
-  background: #c5c6c7;
-  color: #0b0c10;
-}
 
 .entry-point {
-  // padding: 25px;
   display: flex;
   flex-direction: column;
-  background: #c5c6c7;
-
-  // max-width: 1000px;
-  // margin: 0 auto;
-  // margin-top: 72px;
 
   .overview {
     height: 72px;
@@ -55,5 +27,4 @@ html, body {
     background: #1f2833;
     color: #c5c6c7;
   }
-
 }

@@ -21,7 +21,7 @@ const Bar = ({ review_meta }) => {
                 <p className='bar__line'>
                   <u className='bar__line--underline'>{`${item} stars`}</u>
                   <span style={{
-                    background: '#45a29e',
+                    background: '#000000',
                     height: '11px',
                     width: `${barLevel(review_meta.ratings, item)}%`
                   }}></span>
