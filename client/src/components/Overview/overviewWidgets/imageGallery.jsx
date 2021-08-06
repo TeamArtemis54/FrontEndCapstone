@@ -148,8 +148,8 @@ class ImageGallery extends Component {
 
       <div id='main-image-container'>
 
-      <button id='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
-      <button id='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+      <button class='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+      <button class='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
 
       <ul className='carousel'>
       <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
@@ -178,6 +178,10 @@ class ImageGallery extends Component {
       </div>
 
       <div id="overlay">
+
+        <button class='left-button' id='left-button-zoom' onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+        <button class='right-button' id='right-button-zoom' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+
         <span id='close-overlay' onClick={()=>{this.overlay('close')}}>x</span>
         <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
         </div>

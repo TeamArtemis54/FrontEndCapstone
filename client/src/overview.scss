@@ -299,6 +299,8 @@ ul {
   top: 50%
 }
 
+
+
 .arrow {
   border: solid black;
   border-width: 0 10px 10px 0;
@@ -374,12 +376,20 @@ object-fit: cover;
   object-fit: contain;
 
 }
-/* lknsc;knsdcknwdc */
+// #carousel2{
+//   position: absolute;
+//   /* top: 50%; */
+//   left: 5%;
+//   transform: translate(0, 25%);
+//   z-index: 999;
+
+// }
+
 #carousel2{
-  position: absolute;
+  position: relative;
   /* top: 50%; */
-  left: 5%;
-  transform: translate(0, 25%);
+  left: -85%;
+  transform: translate(0, -3%);
   z-index: 999;
 
 }

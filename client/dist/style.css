@@ -592,6 +592,7 @@ ul {
   top: 0px;
   right: 20px;
   font-size: 3em;
+  color:white
 }
 
 #zoom-img {
@@ -613,7 +614,7 @@ ul {
 
 /* ////////ARROWS-start/////// */
 /* https://www.w3schools.com/howto/howto_css_arrows.asp */
-#left-button, #right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
+.left-button, .right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
   background: none;
   color: inherit;
   border: none;
@@ -623,16 +624,26 @@ ul {
   outline: inherit;
 }
 
-#left-button {
+.left-button {
   position: absolute;
   left: 100px;
   top: 50%;
 }
 
-#right-button {
+.right-button {
   position: absolute;
   right: 20px;
   top: 50%;
+}
+
+#left-button-zoom{
+  left:15%;
+  z-index:1000
+}
+#right-button-zoom{
+  right:16%;
+  z-index:1000
+
 }
 
 .arrow {
@@ -709,12 +720,11 @@ ul {
   object-fit: contain;
 }
 
-/* lknsc;knsdcknwdc */
 #carousel2 {
-  position: absolute;
+  position: relative;
   /* top: 50%; */
-  left: 5%;
-  transform: translate(0, 25%);
+  left: -85%;
+  transform: translate(0, -3%);
   z-index: 999;
 }
 
