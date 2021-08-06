@@ -121,6 +121,7 @@ const RelatedProductsWidget = (props) => {
   //   // here I want to be able to send the clicked product id to the overview component
   //   console.log(clickedProduct);
   // }
+  // adding some comments to render change
 
   return(
     <div className="relatedWidget_container">
