@@ -178,6 +178,10 @@ class ImageGallery extends Component {
       </div>
 
       <div id="overlay">
+
+        <button id='left-button-zoom'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+        <button id='right-button-zoom' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+
         <span id='close-overlay' onClick={()=>{this.overlay('close')}}>x</span>
         <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
         </div>
