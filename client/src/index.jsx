@@ -38,9 +38,9 @@ const App = () => {
 
   return (
     <div className='entry-point'>
-      {/* <Header /> */}
+      <Header />
 
-      <Overview/>
+      <Overview product={product} />
 
       <RelatedProductsWidget
         product={product} changeMainProductFn={setMainProduct}/>

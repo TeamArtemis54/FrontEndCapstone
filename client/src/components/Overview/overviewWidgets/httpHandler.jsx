@@ -40,7 +40,7 @@ const getProduct = (style = '17070', callback) => {
 
   instance.get(`fec2/hr-rfp/products/${style}`)
     .then(response => {
-//    console.log(response.data);
+    console.log(response.data);
     callback(null,response.data)
     })
     .catch(function (err) {
