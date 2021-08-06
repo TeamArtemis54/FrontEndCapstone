@@ -17,7 +17,6 @@ class Overview extends Component {
       styles:[],
       selectedStyle: 0,
 
-      //new for productInfo
       productCategory: '',
       productName: ''
     }
@@ -32,8 +31,7 @@ class Overview extends Component {
       if(err){
         console.log(err)
       }
-      // console.log('STYLE DATA')
-      // console.log(data)
+
       this.setState({styles: data.results, dataDidLoad: true})
     })
 
@@ -42,22 +40,14 @@ class Overview extends Component {
       if(err){
         console.log(err)
       }
-      // console.log('PRODUCT DATA')
-      // console.log(data)
-      // console.log(data.category, data.name)
+
       this.setState({productCategory:data.category, productName:data.name})
 
-
-      //this.setState({styles: data.results, dataDidLoad: true})
     })
 
 
   }
 
-  // selectedStylePrice(price){
-  //   //alert(price)
-  //   return price
-  // }
 
   render(){
     if(this.state.dataDidLoad){
@@ -101,10 +91,5 @@ class Overview extends Component {
     )
   }
 };
-//ReactDom.render(<Overview />, document.getElementById('overview'));
-
-// 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/'
-
-//   'Authorization': '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'
 
 export default Overview;
