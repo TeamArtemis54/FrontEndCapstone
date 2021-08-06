@@ -17,6 +17,8 @@ class Overview extends Component {
       styles:[],
       selectedStyle: 0,
 
+      //****Changing 'fetcher' from api-call to 'product' prop****//
+      product: {},
       productCategory: '',
       productName: ''
     }
@@ -35,15 +37,15 @@ class Overview extends Component {
       this.setState({styles: data.results, dataDidLoad: true})
     })
 
+    //****Changing 'fetcher' from api-call to 'product' prop****//
+    // fetcher.getProduct('17071', (err, data)=>{
+    //   if(err){
+    //     console.log(err)
+    //   }
 
-    fetcher.getProduct('17071', (err, data)=>{
-      if(err){
-        console.log(err)
-      }
+      this.setState({productCategory:this.state.product.category, productName:this.state.product.name})
 
-      this.setState({productCategory:data.category, productName:data.name})
-
-    })
+    // })
 
 
   }
@@ -85,7 +87,6 @@ class Overview extends Component {
 
       </aside>
     </div>
-    {/* <footer>related products</footer> */}
 
     </>
     )
