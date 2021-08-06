@@ -304,10 +304,10 @@
   &__carousel {
     // outline: 2px solid blueviolet;
     display: flex;
-    justify-content: space-evenly;
-    // width: 80%;
-    margin: auto;
+    justify-content: flex-start;
+    // margin: auto;
     position: relative;
+    width: 85%;
     // right: 150px;
   }
 }

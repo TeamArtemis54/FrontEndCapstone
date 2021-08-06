@@ -140,9 +140,9 @@
 }
 .relatedList__carousel {
   display: flex;
-  justify-content: space-evenly;
-  margin: auto;
+  justify-content: flex-start;
   position: relative;
+  width: 85%;
 }
 
 .arrow__left {
@@ -629,12 +629,6 @@ ul {
   height: 500px;
 }
 
-#overview-description{
-  padding-left:10%;
-  padding-right:30%
-
-}
-
 /* ////////ARROWS-start/////// */
 /* https://www.w3schools.com/howto/howto_css_arrows.asp */
 #left-button, #right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
@@ -776,7 +770,6 @@ body {
 }
 
 #main > aside {
-  background: beige;
   order: 2;
 }
 
@@ -815,7 +808,6 @@ body {
 }
 
 #main > aside {
-  background: beige;
   order: 2;
 }
 
