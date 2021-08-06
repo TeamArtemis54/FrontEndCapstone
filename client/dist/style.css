@@ -629,12 +629,6 @@ ul {
   height: 500px;
 }
 
-#overview-description{
-  padding-left:10%;
-  padding-right:30%
-
-}
-
 /* ////////ARROWS-start/////// */
 /* https://www.w3schools.com/howto/howto_css_arrows.asp */
 #left-button, #right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
@@ -776,7 +770,6 @@ body {
 }
 
 #main > aside {
-  background: beige;
   order: 2;
 }
 
@@ -815,7 +808,6 @@ body {
 }
 
 #main > aside {
-  background: beige;
   order: 2;
 }
 
@@ -1005,7 +997,6 @@ html, body {
   height: 72px;
   display: flex;
   align-items: center;
-  position: fixed;
   top: 0;
   border-bottom: 2px #1f2833 solid;
   background: #c5c6c7;
@@ -1016,7 +1007,6 @@ html, body {
   display: flex;
   flex-direction: column;
   background: #c5c6c7;
-  margin-top: 72px;
 }
 
 .entry-point .overview {
@@ -1063,7 +1053,6 @@ html, body {
   height: 72px;
   display: flex;
   align-items: center;
-  position: fixed;
   top: 0;
   border-bottom: 2px #1f2833 solid;
   background: #c5c6c7;
