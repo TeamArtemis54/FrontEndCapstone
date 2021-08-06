@@ -21,9 +21,12 @@ const OutfitList = (props) => {
   const [outfitThumbnail, setOutfitThumbnail] = useState([]);
 
   function addItem() {
+    setOutfitInfo([]);
+    setOutfitThumbnail([]);
     let listItem =  [...outfitList];
     if (outfitList.indexOf(currentProduct) < 0) {
-      listItem = [...listItem, currentProduct];
+      // listItem = [...listItem, currentProduct];
+      listItem.push(currentProduct);
       setOutfitList(listItem);
     } else {
       console.log('Item has already been added!');
@@ -34,6 +37,7 @@ const OutfitList = (props) => {
   }
 
   useEffect(() => {
+    console.log('this should get hit after changing outfitList no?');
     if (outfitList.length > 0) {
       outfitList.map((item) => {
         getOutfitInfo(item.id);
@@ -64,23 +68,30 @@ const OutfitList = (props) => {
 
   function removeOutfitItem(id) {
     console.log('here');
-    if (outfitList.length > 0) {
+    if (outfitInfo.length > 0) {
       for (let i = 0; i < outfitList.length; i++) {
-        if (outfitList[i].id === id) {
-          outfitList.splice(i, 1);
+        if (outfitInfo[i].id === id) {
+          outfitInfo.splice(i, 1);
         }
       }
+      // outfitList.pop();
+      console.log('outfitlist after', outfitInfo);
+      setOutfitList(outfitInfo);
+      setOutfitInfo([]);
+      setOutfitThumbnail([]);
     }
+
   }
 
   return (
     // console.log('current in outfit', currentProduct),
+    console.log('outfitList before', outfitList),
     <div className="outfitList">
       {/* <AddItemCard /> */}
       <CardComponent type={"add"} productId={currentProduct.id} addFn={addItem}/>
       {outfitInfo.length > 0 && outfitThumbnail.length > 0 ?
         outfitInfo.map((item, i) => {
-          return <CardComponent type={"outfit"} outfitProduct={item} outfitThumbnail={outfitThumbnail[i]} deleteItemFn={removeOutfitItem}/>
+          return <CardComponent key={i} type={"outfit"} outfitProduct={item} outfitThumbnail={outfitThumbnail[i]} deleteItemFn={removeOutfitItem}/>
         }) :
         console.log('not yet ready')
       }
