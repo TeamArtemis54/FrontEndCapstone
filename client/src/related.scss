@@ -272,9 +272,10 @@
 // THE NEW CSS - 8/03/2021
 
 .relatedWidget_container {
-  width: 100%;
   // outline: 2px solid red;
   padding: 1%;
+  background-color: #fff;
+  margin: 3% 0;
 
   &__title {
     font-size: 1rem;
@@ -286,6 +287,7 @@
     padding: 2%;
     // outline: 2px solid blue;
     letter-spacing: 1px;
+    color: #030A0A;
   }
 }
 
@@ -358,6 +360,7 @@
     // width: 100%;
     display: flex;
     justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 
     &__thumbnail {
       width: 300px;
@@ -404,6 +407,7 @@
     // outline: 2px solid blue;
     padding: 0 1%;
     font-family: 'Open Sans';
+    color: #030A0A;
 
     &__category {
       text-transform: uppercase;

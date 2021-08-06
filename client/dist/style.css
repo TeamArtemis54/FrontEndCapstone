@@ -113,8 +113,9 @@
 }
 
 .relatedWidget_container {
-  width: 100%;
   padding: 1%;
+  background-color: #fff;
+  margin: 3% 0;
 }
 .relatedWidget_container__title {
   font-size: 1rem;
@@ -125,6 +126,7 @@
   margin: auto;
   padding: 2%;
   letter-spacing: 1px;
+  color: #030A0A;
 }
 
 .relatedList {
@@ -180,6 +182,7 @@
   height: 65%;
   display: flex;
   justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .card__mediaBox__thumbnail {
   width: 300px;
@@ -217,6 +220,7 @@
   height: 30%;
   padding: 0 1%;
   font-family: "Open Sans";
+  color: #030A0A;
 }
 .card__info__category {
   text-transform: uppercase;

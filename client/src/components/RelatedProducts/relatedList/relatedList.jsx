@@ -95,7 +95,7 @@ const RelatedList = (props) => {
   function shiftLeft() {
     let carousel = document.getElementsByClassName('relatedList__carousel');
     let rightPos = parseInt(carousel[0].style.right);
-    console.log(rightPos);
+    // console.log(rightPos);
 
     let amount = 0;
 
@@ -114,7 +114,7 @@ const RelatedList = (props) => {
   function shiftRight() {
     let carousel = document.getElementsByClassName('relatedList__carousel');
     let rightPos = parseInt(carousel[0].style.right);
-    console.log(rightPos);
+    // console.log(rightPos);
 
     let amount = 0;
 
