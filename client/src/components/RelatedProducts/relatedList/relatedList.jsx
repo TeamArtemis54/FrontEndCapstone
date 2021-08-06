@@ -85,13 +85,20 @@ const RelatedList = (props) => {
       .catch((err) => console.log(err));
   }
 
+  function resetRelatedList() {
+    setRelatedIdsList([]);
+    setProducts([]);
+    setThumbnails([]);
+    setReviewMeta([]);
+  }
+
   return (
     // console.log('reviewsMeta', reviewsMeta),
     <div className="relatedList">
       {/* <img className="arrow__left" src={arrow} />
       <div className="relatedList__carousel"> */}
         {products.length > 0 && thumbnails.length && reviewsMeta.length > 0 ? products.map((item, i) => {
-          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn} cardFn={cardFn}/>
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn} cardFn={cardFn} resetFn={resetRelatedList}/>
         }) : console.log('not yet ready')}
       {/* </div>
       <img className="arrow__right" src={arrow} /> */}

@@ -32,8 +32,8 @@ const App = () => {
       });
   }, []);
 
-  function setMainProduct(id) {
-    setProductId(id);
+  function setMainProduct(clickedProduct) {
+    setProduct(clickedProduct);
   }
 
   return (

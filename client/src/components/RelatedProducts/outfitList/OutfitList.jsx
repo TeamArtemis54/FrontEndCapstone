@@ -65,20 +65,22 @@ const OutfitList = (props) => {
 
   function removeOutfitItem(id) {
     console.log('here');
-    console.log('outfitList before', outfitList);
-    if (outfitList.length > 0) {
-      // for (let i = 0; i < outfitList.length; i++) {
-      //   if (outfitList[i].id === id) {
-      //     outfitList.splice(i, 1);
-      //   }
-      // }
-      outfitList.pop();
+    if (outfitInfo.length > 0) {
+      for (let i = 0; i < outfitList.length; i++) {
+        if (outfitInfo[i].id === id) {
+          outfitInfo.splice(i, 1);
+        }
+      }
+      // outfitList.pop();
+      console.log('outfitlist after', outfitInfo);
+      setOutfitList(outfitInfo);
     }
-    console.log('outfitlist after', outfitList);
+
   }
 
   return (
     // console.log('current in outfit', currentProduct),
+    console.log('outfitList before', outfitList),
     <div className="outfitList">
       {/* <AddItemCard /> */}
       <CardComponent type={"add"} productId={currentProduct.id} addFn={addItem}/>

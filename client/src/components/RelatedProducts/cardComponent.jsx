@@ -6,7 +6,7 @@ const axios = require('axios');
 
 const CardComponent = (props) => {
   // destructuring the type that is sent in
-  const { type, productId, starFn, cardFn } = props;
+  const { type, productId, starFn, cardFn, resetFn } = props;
   // destructuring the productId that is sent in
   // const { productId } = props;
 
@@ -20,7 +20,10 @@ const CardComponent = (props) => {
     // console.log('thumbnails', thumbnails);
     // console.log('reviewMEta ratings', reviewsMeta.ratings);
     return (
-      <div className="card" onClick={() => cardFn(product)}>
+      <div className="card" onClick={() => {
+        cardFn(product);
+        resetFn();
+      }}>
         <div className="card__mediaBox">
           {/* // if it has thumbnail
           // if it doesn't have thumbnail */}
@@ -70,9 +73,7 @@ const CardComponent = (props) => {
           }
         </div>
         <div className="card__info">
-          <p className="card__info__category">{outfitProduct.category}</p>
           <p className="card__info__name">{outfitProduct.name}</p>
-          <p className="card__info__price">${outfitProduct.default_price}</p>
           {/* {reviewsMeta !== undefined ?
             <Stars review_meta={reviewsMeta}/> :
             console.log('not ready')
