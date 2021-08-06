@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import addZoom from './zoom.js'
+import addZoom from './zoom.js'
 // import addZoom2 from './zoom2.js'
 
 const getStyle = require('./httpHandler.jsx').getStyle
@@ -10,6 +10,8 @@ class ImageGallery extends Component {
   constructor (props) {
     super(props);
     this.changeFocusedImage = this.changeFocusedImage.bind(this)
+    this.scrollImageGallery = this.scrollImageGallery.bind(this)
+    this.overlay = this.overlay.bind(this)
 
     this.state = {
       focusedImageIndex: 0,
@@ -42,15 +44,58 @@ class ImageGallery extends Component {
     }
   }
 
-  changeFocusedImage(event){
-       var index = event.target.dataset.index
-       this.setState({focusedImageIndex: index})
+  scrollImageGallery(direction){
+    var styleIndex = this.props.selectedStyle
+    var stylePhotos=this.props.styles[styleIndex].photos
+    if ((this.state.focusedImageIndex < stylePhotos.length-1) && direction == 'right'){
+      this.setState({focusedImageIndex: Number(this.state.focusedImageIndex) + 1})
+
+      if (this.state.focusedImageIndex > this.state.carouselIndex + 5){
+        this.setState({carouselIndex: this.state.carouselIndex + 1})
+      }
+    }
+    if ((this.state.focusedImageIndex > 0) && direction == 'left'){
+
+      if (this.state.focusedImageIndex <= this.state.carouselIndex){
+        this.setState({carouselIndex: this.state.focusedImageIndex - 1})
+      }
+      this.setState({focusedImageIndex: Number(this.state.focusedImageIndex) - 1})
+
+
+    }
+
+
   }
 
-  overlay(){
-    document.getElementById("overlay").style.display = "flex";
-    // document.getElementById("zoom-img").style.display = "block";
+  componentDidUpdate(){
+    // console.log('tsxtsxv')
+    // console.log(document.querySelectorAll(`[data-index~="5"]`))
+    // console.log(document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`))
 
+    // if (document.getElementById("focused")){
+    //   document.getElementById("focused").id = ""
+    // }
+
+    // document.querySelectorAll(`[data-index~="${this.state.focusedImageIndex}"]`)[1].id = 'focused'
+  }
+
+  changeFocusedImage(event){
+
+    // if (document.getElementById("focused")){
+    //   document.getElementById("focused").id = ""
+    // }
+    // event.target.id = 'focused'
+
+    var index = event.target.dataset.index
+    this.setState({focusedImageIndex: index})
+  }
+
+  overlay(open_close){
+    if (open_close === 'open'){
+      document.getElementById("overlay").style.display = "flex";
+    } else {
+      document.getElementById("overlay").style.display = "none";
+    }
   }
 
   zoom(){
@@ -62,6 +107,8 @@ class ImageGallery extends Component {
   }
 
   componentDidMount(){
+    // document.querySelectorAll(`[data-index~="0"]`)[1].id = 'focused'
+    //console.log(this.props.selectedStyle)
   }
 
 
@@ -74,60 +121,91 @@ class ImageGallery extends Component {
     if(this.props.hasData){
       var styleIndex = this.props.selectedStyle
       var stylePhotos=this.props.styles[styleIndex].photos
-
       var mainImage = stylePhotos[this.state.focusedImageIndex]
+      // console.log(styleIndex)
+      // console.log(stylePhotos)
       // console.log(mainImage)
-      // console.log('mainImage')
+      // console.log(this.props.styles)
+      // console.log(this.props.selectedStyle)
+      // console.log(this.props.styles[this.props.selectedStyle].photos)
+      console.log('carousel', this.state.carouselIndex)
+      console.log('fII', this.state.focusedImageIndex)
 
-      url = this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex].url
+      // if(this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex]){
+        url = this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex].url
+      // }
 
-// console.log(url)
+      // console.log(this.props.styles[this.props.selectedStyle].photos[this.state.focusedImageIndex])
+      // console.log('fII', this.state.focusedImageIndex)
+
+
     } else {
       var stylePhotos = []
       var mainImage = {thumbnail_url:''}
-      // console.log('sfsff')
     }
-
-
-
     return (
       <>
+
       <div id='main-image-container'>
-      {/* <div id='dumbthing'></div> */}
 
 
-      <ul id='carousel'>
+      <button class='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+      <button class='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+
+      <ul className='carousel'>
+      <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
         {stylePhotos.map((image, index) => {
-          if (index >= carouselStart && index <= carouselEnd){return (
-            <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
-            {/* {index} */}
-            <img data-index={index} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
-            )
+          if (index >= carouselStart && index <= carouselEnd){
+            var idForFocus = 'nothing'
+
+            if (index == this.state.focusedImageIndex){
+              idForFocus = 'focused'
+              console.log('contrast',index, this.state.focusedImageIndex)
+              console.log('FOCUSED!')
+              console.log(index)
+            }
+              return (
+                <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+                <img data-index={index} id={idForFocus} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+                )
           }
 
         })}
+      <button id='up-button' onClick = {()=>{this.scrollThumbnails('up')}}><i class="arrow down"></i></button>
+
       </ul>
 
-
-
-
-        <img id='main-image' onClick={this.overlay.bind(this)} src={mainImage.thumbnail_url}></img>
+        <img id='main-image' onClick={()=>{this.overlay('open')}} src={mainImage.url}></img>
       </div>
 
       <div id="overlay">
-      <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
-        {/* <img src={mainImage.thumbnail_url}></img> */}
+
+
+        <button class='left-button' id='left-button-zoom' onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
+        <button class='right-button' id='right-button-zoom' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
+
+        <span id='close-overlay' onClick={()=>{this.overlay('close')}}>x</span>
+        <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
+        </div>
+        <ul className='carousel' id='carousel2'>
+                <button id='down-button' onClick = {()=>{this.scrollThumbnails('down')}}><i class="arrow up"></i></button>
+                {stylePhotos.map((image, index) => {
+                    if (index >= carouselStart && index <= carouselEnd){
+                        var idForFocus = 'nothing'
+                        if (index == this.state.focusedImageIndex){
+                          idForFocus = 'focused'
+                        }
+                        return (
+                          <li data-index={index} onClick={this.changeFocusedImage} key={image.thumbnail_url}>
+                          <img data-index={index} id={idForFocus} onClick={this.changeFocusedImage}  src={image.thumbnail_url} ></img></li>
+                        )
+                    }
+                })}
+                <button id='up-button' onClick = {()=>{this.scrollThumbnails('up')}}><i class="arrow down"></i></button>
+
+            </ul>
       </div>
-      </div>
 
-
-      {/* <div id="zoom-img" onClick={this.zoom.bind(this)} style={{    backgroundImage: `url(${url})`}}>
-      </div> */}
-
-      <hr></hr>
-
-      <button onClick = {()=>{this.scrollThumbnails('up')}}>Next</button>
-      <button onClick = {()=>{this.scrollThumbnails('down')}}>Previous</button>
 
 
 

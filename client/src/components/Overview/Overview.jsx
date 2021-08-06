@@ -17,7 +17,8 @@ class Overview extends Component {
       styles:[],
       selectedStyle: 0,
 
-      //new for productInfo
+      //****Changing 'fetcher' from api-call to 'product' prop****//
+      product: {},
       productCategory: '',
       productName: ''
     }
@@ -28,39 +29,32 @@ class Overview extends Component {
   }
 
   componentDidMount(){
-    fetcher.getStyle('17069', (err, data)=>{
+    fetcher.getStyle('17071', (err, data)=>{
       if(err){
         console.log(err)
       }
-      // console.log('STYLE DATA')
-      // console.log(data)
+
       this.setState({styles: data.results, dataDidLoad: true})
     })
 
-
-    fetcher.getProduct('17071', (err, data)=>{
-      if(err){
-        console.log(err)
-      }
-      // console.log('PRODUCT DATA')
-      // console.log(data)
-      // console.log(data.category, data.name)
-      this.setState({productCategory:data.category, productName:data.name})
-
-
-      //this.setState({styles: data.results, dataDidLoad: true})
-    })
-
-
+    //****Changing 'fetcher' from api-call to 'product' prop****//
+    // fetcher.getProduct('17071', (err, data)=>{
+    //   if(err){
+    //     console.log(err)
+    //   }
+      this.setState({productCategory:this.props.product.category, productName:this.props.product.name})
   }
 
-  // selectedStylePrice(price){
-  //   //alert(price)
-  //   return price
-  // }
+  componentWillReceiveProps(){
+    console.log(this.props.product)
+    this.setState({productCategory:this.props.product.category, productName:this.props.product.name})
+  }
 
   render(){
     if(this.state.dataDidLoad){
+
+      var styleName = this.state.styles[this.state.selectedStyle]['name']
+
       var price = this.state.styles[this.state.selectedStyle]['original_price']
       if (this.state.styles[this.state.selectedStyle]['sale_price']){
         var salePrice = this.state.styles[this.state.selectedStyle]['sale_price']
@@ -75,7 +69,6 @@ class Overview extends Component {
     return (
     <>
 
-    <header>Header</header>
     <div id="main">
       <article>
 
@@ -84,7 +77,7 @@ class Overview extends Component {
       </article>
       <aside>
 
-      <ProductInfo salePrice={salePrice} selectedStylePrice={price} productCategory ={this.state.productCategory} productName={this.state.productName}/>
+      <ProductInfo salePrice={salePrice} selectedStylePrice={price} productCategory ={this.state.productCategory} productName={this.state.productName} styleName={styleName}/>
 
       <StyleSelector changeStyle={this.changeStyle} selectedStyle={this.state.selectedStyle} hasData={this.state.dataDidLoad} styles={this.state.styles}/>
 
@@ -92,17 +85,15 @@ class Overview extends Component {
 
 
       </aside>
+
+
     </div>
-    {/* <footer>related products</footer> */}
+
+    <div id='overview-description'><div><strong>{this.props.product.slogan}</strong></div><div>{this.props.product.description}</div></div>
 
     </>
     )
   }
 };
-//ReactDom.render(<Overview />, document.getElementById('overview'));
-
-// 'https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfp/products/'
-
-//   'Authorization': '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'
 
 export default Overview;

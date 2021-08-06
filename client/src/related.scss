@@ -272,9 +272,10 @@
 // THE NEW CSS - 8/03/2021
 
 .relatedWidget_container {
-  width: 100%;
-  outline: 2px solid red;
+  // outline: 2px solid red;
   padding: 1%;
+  background-color: #fff;
+  margin: 3% 0;
 
   &__title {
     font-size: 1rem;
@@ -284,25 +285,30 @@
     width: 90%;
     margin: auto;
     padding: 2%;
-    outline: 2px solid blue;
+    // outline: 2px solid blue;
     letter-spacing: 1px;
+    color: #030A0A;
   }
 }
 
 .relatedList {
   width: 90%;
+  height: 100%;
   margin: auto;
-  outline: 2px solid orange;
+  // outline: 2px solid orange;
   display: flex;
   overflow-x: hidden;
   align-items: center;
+  justify-content: flex-start;
 
   &__carousel {
-    outline: 2px solid blueviolet;
+    // outline: 2px solid blueviolet;
     display: flex;
-    justify-content: space-evenly;
-    // width: 80%;
-    margin: auto;
+    justify-content: flex-start;
+    // margin: auto;
+    position: relative;
+    width: 85%;
+    // right: 150px;
   }
 }
 
@@ -310,11 +316,15 @@
   height: 40px;
   width: 40px;
   transform: rotate(180deg);
+  position: absolute;
+  left: 150px;
 }
 
 .arrow__right {
   height: 40px;
   width: 40px;
+  position: absolute;
+  right: 150px;
 }
 
 
@@ -322,10 +332,10 @@
 
 .outfitList {
   width: 90%;
+  height: 100%;
   margin: auto;
-  outline: 2px solid green;
+  // outline: 2px solid green;
   display: flex;
-  flex-direction: row;
   // justify-content: space-evenly;
   justify-content: flex-start;
 }
@@ -334,24 +344,26 @@
 
 // CARD COMPONENT BASIC STYLING FOR OUTLINE
 .card {
-  outline: 2px solid aqua;
+  // outline: 2px solid aqua;
   padding: 1%;
   width: 340px;
   max-width: 25%;
-  height: 400px;
+  height: 455px;
   cursor: pointer;
-  // border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
 
   &__mediaBox {
-    outline: 2px solid green;
+    // outline: 2px solid green;
     text-align: center;
     padding: 5%;
     height: 65%;
+    // width: 100%;
     display: flex;
     justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 
     &__thumbnail {
-      width: 100%;
+      width: 300px;
       height: 100%;
       background-size: cover;
       background-repeat: no-repeat;
@@ -371,6 +383,20 @@
       &__star:hover {
         color: #ffdc14;
       }
+
+      &__delete {
+        color: #fff;
+        width: 25px;
+        font-size: 1.3rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-left: 80%;
+        padding: 0.5%;
+      }
+
+      &__delete:hover {
+        color: #45a29e;
+      }
     }
 
   }
@@ -378,27 +404,34 @@
   &__info {
     width: 100%;
     height: 30%;
-    outline: 2px solid blue;
+    // outline: 2px solid blue;
     padding: 0 1%;
     font-family: 'Open Sans';
+    color: #030A0A;
 
     &__category {
       text-transform: uppercase;
       font-size: 0.75rem;
       font-weight: 300;
-      outline: 2px solid green;
+      margin: 0;
+      padding: 1%;
+      // outline: 2px solid green;
     }
 
     &__name {
       font-weight: 600;
       font-size: 1.1rem;
-      outline: 2px solid orange;
+      margin: 0;
+      padding: 1%;
+      // outline: 2px solid orange;
     }
 
     &__price {
       font-weight: 300;
       font-size: 0.75rem;
-      outline: 2px solid red;
+      margin: 0;
+      padding: 1%;
+      // outline: 2px solid red;
     }
   }
 }
@@ -406,7 +439,7 @@
 
 // SPECIFICALLY FOR ADD ITEM CARDS
 .addItem_Card {
-  outline: 1px solid blue;
+  // outline: 1px solid blue;
   width: 100%;
   height: 100%;
   display: flex;

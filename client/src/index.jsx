@@ -32,14 +32,18 @@ const App = () => {
       });
   }, []);
 
+  function setMainProduct(clickedProduct) {
+    setProduct(clickedProduct);
+  }
+
   return (
     <div className='entry-point'>
-      {/* <Header /> */}
+      <Header />
 
-      <Overview/>
+      <Overview product={product} />
 
       <RelatedProductsWidget
-        product={product}/>
+        product={product} changeMainProductFn={setMainProduct}/>
 
       <RatingsAndReviews
         product_id={product_id}

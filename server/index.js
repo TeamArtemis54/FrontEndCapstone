@@ -2,6 +2,7 @@
 var express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+var compression = require('compression');
 
 // Path
 const path = require('path');
@@ -13,6 +14,7 @@ var router = require('./routes.js');
 var app = express();
 module.exports.app = app;
 
+app.use(compression());
 app.set('port', 3000);
 
 app.use(bodyParser.json());
