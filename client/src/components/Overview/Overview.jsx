@@ -89,7 +89,7 @@ class Overview extends Component {
 
     </div>
 
-    <div id='description'>{this.props.product.description}</div>
+    <div id='overview-description'><div><strong>{this.props.product.slogan}</strong></div><div>{this.props.product.description}</div></div>
 
     </>
     )
