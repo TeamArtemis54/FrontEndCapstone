@@ -24,7 +24,6 @@ class AddToCart extends Component{
       <>
       <div id='add-to-cart-row'>
         {inStock ? <button id='add-to-cart-row--button' onClick={this.handleClick}>Add To Cart</button> : 'poop'}
-        <div id='add-to-cart-row--star'> star </div>
       </div>
       </>
     )

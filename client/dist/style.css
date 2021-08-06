@@ -629,6 +629,12 @@ ul {
   height: 500px;
 }
 
+#overview-description{
+  padding-left:10%;
+  padding-right:30%
+
+}
+
 /* ////////ARROWS-start/////// */
 /* https://www.w3schools.com/howto/howto_css_arrows.asp */
 #left-button, #right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
