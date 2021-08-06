@@ -42,14 +42,12 @@ class Overview extends Component {
     //   if(err){
     //     console.log(err)
     //   }
-
-      this.setState({productCategory:this.state.product.category, productName:this.state.product.name})
-
-    // })
-
-
+      this.setState({productCategory:this.props.product.category, productName:this.props.product.name})
   }
 
+  componentWillReceiveProps(){
+    this.setState({productCategory:this.props.product.category, productName:this.props.product.name})
+  }
 
   render(){
     if(this.state.dataDidLoad){
