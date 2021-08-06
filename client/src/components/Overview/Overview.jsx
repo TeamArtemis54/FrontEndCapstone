@@ -46,6 +46,7 @@ class Overview extends Component {
   }
 
   componentWillReceiveProps(){
+    console.log(this.props.product)
     this.setState({productCategory:this.props.product.category, productName:this.props.product.name})
   }
 
@@ -84,7 +85,11 @@ class Overview extends Component {
 
 
       </aside>
+
+
     </div>
+
+    <div id='description'>{this.props.product.description}</div>
 
     </>
     )
