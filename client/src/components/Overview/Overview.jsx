@@ -78,7 +78,6 @@ class Overview extends Component {
     return (
     <>
 
-    <header>Header</header>
     <div id="main">
       <article>
 
