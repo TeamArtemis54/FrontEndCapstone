@@ -17,7 +17,7 @@ const axios = require('axios');
 
 const RelatedProductsWidget = (props) => {
 
-  const { product, setMainProductFn } = props;
+  const { product, changeMainProductFn } = props;
 
   // console.log('the PRODUCT BEING DISPLAYED', product);
 
@@ -117,15 +117,15 @@ const RelatedProductsWidget = (props) => {
 
   // ATTENTION!!!!!
   // this function will get replaced by changeMainProductFn passed in from prop
-  function handleCardClick(clickedProduct) {
-    // here I want to be able to send the clicked product id to the overview component
-    console.log(clickedProduct);
-  }
+  // function handleCardClick(clickedProduct) {
+  //   // here I want to be able to send the clicked product id to the overview component
+  //   console.log(clickedProduct);
+  // }
 
   return(
     <div className="relatedWidget_container">
       <h3 className="relatedWidget_container__title">Related Products</h3>
-      <RelatedList currentProduct={currentProduct} starFn={handleStarClick} cardFn={handleCardClick}/>
+      <RelatedList currentProduct={currentProduct} starFn={handleStarClick} cardFn={changeMainProductFn}/>
       <h3 className="relatedWidget_container__title">Your Outfit</h3>
       <OutfitList currentProduct={currentProduct} />
       <CompareModal clickedInfo={modalTargetData} currentInfo={modalCurrData} show={showModal} closeClick={closeModal}/>

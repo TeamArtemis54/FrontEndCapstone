@@ -85,16 +85,62 @@ const RelatedList = (props) => {
       .catch((err) => console.log(err));
   }
 
+  function resetRelatedList() {
+    setRelatedIdsList([]);
+    setProducts([]);
+    setThumbnails([]);
+    setReviewMeta([]);
+  }
+
+  function shiftLeft() {
+    let carousel = document.getElementsByClassName('relatedList__carousel');
+    let rightPos = parseInt(carousel[0].style.right);
+    console.log(rightPos);
+
+    let amount = 0;
+
+    if (!rightPos) {
+      amount = 300;
+    } else {
+      amount = rightPos - 300;
+      // console.log('sec')
+    }
+    // console.log('carousel style', rightPos.slice(0, rightPos.length - 2));
+
+    // console.log(amount);
+    carousel[0].style.right = `${amount}px`;
+  }
+
+  function shiftRight() {
+    let carousel = document.getElementsByClassName('relatedList__carousel');
+    let rightPos = parseInt(carousel[0].style.right);
+    console.log(rightPos);
+
+    let amount = 0;
+
+    if (!rightPos) {
+      amount = 300;
+    } else {
+      amount = rightPos + 300;
+      // console.log('sec')
+    }
+    // console.log('carousel style', rightPos.slice(0, rightPos.length - 2));
+
+    // console.log(amount);
+    carousel[0].style.right = `${amount}px`;
+  }
+
   return (
     // console.log('reviewsMeta', reviewsMeta),
     <div className="relatedList">
-      {/* <img className="arrow__left" src={arrow} />
-      <div className="relatedList__carousel"> */}
+      <img className="arrow__left" onClick={shiftLeft} src={arrow} />
+      <img className="arrow__right" onClick={shiftRight} src={arrow} />
+      <div className="relatedList__carousel">
         {products.length > 0 && thumbnails.length && reviewsMeta.length > 0 ? products.map((item, i) => {
-          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn} cardFn={cardFn}/>
+          return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn} cardFn={cardFn} resetFn={resetRelatedList}/>
         }) : console.log('not yet ready')}
-      {/* </div>
-      <img className="arrow__right" src={arrow} /> */}
+      </div>
+
     </div>
   )
 
