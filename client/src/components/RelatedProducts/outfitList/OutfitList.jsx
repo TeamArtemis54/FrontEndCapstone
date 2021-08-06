@@ -34,6 +34,7 @@ const OutfitList = (props) => {
   }
 
   useEffect(() => {
+    console.log('this should get hit after changing outfitList no?');
     if (outfitList.length > 0) {
       outfitList.map((item) => {
         getOutfitInfo(item.id);
@@ -64,13 +65,16 @@ const OutfitList = (props) => {
 
   function removeOutfitItem(id) {
     console.log('here');
+    console.log('outfitList before', outfitList);
     if (outfitList.length > 0) {
-      for (let i = 0; i < outfitList.length; i++) {
-        if (outfitList[i].id === id) {
-          outfitList.splice(i, 1);
-        }
-      }
+      // for (let i = 0; i < outfitList.length; i++) {
+      //   if (outfitList[i].id === id) {
+      //     outfitList.splice(i, 1);
+      //   }
+      // }
+      outfitList.pop();
     }
+    console.log('outfitlist after', outfitList);
   }
 
   return (
@@ -80,7 +84,7 @@ const OutfitList = (props) => {
       <CardComponent type={"add"} productId={currentProduct.id} addFn={addItem}/>
       {outfitInfo.length > 0 && outfitThumbnail.length > 0 ?
         outfitInfo.map((item, i) => {
-          return <CardComponent type={"outfit"} outfitProduct={item} outfitThumbnail={outfitThumbnail[i]} deleteItemFn={removeOutfitItem}/>
+          return <CardComponent key={i} type={"outfit"} outfitProduct={item} outfitThumbnail={outfitThumbnail[i]} deleteItemFn={removeOutfitItem}/>
         }) :
         console.log('not yet ready')
       }
