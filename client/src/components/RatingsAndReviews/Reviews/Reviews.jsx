@@ -26,17 +26,23 @@ const Reviews = ({ reviews, product_id }) => {
           )
         })}
       </div>
-      <div className={show ? 'form-section show-review-form' : 'form-section hide-review-form'}>
-        {show ? <ReviewForm product_id={product_id} /> : <Button
-          onClick={() => seeMore()}
-          className='more_reviews'>More Reviews</Button>}
+      {/* <div className={show ? 'form-section show-review-form' : 'form-section hide-review-form'}> */}
+        {show ? <ReviewForm
+                  product_id={product_id}>
+                  <Button
+                    onClick={() => setShowReviewForm(!show)}
+                    className={show ? 'cancel-review' : 'add-review'}>{show ? 'Cancel' : 'Add a Review'}</Button>
+                </ReviewForm>
+              : <Button
+                  onClick={() => seeMore()}
+                  className='more_reviews'>More Reviews</Button>}
         {/* <Button
           onClick={() => setShowReviewForm(!show)}
           className={show ? 'cancel-review' : 'add-review'}>{show ? 'Cancel' : 'Add a Review'}</Button> */}
-      </div>
+      {/* </div> */}
       <Button
         onClick={() => setShowReviewForm(!show)}
-        className={show ? 'cancel-review' : 'add-review'}>{show ? 'Cancel' : 'Add a Review'}</Button>
+        className='add-review'>Add a Review</Button>
     </div>
   )
 };

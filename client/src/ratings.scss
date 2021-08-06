@@ -1,5 +1,9 @@
-* {
-  outline: 1px solid rgb(93, 38, 182);
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .ratings_and_reviews {
   display: flex;
@@ -10,7 +14,7 @@
     flex-direction: column;
 
     width: 35%;
-    background: #c5c6c7;
+    background: #ffffff;
 
     .ratings_left {
       display: flex;
@@ -65,7 +69,7 @@
     flex-direction: column;
 
     width: 65%;
-    background: #45a29e;
+    background: #ffffff;
 
     .review {
       // display: flex;
@@ -107,13 +111,7 @@
   }
 }
 
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+
 
 .hide-review-form {
  display: none;
@@ -126,7 +124,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #c5c6c7;
+  background: #ffffff;
   width: 54%;
   height: 68vh;
   box-shadow: 0 0 21px 9px #030a0a;
@@ -136,9 +134,10 @@
   align-content: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
+  // top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: -261%;
+  transform: translate(-50%, 0%);
   background: #030a0a;
   color: #c5c6c7;
   width: 523px;
@@ -151,10 +150,11 @@
   justify-content: space-between;
   align-content: center;
   flex-wrap: wrap;
-  background: #c5c6c7;
+  background: #ffffff;
   opacity: 1;
   color: #030a0a;
   width: 100%;
+  box-shadow: 0 0 3px 23px black;
 }
 .review-form__rating {
   display: flex;

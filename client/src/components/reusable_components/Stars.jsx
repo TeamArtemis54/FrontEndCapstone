@@ -59,7 +59,7 @@ const Stars = (props) => {
             {[1, 2, 3, 4, 5].map((item, idx) => {
               return (
                 <div key={idx} className='stars__underlay--stars-container_stars'>
-                  <img className='stars__underlay--stars-container_stars__image' src='star-ii.png' />
+                  <img className='stars__underlay--stars-container_stars__image' src='star.png' />
                 </div>
               )
             })}

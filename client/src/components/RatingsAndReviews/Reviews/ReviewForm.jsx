@@ -123,6 +123,8 @@ const ReviewForm = (props) => {
           type='button'
           onClick={() => handleFormSubmission()}>Submit Review</Button>
 
+          {props.children}
+
       </form>
     </div>
   )
