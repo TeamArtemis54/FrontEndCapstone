@@ -56,7 +56,7 @@ const CardComponent = (props) => {
 
   function OutfitCard() {
     // console.log('outfitinfo', outfitProduct);
-    console.log('outfitThumbnail', outfitThumbnail);
+    // console.log('outfitThumbnail', outfitThumbnail);
     return (
       <div className="card">
         <div className="card__mediaBox">
