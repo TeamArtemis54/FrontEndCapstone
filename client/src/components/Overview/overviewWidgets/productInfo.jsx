@@ -16,7 +16,7 @@ class ProductInfo extends Component{
 
   getReviewsMeta() {
     // axios.get(`/api/reviews/meta/${this.props.product.id}`)
-    axios.get(`/api/reviews/meta/1701`)
+    axios.get(`/api/reviews/meta/17071`)
       .then((response) => {
         this.setState({
           reviewsMeta: response.data
