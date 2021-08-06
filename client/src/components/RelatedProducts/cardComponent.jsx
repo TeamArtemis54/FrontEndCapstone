@@ -18,7 +18,7 @@ const CardComponent = (props) => {
   function RelatedCard() {
     // console.log('product', product);
     // console.log('thumbnails', thumbnails);
-    // console.log('reviewMEta', reviewsMeta);
+    // console.log('reviewMEta ratings', reviewsMeta.ratings);
     return (
       <div className="card" onClick={() => cardFn(product)}>
         <div className="card__mediaBox">
@@ -47,18 +47,43 @@ const CardComponent = (props) => {
     )
   }
 
+
+  // FOR OUTFIT CARD
+  const { outfitProduct, outfitThumbnail, deleteItemFn } = props;
+
   function OutfitCard() {
+    // console.log('outfitinfo', outfitInfo);
+    // console.log('outfitThumbnail', outfitThumbnail);
     return (
       <div className="card">
         <div className="card__mediaBox">
-
+          {/* // if it has thumbnail
+          // if it doesn't have thumbnail */}
+          {thumbnails === null ?
+            <div className="card__mediaBox__thumbnail">No image available</div> :
+            <div className="card__mediaBox__thumbnail" style={{
+              backgroundImage: `url(${outfitThumbnail})`
+            }}>
+              <p onClick={() => {deleteItemFn(outfitProduct.id)}}
+              className="card__mediaBox__thumbnail__star">&#10005;</p>
+            </div>
+          }
+        </div>
+        <div className="card__info">
+          <p className="card__info__category">{outfitProduct.category}</p>
+          <p className="card__info__name">{outfitProduct.name}</p>
+          <p className="card__info__price">${outfitProduct.default_price}</p>
+          {/* {reviewsMeta !== undefined ?
+            <Stars review_meta={reviewsMeta}/> :
+            console.log('not ready')
+          } */}
         </div>
       </div>
     )
   }
 
 
-  // FOR ADD CARD
+  // FOR ADD CAR
   const { addFn } = props;
 
   function AddCard() {
