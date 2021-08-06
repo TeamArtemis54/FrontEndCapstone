@@ -612,6 +612,11 @@ ul {
   font-size: 3em;
 }
 
+#overview-description {
+  padding-left: 10%;
+  padding-right: 30%;
+}
+
 #zoom-img {
   z-index: 99;
   width: 85%;
@@ -997,7 +1002,6 @@ html, body {
   height: 72px;
   display: flex;
   align-items: center;
-  position: fixed;
   top: 0;
   border-bottom: 2px #1f2833 solid;
   background: #c5c6c7;
@@ -1008,7 +1012,6 @@ html, body {
   display: flex;
   flex-direction: column;
   background: #c5c6c7;
-  margin-top: 72px;
 }
 
 .entry-point .overview {
@@ -1055,7 +1058,6 @@ html, body {
   height: 72px;
   display: flex;
   align-items: center;
-  position: fixed;
   top: 0;
   border-bottom: 2px #1f2833 solid;
   background: #c5c6c7;
