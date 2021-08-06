@@ -6,7 +6,7 @@ function Button(props) {
       onClick={props.onClick}
       type={props.type}
       value={props.value}
-      className={props.class}>
+      className={props.className}>
       {props.children}
     </button>
   )

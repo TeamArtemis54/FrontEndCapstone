@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Review from './Review.jsx';
 import Button from './../../reusable_components/Button.jsx';
 import ReviewForm from './ReviewForm.jsx';
 
-const Reviews = ({reviews}) => {
-  // console.log(reviews)
+const Reviews = ({ reviews, product_id }) => {
   const [next, setNext] = useState(0);
   const [show, setShowReviewForm] = useState(false);
   let reviewList = reviews.slice(next, next + 2);
 
-  function seeMore () {
+  function seeMore() {
     setNext(next + 2);
     if (reviewList.length <= 1) {
       setNext(0);
@@ -27,15 +26,17 @@ const Reviews = ({reviews}) => {
           )
         })}
       </div>
-      <div className='form-section'>
-        {show ? <ReviewForm /> : null}
-        {show ? null : <Button
+      <div className={show ? 'form-section show-review-form' : 'form-section hide-review-form'}>
+        {show ? <ReviewForm product_id={product_id} /> : <Button
           onClick={() => seeMore()}
           className='more_reviews'>More Reviews</Button>}
-        <Button
+        {/* <Button
           onClick={() => setShowReviewForm(!show)}
-          className='add_a_review'>{show ? 'Cancel' : 'Add a Review'}</Button>
+          className={show ? 'cancel-review' : 'add-review'}>{show ? 'Cancel' : 'Add a Review'}</Button> */}
       </div>
+      <Button
+        onClick={() => setShowReviewForm(!show)}
+        className={show ? 'cancel-review' : 'add-review'}>{show ? 'Cancel' : 'Add a Review'}</Button>
     </div>
   )
 };

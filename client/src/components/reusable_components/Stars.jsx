@@ -51,12 +51,6 @@ const Stars = (props) => {
   return (
     <div className='stars'>
 
-      <div className='average__container'>
-        <div className='average__container--average'>
-          <p className='average__container--average_text'>{average = average || 0}</p>
-        </div>
-      </div>
-
       <div className='stars__container'>
         <div className='stars__underlay'>
           <div
