@@ -51,18 +51,11 @@ const Stars = (props) => {
   return (
     <div className='stars'>
 
-      <div className='average__container'>
-        <div className='average__container--average'>
-          <p className='average__container--average_text'>{average = average || 0}</p>
-        </div>
-      </div>
-
       <div className='stars__container'>
         <div className='stars__underlay'>
           <div
             className='stars__underlay--stars-container'
-            style={{ width: width, background: '#45a29e' }}>
-              {console.log('width', width)}
+            style={{ width: width, background: '#000000' }}>
             {[1, 2, 3, 4, 5].map((item, idx) => {
               return (
                 <div key={idx} className='stars__underlay--stars-container_stars'>

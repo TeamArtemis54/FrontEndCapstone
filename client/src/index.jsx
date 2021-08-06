@@ -46,6 +46,7 @@ const App = () => {
         product={product} changeMainProductFn={setMainProduct}/>
 
       <RatingsAndReviews
+        product_id={product_id}
         reviews={reviews}
         review_meta={review_meta} />
     </div>

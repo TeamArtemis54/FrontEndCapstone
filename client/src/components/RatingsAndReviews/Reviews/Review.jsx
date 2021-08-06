@@ -6,6 +6,7 @@ import moment from 'moment';
 
 const Review = (props) => {
   const {review} = props;
+  console.log(review)
   let date = moment(review.date)
   return (
     <div className='review'>
