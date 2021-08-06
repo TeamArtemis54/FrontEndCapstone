@@ -148,6 +148,7 @@ class ImageGallery extends Component {
 
       <div id='main-image-container'>
 
+
       <button class='left-button'  onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
       <button class='right-button' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
 
@@ -178,6 +179,7 @@ class ImageGallery extends Component {
       </div>
 
       <div id="overlay">
+
 
         <button class='left-button' id='left-button-zoom' onClick={()=>{this.scrollImageGallery('left')}}><i class="arrow left"></i></button>
         <button class='right-button' id='right-button-zoom' onClick={()=>{this.scrollImageGallery('right')}}><i class="arrow right"></i></button>
