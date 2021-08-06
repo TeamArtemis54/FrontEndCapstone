@@ -612,6 +612,12 @@ ul {
   font-size: 3em;
 }
 
+#overview-description{
+  padding-left:10%;
+  padding-right:30%
+
+}
+
 #zoom-img {
   z-index: 99;
   width: 85%;
