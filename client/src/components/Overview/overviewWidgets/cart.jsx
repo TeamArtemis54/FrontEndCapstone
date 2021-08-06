@@ -21,9 +21,12 @@ class AddToCart extends Component{
   render(){
     var inStock = this.props.inStock
     return(
-      <div>
-        {inStock ? <button onClick={this.handleClick}>Add To Cart</button> : 'poop'}
+      <>
+      <div id='add-to-cart-row'>
+        {inStock ? <button id='add-to-cart-row--button' onClick={this.handleClick}>Add To Cart</button> : 'poop'}
+        <div id='add-to-cart-row--star'> star </div>
       </div>
+      </>
     )
   }
 }
@@ -93,10 +96,10 @@ class Cart extends Component {
           })}
         </ul> */}
 
-        <form onSubmit={this.handleSubmit}>
+        <form id='shopping-form' onSubmit={this.handleSubmit}>
           <label>
-            size:
-            <select value={this.state.value} onChange={this.selectSize}>
+            {/* size: */}
+            <select id='select-size' value={this.state.value} onChange={this.selectSize}>
             <option value={null} >select size</option>
 
               {Object.entries(this.props.selectedStyleObject.skus).map((key) => {//console.log(key);
@@ -109,8 +112,8 @@ class Cart extends Component {
           </label>
           {/* /////////second select menu ////////////*/}
           <label>
-            quantity:
-            <select value={this.state.selectedQuantity} onChange={this.selectQuantity}>
+            {/* quantity: */}
+            <select id='select-quantity' value={this.state.selectedQuantity} onChange={this.selectQuantity}>
               {}
               <option value={null} >-</option>
 
@@ -120,7 +123,7 @@ class Cart extends Component {
             </select>
           </label>
           {/* //AHH SHIT. SHOULD ADD TO CART BE SUBMIT BUTTON? */}
-          <input type="submit" value="Submit" />
+          {/* <input type="submit" value="Submit" /> */}
         </form>
 
         <AddToCart inStock={inStock} style_id={this.props.selectedStyleObject.style_id} selectedSize={this.state.selectedSize} selectedQuantity={this.state.selectedQuantity}/>
