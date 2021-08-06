@@ -140,9 +140,9 @@
 }
 .relatedList__carousel {
   display: flex;
-  justify-content: space-evenly;
-  margin: auto;
+  justify-content: flex-start;
   position: relative;
+  width: 85%;
 }
 
 .arrow__left {

@@ -62,6 +62,7 @@ const Stars = (props) => {
           <div
             className='stars__underlay--stars-container'
             style={{ width: width, background: '#45a29e' }}>
+              {console.log('width', width)}
             {[1, 2, 3, 4, 5].map((item, idx) => {
               return (
                 <div key={idx} className='stars__underlay--stars-container_stars'>

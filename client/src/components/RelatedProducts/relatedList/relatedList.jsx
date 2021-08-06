@@ -100,9 +100,9 @@ const RelatedList = (props) => {
     let amount = 0;
 
     if (!rightPos) {
-      amount = 300;
+      amount = 320;
     } else {
-      amount = rightPos - 300;
+      amount = rightPos - 320;
       // console.log('sec')
     }
     // console.log('carousel style', rightPos.slice(0, rightPos.length - 2));
@@ -119,9 +119,9 @@ const RelatedList = (props) => {
     let amount = 0;
 
     if (!rightPos) {
-      amount = 300;
+      amount = 320;
     } else {
-      amount = rightPos + 300;
+      amount = rightPos + 320;
       // console.log('sec')
     }
     // console.log('carousel style', rightPos.slice(0, rightPos.length - 2));
@@ -134,13 +134,13 @@ const RelatedList = (props) => {
     // console.log('reviewsMeta', reviewsMeta),
     <div className="relatedList">
       <img className="arrow__left" onClick={shiftLeft} src={arrow} />
-      <img className="arrow__right" onClick={shiftRight} src={arrow} />
+
       <div className="relatedList__carousel">
         {products.length > 0 && thumbnails.length && reviewsMeta.length > 0 ? products.map((item, i) => {
           return <CardComponent type={"related"} key={i} product={item} thumbnails={thumbnails[i]} reviewsMeta={reviewsMeta[i]} starFn={starFn} cardFn={cardFn} resetFn={resetRelatedList}/>
         }) : console.log('not yet ready')}
       </div>
-
+      <img className="arrow__right" onClick={shiftRight} src={arrow} />
     </div>
   )
 
