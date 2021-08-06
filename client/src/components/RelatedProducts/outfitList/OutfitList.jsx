@@ -21,9 +21,12 @@ const OutfitList = (props) => {
   const [outfitThumbnail, setOutfitThumbnail] = useState([]);
 
   function addItem() {
+    setOutfitInfo([]);
+    setOutfitThumbnail([]);
     let listItem =  [...outfitList];
     if (outfitList.indexOf(currentProduct) < 0) {
-      listItem = [...listItem, currentProduct];
+      // listItem = [...listItem, currentProduct];
+      listItem.push(currentProduct);
       setOutfitList(listItem);
     } else {
       console.log('Item has already been added!');
@@ -74,6 +77,8 @@ const OutfitList = (props) => {
       // outfitList.pop();
       console.log('outfitlist after', outfitInfo);
       setOutfitList(outfitInfo);
+      setOutfitInfo([]);
+      setOutfitThumbnail([]);
     }
 
   }

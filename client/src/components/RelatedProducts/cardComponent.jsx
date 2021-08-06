@@ -20,23 +20,23 @@ const CardComponent = (props) => {
     // console.log('thumbnails', thumbnails);
     // console.log('reviewMEta ratings', reviewsMeta.ratings);
     return (
-      <div className="card" onClick={() => {
-        cardFn(product);
-        resetFn();
-      }}>
+      <div className="card">
         <div className="card__mediaBox">
           {/* // if it has thumbnail
           // if it doesn't have thumbnail */}
           {thumbnails === null ?
-            <div className="card__mediaBox__thumbnail">No image available</div> :
+            <div className="card__mediaBox__thumbnail" >No image available</div> :
             <div className="card__mediaBox__thumbnail" style={{
-              backgroundImage: `url(${thumbnails})`
+                backgroundImage: `url(${thumbnails})`
             }}>
               <p onClick={(e) => starFn(product, e)} className="card__mediaBox__thumbnail__star">&#9733;</p>
             </div>
           }
         </div>
-        <div className="card__info">
+        <div className="card__info" onClick={() => {
+          cardFn(product);
+          resetFn();
+        }}>
           <p className="card__info__category">{product.category}</p>
           <p className="card__info__name">{product.name}</p>
           <p className="card__info__price">${product.default_price}</p>
@@ -55,8 +55,8 @@ const CardComponent = (props) => {
   const { outfitProduct, outfitThumbnail, deleteItemFn } = props;
 
   function OutfitCard() {
-    // console.log('outfitinfo', outfitInfo);
-    // console.log('outfitThumbnail', outfitThumbnail);
+    // console.log('outfitinfo', outfitProduct);
+    console.log('outfitThumbnail', outfitThumbnail);
     return (
       <div className="card">
         <div className="card__mediaBox">
@@ -68,7 +68,7 @@ const CardComponent = (props) => {
               backgroundImage: `url(${outfitThumbnail})`
             }}>
               <p onClick={() => {deleteItemFn(outfitProduct.id)}}
-              className="card__mediaBox__thumbnail__star">&#10005;</p>
+              className="card__mediaBox__thumbnail__delete">&#10005;</p>
             </div>
           }
         </div>
