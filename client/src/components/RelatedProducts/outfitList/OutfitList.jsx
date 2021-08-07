@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import RelatedCard from '../relatedList/relatedCard.jsx';
-// import AddItemCard from './addItemCard.jsx';
 import CardComponent from '../CardComponent.jsx';
 
 const axios = require('axios');

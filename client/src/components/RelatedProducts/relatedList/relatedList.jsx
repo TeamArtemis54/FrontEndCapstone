@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import RelatedCard from './relatedCard.jsx';
 import CardComponent from '../CardComponent.jsx';
 import arrow from '../assets/next.png';
 
