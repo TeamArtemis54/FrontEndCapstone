@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import RelatedCard from '../relatedList/relatedCard.jsx';
-// import AddItemCard from './addItemCard.jsx';
 import CardComponent from '../CardComponent.jsx';
 
 const axios = require('axios');
@@ -31,13 +29,9 @@ const OutfitList = (props) => {
     } else {
       console.log('Item has already been added!');
     }
-    // setOutfitList(outfitList => [...outfitList, currentProduct]);
-    // console.log('outfitlist', outfitList);
-    // return <h1>hello</h1>
   }
 
   useEffect(() => {
-    console.log('this should get hit after changing outfitList no?');
     if (outfitList.length > 0) {
       outfitList.map((item) => {
         getOutfitInfo(item.id);
@@ -67,7 +61,7 @@ const OutfitList = (props) => {
   }
 
   function removeOutfitItem(id) {
-    console.log('here');
+    // console.log('here');
     if (outfitInfo.length > 0) {
       for (let i = 0; i < outfitList.length; i++) {
         if (outfitInfo[i].id === id) {
@@ -75,7 +69,7 @@ const OutfitList = (props) => {
         }
       }
       // outfitList.pop();
-      console.log('outfitlist after', outfitInfo);
+      // console.log('outfitlist after', outfitInfo);
       setOutfitList(outfitInfo);
       setOutfitInfo([]);
       setOutfitThumbnail([]);
@@ -85,7 +79,7 @@ const OutfitList = (props) => {
 
   return (
     // console.log('current in outfit', currentProduct),
-    console.log('outfitList before', outfitList),
+    // console.log('outfitList before', outfitList),
     <div className="outfitList">
       {/* <AddItemCard /> */}
       <CardComponent type={"add"} productId={currentProduct.id} addFn={addItem}/>

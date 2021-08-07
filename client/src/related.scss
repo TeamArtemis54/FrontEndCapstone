@@ -6,140 +6,6 @@
 // #66fcf1;
 // #45a29e;
 
-// * {
-//   outline: 1px solid green;
-// }
-
-// WIDGET STYLING
-// .widget_container {
-//   border: 2px solid red;
-//   padding: 2%;
-//   background-color: #f9f9f9;
-
-//   .widget_title {
-//     font-size: 1rem;
-//     font-family: 'Open Sans';
-//     font-weight: 300;
-//     text-transform: uppercase;
-//     width: 90%;
-//     margin: auto;
-//     padding: 2%;
-//     border: 2px solid blue;
-//   }
-
-//   // RELATED LIST CONTAINER
-//   .relatedlist_container {
-//     width: 90%;
-//     margin: auto;
-//     display: flex;
-//     border: 2px solid orange;
-//   }
-
-//   // THE RELATED LIST
-//   .relatedList {
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-evenly;
-//     border: 2px solid green;
-
-//     .relatedCard:hover {
-//       box-shadow: 3px 3px 19px 6px rgba(0,0,0,0.46);
-//     }
-
-//     // EACH CARD STYLING
-//     .relatedCard {
-//       font-family: 'Open Sans';
-//       font-weight: 300;
-//       // border: 0.5px solid rgba(0, 0, 0, 0.2);
-//       border: 2px solid red;
-//       height: 500px;
-//       width: 90%;
-//       padding: 2%;
-
-//       .card_img {
-//         width: 100%;
-//         height: 65%;
-//         display: flex;
-//         text-align: right;
-//         border: 2px solid aqua;
-
-//         &__thumbnail {
-//           width: 100%;
-//           height: 100%;
-//           background-size: cover;
-//           background-repeat: no-repeat;
-//           background-position: center;
-//         }
-
-//         &__star {
-//           color: #fff;
-//           border: 2px solid red;
-//           width: 25px;
-//           font-size: 1.3rem;
-//           text-align: center;
-//           background-color: rgba(0, 0, 0, 0.3);
-//           margin-left: 90%;
-//           padding: 0.5%;
-//         }
-
-//         &__star:hover {
-//           color: #ffdc14;
-//         }
-//       }
-
-//       .card_info {
-//         width: 100%;
-//         height: 30%;
-//         padding: 0 1%;
-//         border: 2px solid blue;
-
-
-//         &__category {
-//           text-transform: uppercase;
-//           font-size: 0.75rem;
-//           border: 2px solid green;
-//         }
-
-//         &__name {
-//           font-weight: 600;
-//           font-size: 1.1rem;
-//           border: 2px solid orange;
-//         }
-
-//         &__price {
-//           font-weight: 300;
-//           font-size: 0.75rem;
-//           border: 2px solid red;
-//         }
-//       }
-//     }
-//   }
-
-
-//   // USER LIST
-//   .userList_title {
-//     font-size: 1rem;
-//     font-family: 'Open Sans';
-//     font-weight: 300;
-//     text-transform: uppercase;
-//     width: 90%;
-//     margin: 1% auto 0;
-//     padding: 2%;
-//     border: 2px solid blue;
-//   }
-
-//   .userList_container {
-//     width: 90%;
-//     margin: auto;
-//     display: flex;
-//     border: 2px solid orange;
-//   }
-
-
-// }
-
-
-
 // STARS REUSABLE COMPONENT CSS
 .stars {
   display: flex;
@@ -165,109 +31,70 @@
   align-items: center;
   justify-content: center;
   padding: 5%;
-}
 
-.modal-content {
-  width: 500px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+  &__content {
+    width: 500px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-.modal-header {
-  padding: 10px 10px;
-  display: flex;
-  justify-content: space-between;
-}
+    &-header {
+      padding: 10px 10px;
+      display: flex;
+      justify-content: space-between;
 
-  .closeButton  {
-    background-color: transparent;
-    border: none;
-    text-align: right;
-  }
-
-  .closeButton:hover {
-    color: #C5C6C7;
-  }
-
-.modal-title {
-  margin: 0;
-  padding: 1% 3%;
-  text-transform: uppercase;
-  font-family: 'Open Sans';
-  font-weight: 300;
-  font-size: 0.8rem;
-}
-
-.modal-body table{
-  font-family: 'Open Sans';
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.modal-body tr {
-  margin: 2% 0;
-}
-
-.modal-body table tr td {
-  padding: 5%;
-  text-align: center;
-}
-
-.modal-body table tr th {
-  border-bottom: 0.2px solid rgba(0, 0, 0, 0.3);
-  width: 33%;
-  margin: auto;
-}
-
-.table-mid {
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 300;
-  border: none;
-}
-
-  .modal-productName {
-    font-size: 1.1rem;
-    font-weight: 700;
-    font-family: 'Open Sans';
-    padding: 0.5% 3%;
-  }
-
-
-
-
-// YOUR OUTFIT LIST CSS
-
-  .addItemCard {
-    &_deleteButton {
-      border: 1px solid red;
-      text-align: right;
-      width: 100%;
-      margin: 0;
-      font-size: 1.3rem;
-      font-weight: 700;
-      border: 2px solid black;
-      padding: 1%;
-
-      &__box {
-        border: 2px solid #4d4d4d;
-        // border: 2px solid red;
-        border-radius: 50%;
-        display: block;
-        width: 20px;
-        height: 20px;
-        line-height: 100%;
-        text-align: center;
-        margin-left: 85%;
+      &_title {
+        margin: 0;
+        padding: 1% 3%;
+        text-transform: uppercase;
+        font-family: 'Open Sans';
+        font-weight: 300;
+        font-size: 0.8rem;
       }
     }
+
+    &-body {
+
+      table {
+        font-family: 'Open Sans';
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      tr {
+        margin: 2% 0;
+      }
+
+      table tr td  {
+        padding: 5%;
+        text-align: center;
+      }
+
+      table tr th {
+        border-bottom: 0.2px solid rgba(0, 0, 0, 0.3);
+        width: 33%;
+        margin: auto;
+      }
+
+      &_middle {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 300;
+        border: none;
+      }
+
+    }
   }
+}
 
+.closeButton  {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
 
-
-
-
-
+.closeButton:hover {
+  color: #C5C6C7;
+}
 
 // THE NEW CSS - 8/03/2021
 
