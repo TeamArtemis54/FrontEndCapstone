@@ -257,6 +257,7 @@ ul {
   top: 0px;
   right: 20px;
   font-size: 3em;
+  color: #fff;
 }
 
 #zoom-img {
@@ -677,24 +678,29 @@ html, body {
   // position: fixed;
   top: 0;
   border-bottom: 2px #1f2833 solid;
-  background: #c5c6c7;
+  // background: #c5c6c7;
   color: #0b0c10;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 2rem;
+  margin-right: 2%;
 }
+
 .entry-point {
   display: flex;
   flex-direction: column;
-  background: #c5c6c7;
+  // background: #c5c6c7;
   // margin-top: 72px;
 }
 .entry-point .overview {
   height: 72px;
-  background: #45a29e;
+  // background: #45a29e;
 }
 
 .related-products {
   height: min-content;
   background: #1f2833;
-  color: #c5c6c7;
+  // color: #c5c6c7;
 }
 
 .ratings_and_reviews {
@@ -702,11 +708,81 @@ html, body {
 }
 .ratings_and_reviews__ratings-left {
   flex-basis: 35%;
-  background: #c5c6c7;
+  // background: #c5c6c7;
 }
 .ratings_and_reviews__reviews-right {
   flex-basis: 65%;
-  background: #45a29e;
+  // background: #45a29e;
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* ////////ARROWS-start/////// */
+/* https://www.w3schools.com/howto/howto_css_arrows.asp */
+.left-button, .right-button, #up-button, #down-button, input[type=submit], input[type=reset] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.left-button {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+}
+
+.right-button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+
+#left-button-zoom{
+  left:15%;
+  z-index:1000
+}
+#right-button-zoom{
+  right:16%;
+  z-index:1000
+
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 5px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* ////////ARROWS-end/////// */
+
+
+#overview-description {
+  padding-left: 10%;
+  padding-right: 30%;
+  background-color: white;
+}
