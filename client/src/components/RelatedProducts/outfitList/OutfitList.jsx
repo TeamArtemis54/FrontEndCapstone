@@ -29,9 +29,6 @@ const OutfitList = (props) => {
     } else {
       console.log('Item has already been added!');
     }
-    // setOutfitList(outfitList => [...outfitList, currentProduct]);
-    // console.log('outfitlist', outfitList);
-    // return <h1>hello</h1>
   }
 
   useEffect(() => {
