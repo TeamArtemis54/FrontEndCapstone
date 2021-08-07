@@ -102,7 +102,6 @@ const RelatedList = (props) => {
       amount = 320;
     } else {
       amount = rightPos - 320;
-      // console.log('sec')
     }
 
     // console.log(amount);
@@ -120,7 +119,6 @@ const RelatedList = (props) => {
       amount = 320;
     } else {
       amount = rightPos + 320;
-      // console.log('sec')
     }
 
     // console.log(amount);
