@@ -88,7 +88,7 @@ const RelatedList = (props) => {
     setRelatedIdsList([]);
     setProducts([]);
     setThumbnails([]);
-    setReviewMeta([]);
+    setReviewsMeta([]);
   }
 
   function shiftLeft() {
