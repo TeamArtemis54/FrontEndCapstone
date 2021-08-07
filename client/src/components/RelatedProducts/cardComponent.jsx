@@ -96,7 +96,7 @@ const CardComponent = (props) => {
             <p className="addItem_Card__plus_sign" onClick={() => addFn()}>&#43;</p>
           </div>
         </div>
-        <Button onClick={() => addFn()} class={"addCard_button"} children={'Add To Outfit'} />
+        <Button onClick={() => addFn()} className={"addCard_button"} children={'Add To Outfit'} />
       </div>
     )
   }

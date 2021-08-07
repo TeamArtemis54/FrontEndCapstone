@@ -96,39 +96,6 @@
   color: #C5C6C7;
 }
 
-// YOUR OUTFIT LIST CSS
-
-  .addItemCard {
-    &_deleteButton {
-      border: 1px solid red;
-      text-align: right;
-      width: 100%;
-      margin: 0;
-      font-size: 1.3rem;
-      font-weight: 700;
-      border: 2px solid black;
-      padding: 1%;
-
-      &__box {
-        border: 2px solid #4d4d4d;
-        // border: 2px solid red;
-        border-radius: 50%;
-        display: block;
-        width: 20px;
-        height: 20px;
-        line-height: 100%;
-        text-align: center;
-        margin-left: 85%;
-      }
-    }
-  }
-
-
-
-
-
-
-
 // THE NEW CSS - 8/03/2021
 
 .relatedWidget_container {

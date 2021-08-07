@@ -76,27 +76,6 @@
   color: #C5C6C7;
 }
 
-.addItemCard_deleteButton {
-  border: 1px solid red;
-  text-align: right;
-  width: 100%;
-  margin: 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  border: 2px solid black;
-  padding: 1%;
-}
-.addItemCard_deleteButton__box {
-  border: 2px solid #4d4d4d;
-  border-radius: 50%;
-  display: block;
-  width: 20px;
-  height: 20px;
-  line-height: 100%;
-  text-align: center;
-  margin-left: 85%;
-}
-
 .relatedWidget_container {
   padding: 1%;
   background-color: #fff;
